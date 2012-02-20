@@ -1,0 +1,4 @@
+genre: normal
+pregen: false
+world_on: !ruby/range 4..6
+giant_on: !ruby/range 0..9
