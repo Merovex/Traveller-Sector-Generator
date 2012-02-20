@@ -1,7 +1,7 @@
 require 'rvg/rvg'
 include Magick
 
-class SvgMapMaker
+class SvgOutput
   @@pi = Math::PI.round(5)
   def initialize()
     @side    = 40
