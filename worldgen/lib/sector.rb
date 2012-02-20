@@ -8,7 +8,7 @@ class Sector<WorldGenerator
       32.times do |r|
         if (@@config['world_on'].include?(@@dice.roll))
           v = Volume.new(c,r) 
-          puts v.inspect
+          puts [v.uwp, v].inspect
         end
       end
     end
