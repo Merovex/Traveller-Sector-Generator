@@ -1,7 +1,7 @@
 class WorldGenerator
   @@config = YAML::load(IO.read('_config.yml'))
   @@dice = YAML::load(IO.read('pregen_rolls.yml'))
-  @@names = YAML::load_file('lib/names.yaml')
+  @@names = YAML::load_file('./worldgen/lib/names.yml')
 end
 class Integer
   def dn(n)
@@ -18,5 +18,6 @@ class Array
 end
 
 require './worldgen/lib/sector'
+require './worldgen/lib/volume'
 require './worldgen/lib/svg'
     

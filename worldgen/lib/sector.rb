@@ -6,7 +6,10 @@ class Sector<WorldGenerator
   def generate
     40.times do |c|
       32.times do |r|
-        puts "%02d%02d" % [c,r, Volume.new] if (@@config['world_on'].include?(@@dice.roll))
+        if (@@config['world_on'].include?(@@dice.roll))
+          v = Volume.new(c,r) 
+          puts v.inspect
+        end
       end
     end
   end
