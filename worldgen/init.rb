@@ -36,6 +36,10 @@ class Integer
     return n if self > n
     return self
   end
+  def min(n)
+    return n if self < n
+    return self
+  end
 end
 class Array
   def roll(n=1)
