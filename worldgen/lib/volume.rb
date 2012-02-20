@@ -1,10 +1,12 @@
 class Volume<WorldGenerator
   def initialize(c,r)
+    
     @name      = @@names.sample
     @column    = c
     @row       = r
     @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
-    @port   = %w{X X X E E D D C C B B A A A A}[toss(2,0)]
+    @port_roll = toss(2,0)
+    # @port   = %w{X X X E E D D C C B B A A A A}[toss(2,0)]
     
     # Size, Climae & Biosphere. MgT 170--71.
     @size      = toss()
@@ -26,33 +28,65 @@ class Volume<WorldGenerator
     @h20 -= 6 if @temp == 'R'
     @h20 = @h20.whole
     
+    # Adjust Atmosphere and Hydrographics when not Normal. MgT p. 180.
+    if (%{opera firm}.include?(@@config['genre'].downcase))
+      @atmo = case
+        when (@size < 3 or (@size < 4 and @atmo < 3)) then 0
+        when ([3,4].include?(@size) and (3..5).include?(@atmo)) then 1
+        when ([3,4].include?(@size) and @atmo > 5) then 10
+        else @atmo
+      end
+      @h20 -= 6 if (((3..4).include?(@size) and @atmo == 'A' ) or @atmo < 2)
+      @h20 -= 4 if ([2,3,11,12].include?(@atmo))
+    end
+    
     @popx = toss()
+    if ('firm' == @@config['genre'].downcase)
+      @popx -= 1 if (@size < 3 or @size > 9)
+      @popx += [-1, -1, -1, -1, -1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1, -1][@atmo]
+      @port_roll = (@port_roll - 7 + @popx.whole).whole
+    end
+    @popx = @popx.whole
     
     # Government & Law. MgT p. 173
     @govm = (toss(2,7) + @popx).whole
     @law  = (toss(2,7) + @govm).whole
-    @law = @govm = 0 if @popx == 0
 
     # Identify Factions. MgT p. 173
-    fax_r = d3
+    fax_r = d3.max(3)
     fax_r += 1 if [0,7].include?(@law)
     fax_r -= 1 if @law > 9
-    @factions = (@popx == 0) ? [] : fax_r.times.map { %w{O O O O F F M M N N S S P}[toss(2,0)] }
+    rolls = [toss(2,0),toss(2,0),toss(2,0),toss(2,0),toss(2,0)]
+    @factions = (@popx == 0) ? [] : fax_r.times.map { |r| %w{O O O O F F M M N N S S P}[rolls.shift] }
     
     # Set Technology die modifier based on World attributes. MgT p. 170
-    tek_dm = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'X' => -4}[@port]
+    tek_dm = { 'A' => 6, 'B' => 4, 'C' => 2, 'D' => 0, 'E' => 0, 'X' => -4}[port]
     tek_dm += [2,2,1,1,1,0,0,0,0,0,0,0,0,0,0,0][@size]
     tek_dm += [1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1][@atmo]
     tek_dm += [1,0,0,0,0,0,0,0,0,1,2][@h20]
     tek_dm += [0,1,1,1,1,1,0,0,0,1,2,3,4][@popx]
     tek_dm += [1,0,0,0,0,1,0,2,0,0,0,0,0,-2,-2,0][@govm]
-    @tek = (toss(1,0) + tek_dm).min( [8,8,5,5,3,0,0,3,0,8,9,10,5,8][@atmo] ) # MgT p. 179 Environmental Limites
+    tek_limit = environmental_tek_limits[@atmo]
+    @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limites
     
-    @trades = get_trade_codes
+    # For those who want to limit technology
+    @tek = @tek.max(@@config['tech_cap']) unless @@config['tech_cap'].nil?
+    @popx = @law = @govm = @tek = 0 if (@tek < tek_limit)
+    @tek = @tek.min(@popx)
+    @law = @govm = @tek = 0 if @popx == 0
     
     @code   = (@atmo > 9 or [0,7,10].include?(@law) or [0,9,10,11,12,13,14,15,16].include?(@law)) ? 'AZ' : '..'
   end
-  def get_trade_codes
+  def port
+    %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole]
+  end
+  def environmental_tek_limits
+    [8,8,5,5,3,0,0,3,0,8,9,10,5,8]
+  end
+  def empty?
+    (uwp.include?('X000000'))
+  end
+  def trade_codes
     code = []
     code << 'Ag' if ((4..9) === @atmo and (4..8) === @h20 and  (5..7) === @popx)
     code << 'As' if (@size == 0 and @atmo == 0 and @h20 ==0)
@@ -75,10 +109,10 @@ class Volume<WorldGenerator
     code
   end
   def to_s
-    "%s %s %s %s %s %s\t%-15s\t%s\t%s" % [location, uwp, @temp, @gas_giant, @bases, @code, @trades.join(','), @factions.join(','), @name]
+    "%s %s %s %s %s %s\t%-15s\t%s\t%s" % [location, uwp, @temp, @gas_giant, @bases, @code, trade_codes.join(','), @factions.join(','), @name]
   end
   def uwp
-    "%s%s%s%s%s%s%s-%s" % [ @port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
+    "%s%s%s%s%s%s%s-%s" % [ port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
   end
   def location
     "%02d%02d" % [@column,@row]

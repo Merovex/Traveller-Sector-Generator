@@ -8,6 +8,9 @@ class WorldGenerator
   def d3
     (@@dice.roll() / 2).ceil
   end
+  def d66
+    2.times.map { @@dice.roll.to_s }.inject{ |s,x| s + x}
+  end
 end
 class Integer
   def dn(n)
@@ -18,7 +21,7 @@ class Integer
   end
   def hexd
     return 'F' if self > 15
-    self.to_s(16).upcase
+    self.whole.to_s(16).upcase
   end
   def whole
     return 0 if self < 0
