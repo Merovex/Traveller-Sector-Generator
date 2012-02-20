@@ -14,7 +14,6 @@ class Volume<WorldGenerator
     
     @temp      = %w{F F F C C T T T T T H H R R R R R }[temp_dice]
     
-    @trades = []
     @bases  = '.....'
     
     # Hydrographics. MgT p. 172
@@ -49,9 +48,34 @@ class Volume<WorldGenerator
     tek_dm += [1,0,0,0,0,1,0,2,0,0,0,0,0,-2,-2,0][@govm]
     @tek = (toss(1,0) + tek_dm).min( [8,8,5,5,3,0,0,3,0,8,9,10,5,8][@atmo] ) # MgT p. 179 Environmental Limites
     
+    @trades = get_trade_codes
+    
+    @code   = (@atmo > 9 or [0,7,10].include?(@law) or [0,9,10,11,12,13,14,15,16].include?(@law)) ? 'AZ' : '..'
+  end
+  def get_trade_codes
+    code = []
+    code << 'Ag' if ((4..9) === @atmo and (4..8) === @h20 and  (5..7) === @popx)
+    code << 'As' if (@size == 0 and @atmo == 0 and @h20 ==0)
+    code << 'Ba' if (@popx == 0 and @govm == 0 and @law == 0)
+    code << 'De' if (@atmo > 1 and @h20 == 0)
+    code << 'Fl' if (@atmo > 9 and @h20 > 0)
+    code << 'Ga' if (@size > 4 and (4..9) === @atmo and (4..8) === @hydro)
+    code << 'Hi' if (@popx > 8)
+    code << 'Ht' if (@tek > 12)
+    code << 'IC' if (@atmo < 2 and @h20 > 0)
+    code << 'In' if ([0,1,2,4,7,9].include?(@atmo) and @popx > 8)
+    code << 'Lo' if ((1..3) === @popx)
+    code << 'Lt' if (@tek < 6)
+    code << 'Na' if ((0..3) === @atmo and (0..3) === @h20 and @popx > 5)
+    code << 'NI' if ((4..6) === @popx)
+    code << 'Po' if ((2..5) === @atmo and (0..3) === @h20)
+    code << 'Ri' if ([6,8].include?(@atmo) and (6..8) === @popx)
+    code << 'Va' if (@atmo == 0)
+    code << 'Wa' if (@hydro == 10)
+    code
   end
   def to_s
-    "%s %s %s %s %s %s\t%s" % [@location, uwp, @trades.join(','),@temp, @gas_giant, @bases, @name]
+    "%s %s %s %s %s %s\t%-15s\t%s\t%s" % [location, uwp, @temp, @gas_giant, @bases, @code, @trades.join(','), @factions.join(','), @name]
   end
   def uwp
     "%s%s%s%s%s%s%s-%s" % [ @port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
