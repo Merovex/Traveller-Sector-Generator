@@ -1,12 +1,8 @@
 class WorldGenerator
   @@config = YAML::load(IO.read('_config.yml'))
   @@dice = YAML::load(IO.read('pregen_rolls.yml'))
+  @@names = YAML::load_file('lib/names.yaml')
 end
-
-require './worldgen/lib/sector'
-require './worldgen/lib/svg'
-
-
 class Integer
   def dn(n)
        (1..self).inject(0) { |a, e| a + rand(n) + 1 }
@@ -20,4 +16,7 @@ class Array
     n.times.map{ self.shift }.inject{|s,x| s + x}
   end
 end
+
+require './worldgen/lib/sector'
+require './worldgen/lib/svg'
     

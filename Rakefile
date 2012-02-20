@@ -4,9 +4,7 @@ require './worldgen/init'
 task :worldgen do 
   read_config
   s = Sector.new
-end
-def config
-  @config
+  s.generate
 end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))
