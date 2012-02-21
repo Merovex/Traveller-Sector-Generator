@@ -47,7 +47,7 @@ class SvgOutput<WorldGenerator
         :white      => white
       },
       'lite' => {
-        :background => base3,
+        :background => white,
         :zone       => {'AZ' => yellow, 'RZ' => red},
         :hex        => base1,
         :hex_id     => base01,
@@ -55,22 +55,12 @@ class SvgOutput<WorldGenerator
         :black      => black,
         :base02     => base02,
         :base1      => base1,
-        :white      => white
+        :white      => white,
+        :tract_id   => base2
       }
     }
     theme = (%w{lite dark}.include?(@@config['svg_theme'])) ? @@config['svg_theme'] : 'lite'
     @color = @theme[theme]
-    # @color = {
-    #   :background => base03,
-    #   :zone       => {'AZ' => yellow, 'RZ' => red},
-    #   :hex        => base1,
-    #   :hex_id     => base01,
-    #   :world_text => base01,
-    #   :black      => black,
-    #   :base02     => base02,
-    #   :base1      => base1,
-    #   :white      => base3
-    # }
     @hex = {
       :side_h => (@side * (@factor / 2)).tweak,
       :side_w => (@side / 2).tweak,
@@ -106,9 +96,10 @@ J2 0406 0706 0704 0802
   def print
     from_file
     puts header
+    puts tract_marks
     puts hex_grid
+
     puts @volumes.map {|v| world(v) }
-    # puts travel_warnings
     puts volumes
     puts frame
     puts footer    
@@ -136,9 +127,11 @@ J2 0406 0706 0704 0802
         .Planet         { fill: #{@color[:black]}; stroke: #{@color[:black]}; stroke-width: 1; }
         .Desert         { fill: none; stroke: #{@color[:black]}; stroke-width: 2; }
         polyline.Frame  { fill: none; stroke: #{@color[:black]}; stroke-width:4; }
+        polyline.Tract  { fill: none; stroke: #{@color[:hex]}; stroke-width: 1; }
         polyline.Hexgrid{ fill: none; stroke: #{@color[:hex]}; stroke-width: 1;}
         text.Name       { font-family: Verdana;}
         text.Spaceport  { font-size: #{@side/3}px}
+        text.TractID    { font-size: #{@side*3}px; fill: #{@color[:tract_id]}}
         text.VolumeId   { fill: #{@color[:hex_id]}}
         rect            { fill: #{@color[:background]}
       ]]></style>
@@ -214,6 +207,24 @@ J2 0406 0706 0704 0802
   def frame(k='Frame')
     z = 0; w = @width - 0; h = @height - z;
     "    <polyline class='#{k}' points='#{z},#{z} #{w},#{z} #{w},#{h} #{z},#{h} #{z},#{z}' />"
+  end
+  def tract_marks
+    height = (@height / 4).floor 
+    width  = (@width / 4).ceil
+    # width -= 2
+    
+    output = ''
+    letters = ('A'..'P').to_a
+    5.times do |r|
+      h1 = (height.floor * r) - (8*r); h2 = h1 + height - 8
+      w2 = 0
+      4.times do |c|
+        w1 = w2; w2 += (width - [-4,4,5,-4][c])
+        output += "    <text class='TractID' x='#{w1 + 70}' y='#{h1 + 110}'>#{letters.shift}</text>\n"
+        output += "    <polyline class='Tract' points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />"
+      end
+    end
+    return output
   end
   def volumes
     output = ''
