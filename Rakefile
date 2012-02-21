@@ -4,8 +4,6 @@ require './worldgen/init'
 task :worldgen do 
   read_config
   s = Sector.new
-  x = s.d66
-  raise x.inspect
   s.generate
   puts s.volumes
 end

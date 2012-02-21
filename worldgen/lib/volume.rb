@@ -75,6 +75,10 @@ class Volume<WorldGenerator
     @tek = @tek.min(@popx)
     @law = @govm = @tek = 0 if @popx == 0
     
+    # Fix temperature
+    @temp = 'F' if (trade_codes.include?('IC') or trade_codes.include?('Va'))
+    @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
+  
     @code   = (@atmo > 9 or [0,7,10].include?(@law) or [0,9,10,11,12,13,14,15,16].include?(@law)) ? 'AZ' : '..'
   end
   def port
