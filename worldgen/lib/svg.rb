@@ -7,6 +7,7 @@ class SvgOutput<WorldGenerator
     @rows     = 40
     @columns  = 32
     @source_filename = filename
+    @svg_filename    = filename.gsub(File.extname(filename), '.svg')
     @side    = 40
     @factor  = 1.732
     @height  = (@side * @factor * (@rows + 0.5)).ceil
@@ -95,14 +96,16 @@ J2 0406 0706 0704 0802
   end
   def print
     from_file
-    puts header
-    puts tract_marks
-    puts hex_grid
+    svg = []
+    svg << header
+    svg << tract_marks
+    svg << hex_grid
 
-    puts @volumes.map {|v| world(v) }
-    puts volumes
-    puts frame
-    puts footer    
+    svg << @volumes.map {|v| world(v) }
+    svg << volumes
+    svg << frame
+    svg << footer
+    File.open(@svg_filename,'w').write(svg.flatten.join('\n'))
   end
   def footer
     return "</svg>"
@@ -178,7 +181,7 @@ J2 0406 0706 0704 0802
     c         = center_of(locx) # get Location's x,y Coordinates
     curve = @side / 2
     
-    output =  "<!-- Volume: #{volume} -->"
+    output =  "<!-- Volume: #{volume.strip} -->"
     output +=  (size == 0) ? draw_belt(c) : draw_planet(c,uwp)
     output += "    <text class='Spaceport' x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
 
