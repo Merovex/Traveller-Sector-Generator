@@ -1,7 +1,7 @@
 require 'rvg/rvg'
 include Magick
 
-class SvgOutput
+class SvgOutput<WorldGenerator
   @@pi = Math::PI.round(5)
   def initialize(filename)
     @rows     = 40
@@ -34,16 +34,43 @@ class SvgOutput
     white   = '#FFFFFF'
     black   = '#222222'
     
-    @color = {
-      :zone       => {'AZ' => yellow, 'RZ' => red},
-      :hex        => base1,
-      :hex_id     => base01,
-      :world_text => base01,
-      :black      => black,
-      :base02     => base02,
-      :base1      => base1,
-      :white      => base3
+    @theme = {
+      'dark' => {
+        :background => base03,
+        :zone       => {'AZ' => yellow, 'RZ' => red},
+        :hex        => base1,
+        :hex_id     => base2,
+        :world_text => base2,
+        :black      => base3,
+        :base02     => base2,
+        :base1      => base01,
+        :white      => white
+      },
+      'lite' => {
+        :background => base3,
+        :zone       => {'AZ' => yellow, 'RZ' => red},
+        :hex        => base1,
+        :hex_id     => base01,
+        :world_text => base01,
+        :black      => black,
+        :base02     => base02,
+        :base1      => base1,
+        :white      => white
+      }
     }
+    theme = (%w{lite dark}.include?(@@config['svg_theme'])) ? @@config['svg_theme'] : 'lite'
+    @color = @theme[theme]
+    # @color = {
+    #   :background => base03,
+    #   :zone       => {'AZ' => yellow, 'RZ' => red},
+    #   :hex        => base1,
+    #   :hex_id     => base01,
+    #   :world_text => base01,
+    #   :black      => black,
+    #   :base02     => base02,
+    #   :base1      => base1,
+    #   :white      => base3
+    # }
     @hex = {
       :side_h => (@side * (@factor / 2)).tweak,
       :side_w => (@side / 2).tweak,
@@ -97,6 +124,7 @@ J2 0406 0706 0704 0802
 <svg width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg" blackground-color='#{@color[:white]}'>
     <desc>Subsector Map Grid</desc>
     <style type="text/css"><![CDATA[
+        body      { fill: red; }
         circle          { fill: #{@color[:black]}; stroke: #{@color[:white]}; stroke-width: 1; }
         polyline        { fill: none; }
         polygon         { fill: #{@color[:black]}; stroke: none; stroke-width:1;}
@@ -112,9 +140,9 @@ J2 0406 0706 0704 0802
         text.Name       { font-family: Verdana;}
         text.Spaceport  { font-size: #{@side/3}px}
         text.VolumeId   { fill: #{@color[:hex_id]}}
-        rect            { fill: red; width: 100%; height: 100%;}
+        rect            { fill: #{@color[:background]}
       ]]></style>
-    <rect />
+    <rect width='#{@width}' height='#{@height}' />
     EOS
 
   end
