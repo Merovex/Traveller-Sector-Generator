@@ -177,12 +177,12 @@ J2 0406 0706 0704 0802
     @zones << "#{locx} #{zone}" unless zone=='..'
 
     spaceport = uwp[0]
-    size      = uwp[1].to_i
+    size      = uwp[1]
     c         = center_of(locx) # get Location's x,y Coordinates
     curve = @side / 2
     
     output =  "<!-- Volume: #{volume.strip} -->"
-    output +=  (size == 0) ? draw_belt(c) : draw_planet(c,uwp)
+    output +=  (size == '0') ? draw_belt(c) : draw_planet(c,uwp)
     output += "    <text class='Spaceport' x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
 
     output += navy_base(c)  if nsg.include?('N')

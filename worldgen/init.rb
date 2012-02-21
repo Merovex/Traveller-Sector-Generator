@@ -2,6 +2,15 @@ class WorldGenerator
   @@config = YAML::load(IO.read('_config.yml'))
   @@dice = YAML::load(IO.read('pregen_rolls.yml'))
   @@names = YAML::load_file('./worldgen/lib/names.yml')
+  def has_system?
+    case
+      when @@config['density'] == 'rift'      then (toss(2,0) == 12)
+      when @@config['density'] == 'sparse'    then (toss(1,0) > 5)
+      when @@config['density'] == 'scattered' then (toss(1,0) > 4)
+      when @@config['density'] == 'dense'     then (toss(1,0) > 2)
+      else (toss(1,0) > 3)
+    end
+  end
   def toss(a=2,b=2)
     (@@dice.roll(a) - b).whole
   end
