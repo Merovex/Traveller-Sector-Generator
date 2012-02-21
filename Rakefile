@@ -1,11 +1,16 @@
 require 'yaml'
 require './worldgen/init'
 
-task :worldgen do 
+task :svg, :filename do |t,args| 
+  s = SvgOutput.new(args[:filename])
+  s.print
+end
+task :worldgen, :sector_name do |t,args| 
+  name = args[:sector_name] || nil
   read_config
-  s = Sector.new
+  s = Sector.new(name)
   s.generate
-  puts s.volumes
+  puts s
 end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))

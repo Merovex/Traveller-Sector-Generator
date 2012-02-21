@@ -12,6 +12,11 @@ class WorldGenerator
     2.times.map { @@dice.roll.to_s }.inject{ |s,x| s + x}
   end
 end
+class Float
+  def tweak
+    self.round(2)
+  end
+end
 class Integer
   def dn(n)
        (1..self).inject(0) { |a, e| a + rand(n) + 1 }
@@ -41,6 +46,9 @@ class Integer
   end
   def min(n)
     return n if self < n
+    return self
+  end
+  def tweak
     return self
   end
 end

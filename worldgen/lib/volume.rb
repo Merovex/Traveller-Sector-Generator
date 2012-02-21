@@ -16,7 +16,7 @@ class Volume<WorldGenerator
     
     @temp      = %w{F F F C C T T T T T H H R R R R R }[temp_dice]
     
-    @bases  = '.....'
+    @bases  = '......'
     
     # Hydrographics. MgT p. 172
     @h20 = case 
@@ -81,6 +81,11 @@ class Volume<WorldGenerator
   
     @code   = (@atmo > 9 or [0,7,10].include?(@law) or [0,9,10,11,12,13,14,15,16].include?(@law)) ? 'AZ' : '..'
   end
+  def bases
+    raw = '......'
+    raw[0] = @gas_giant
+    raw
+  end
   def port
     %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole]
   end
@@ -113,7 +118,7 @@ class Volume<WorldGenerator
     code
   end
   def to_s
-    "%s %s %s %s %s %s\t%-15s\t%s\t%s" % [location, uwp, @temp, @gas_giant, @bases, @code, trade_codes.join(','), @factions.join(','), @name]
+    "%s %s %s %s %s\t%-15s\t%-8s\t%s" % [location, uwp, @temp, @bases, @code, trade_codes.join(','), @factions.join(','), @name]
   end
   def uwp
     "%s%s%s%s%s%s%s-%s" % [ port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]

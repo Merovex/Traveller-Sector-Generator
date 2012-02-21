@@ -3,11 +3,14 @@ include Magick
 
 class SvgOutput
   @@pi = Math::PI.round(5)
-  def initialize()
+  def initialize(filename)
+    @rows     = 40
+    @columns  = 32
+    @source_filename = filename
     @side    = 40
     @factor  = 1.732
-    @height  = (@side * @factor * 10.5).ceil
-    @width   = (@side * 12.5).ceil
+    @height  = (@side * @factor * (@rows + 0.5)).ceil
+    @width   = (@side * (@columns * 1.5 + 0.5)).ceil
     @mark    = 13
     @zones   = []
     @volumes = []
@@ -49,71 +52,36 @@ class SvgOutput
     @stroke = {
       :zone => {'AZ' => '1%,1%', 'RZ' => '%3,%3'}
     }
-    from_file
   end
   def from_file
     text=<<-TEXT
- subsector Havana
-sector Transit
-
-0104 A000512-G N.G	Diego
-0107 B454632-9 N.G	Armistice
-0109 B646521-A ..G	Biendah
-0201 D855498-2 .SG	Hardscrabble
-0202 C544677-6 ..G	Mandinka
-0205 D698413-6 .S.	Sierra Pasos
-0206 E652378-4 NSG	LaGrange
-0207 C576545-8 ..G	Tabula
-0208 E447667-3 ..G	Mesa
-0210 B3107CA-A ..G	Hosanna
-0304 C147630-7 ..G	Carnastra
-0310 B223AAD-G ..G	Politzania
-0406 B224633-A ...	Teg
-0407 C410254-7 .SG	Calan Tria
-0408 B3009DG-A N.G	Gasp
-0409 C141657-6 .SG	New Manifold
-0502 B877549-9 ..G	Tarsus
-0504 C210524-8 .SG	Quench
-0508 A430320-D N.G	Gulch
-0509 B746322-8 ..G	Grisas
-0510 C68A301-9 ..G	Kli
-0603 E344596-4 ..G	Grit
-0609 A9A7344-9 .SG	Sunder
-0704 A542451-B ..G	Tomas
-0706 B020355-D N.G	Pocket
-0802 B400215-B ..G	Black
-0807 A589885-9 ..G	Breadbasket
-0808 C9B8455-7 ..G	Aerie
-0809 A400133-B .SG	Domiere
-
-AZ 0310
-AZ 0208
-AZ 0206
-RZ 0603
 
 J1 0104 0406 0508 0807
 J2 0406 0706 0704 0802
     TEXT
     
     # lines = text.split(/\n/)
-    lines = File.open('sectors/opera.sector.txt','r').readlines
+    lines = File.open(@source_filename,'r').readlines
     # raise lines.inspect
-    lines.each do |line|
-      # last if 
-      case
-      when /^\d{4}/.match(line) then
-        @volumes << line.split(/\t/)
-      when /^(A|R)Z/.match(line) then 
-        @zones << line
-      end
-    end
+    #0000 D200233-8 F G ..... ..»Lo,Va          »S,F     »·Phoenix
     
+    lines.each do |line|
+      @volumes << line if /^\d{4}/.match(line)
+      # last if 
+      # case
+      # when /^\d{4}/.match(line) then
+      #   @volumes << line.split(/\t/)
+      # when /^(A|R)Z/.match(line) then 
+      #   @zones << line
+      # end
+    end
   end
   def print
+    from_file
     puts header
     puts hex_grid
-    puts travel_warnings
     puts @volumes.map {|v| world(v) }
+    # puts travel_warnings
     puts volumes
     puts frame
     puts footer    
@@ -169,27 +137,36 @@ J2 0406 0706 0704 0802
     return coords
   end
   def world(volume)
-    # First column: Hex/Column location in sector 
-    # Second block: UWP code 
-    # Third block: Trade codes 
-    # Fourth block: Temperature code (0 = Extremes, 1 = Frozen, 2 = Cold, 3 = Temperate, 4 = Hot, 5 = Roasting). 
-    # Fifth block: Gas giant Present (G = yes, blank = no)
-    # locx, wo, nsg = volume[0].split(/\s+/)
-    locx, uwp, trades, temp, nsg = volume[0].split(/\s+/)
-    nsg = '' if (nsg.nil?)
+    # TAB 0 - World Details
+    # 0. Location
+    # 1. UWP
+    # 2. Temp
+    # 3. NSG (Features)
+    # 4. Travel Zone
+    # TAB 1 - Trade Codes
+    # TAB 2 - Factions
+    # TAB 3 - Name
+    #0000 D200233-8 F G ..... ..»Lo,Va          »S,F     »·Phoenix
+    details, trades, factions, name = volume.split(/\t/)    
+    
+    locx, uwp, temp, nsg, zone = details.split(/\s+/)
+    @zones << "#{locx} #{zone}" unless zone=='..'
 
     spaceport = uwp[0]
     size      = uwp[1].to_i
     c         = center_of(locx) # get Location's x,y Coordinates
+    curve = @side / 2
     
-    output = (size == 0) ? draw_belt(c) : draw_planet(c,uwp)
+    output =  "<!-- Volume: #{volume} -->"
+    output +=  (size == 0) ? draw_belt(c) : draw_planet(c,uwp)
     output += "    <text class='Spaceport' x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
 
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
     output += "<text class='Detail' fill='#{@color[:world_text]}' x='#{c[0]}' y='#{c[1]+(@side/1.3)}'>#{uwp}</text>\n"
-    output += "<text class='Name'   fill='#{@color[:world_text]}' x='#{c[0]}' y='#{c[1]-(@side/2.1)}'>#{volume[1]}</text>\n"
+    output += "<text class='Name'   fill='#{@color[:world_text]}' x='#{c[0]}' y='#{c[1]-(@side/2.1)}'>#{name}</text>\n"
+    output += "<path class='#{zone}_zone' d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />" unless zone == '..'
     output
     
   end
@@ -212,22 +189,14 @@ J2 0406 0706 0704 0802
   end
   def volumes
     output = ''
-    9.times do |c|
-      12.times do |r|
+    (@rows+2).times do |r|
+      (@columns+1).times do |c|
         x = @side + ((c-1) * @side * 1.5)
         y = (c % 2 == 1) ? (r-1) * @side * @factor + (0.2 * @side) : (r-1) * @side * @factor + @hex[:side_h]+ (0.2 * @side)
         output += "<text class='VolumeId' x='#{x.tweak}' y='#{y.tweak}'>%02d%02d</text>\n" % [c,r]
       end
     end
     output
-  end
-  def travel_warnings()
-    @zones.map do |z|
-      zone, locx = z.split(/\s+/)
-      c = center_of(locx)
-      curve = @side / 2
-      "<path class='#{zone}_zone' d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />"
-    end
   end
   def polygon(x, y, sx, sy, sides=4)
     polygon = star_coords(sx, sy, sides).map { |c| "#{x + c[0]},#{y.tweak+c[1]}" }
@@ -244,12 +213,13 @@ J2 0406 0706 0704 0802
   end
   def scout_base(c); '<!--SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3); end
   def navy_base(c); '<!--NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); end
-  def hex_grid; (@side / 2 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) }; end
+  def hex_grid; (@rows * 3 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) }; 
+  end
   def hex_row(row, top=false)
     ly = (row * 2 * @hex[:side_h]) + @hex[:side_h]
     points = []
     x = 0; y = 0
-    4.times do |j|
+    (@columns/2).ceil.times do |j|
       x = j * @side * 3
       y = ly
       points << "#{x.tweak},#{y.tweak}"
