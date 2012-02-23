@@ -60,6 +60,9 @@ class Integer
   def tweak
     return self
   end
+  def to_string
+    return self.tweak
+  end
 end
 class Array
   def roll(n=1)

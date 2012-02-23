@@ -67,40 +67,29 @@ class SvgOutput<WorldGenerator
       :side_w => (@side / 2).tweak,
       :width  => @side
     }
-    @stroke = {
-      :zone => {'AZ' => '1%,1%', 'RZ' => '%3,%3'}
-    }
-    text = " text-anchor='middle'"
-    # normaltext = " "
     @style = {
-      # :circle    => '',
-      # :body      => "fill='red'",
       :circle    => "fill='#{@color[:black]}' stroke='#{@color[:white]}' stroke-width='1'",
       :polyline  => "fill='none'",
       :polygon   => "fill='#{@color[:black]}' stroke='none' stroke-width='1'",
       :ellipse   => "fill='none' stroke='#{@color[:base02]}' stroke-width='1'",
-      # :text      => "fill='#{@color[:world_text]}' font-size='#{@side/5}px' font-family='Sans-Serif' text-anchor='middle'",
       :Belt      => "stroke='#{@color[:white]}' stroke-width='1'",
-      :AZ_zone   => "fill='none' stroke='#{@color[:zone]['AZ']}' stroke-width='3' stroke-dasharray='2%,0.5%'",
+      :AZ_zone   => "fill='none' stroke='#{@color[:zone]['AZ']}' stroke-width='3' stroke-dasharray='5%,5%'",
       :RZ_zone   => "fill='none' stroke='#{@color[:zone]['RZ']}' stroke-width='3'",
       :Planet    => "fill='#{@color[:black]}' stroke='#{@color[:black]}' stroke-width='1'",
       :Desert    => "fill='none' stroke='#{@color[:black]}' stroke-width='2'",
       :Frame     => "fill='none' stroke='#{@color[:black]}' stroke-width='4'",
       :Tract     => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Hexgrid   => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
-      :Name      => "#{text} font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
-      :Spaceport => "#{text} font-size='#{@side/3}px' font-family='Verdana'",
-      :TractID   => "#{text} font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
-      :VolumeId  => "#{text} font-size='#{@side/5}px' fill='#{@color[:hex_id]}'",
+      :Name      => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
+      :Spaceport => "text-anchor='middle' font-size='#{@side/3}px' font-family='Verdana'",
+      :TractID   => "text-anchor='middle' font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
+      :VolumeId  => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:hex_id]}' font-family='Verdana'",
       :rect      => "fill='#{@color[:background]}'"
     }
     @style[:Detail] = @style[:Name]
   end
   def from_file
-    lines = File.open(@source_filename,'r').readlines
-    lines.each do |line|
-      @volumes << line if /^\d{4}/.match(line)
-    end
+    File.open(@source_filename,'r').readlines.each { |line| @volumes << line if /^\d{4}/.match(line) }
   end
   def print
     from_file
@@ -124,9 +113,8 @@ class SvgOutput<WorldGenerator
   <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
     "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg" blackground-color='#{@color[:white]}'>
-    <desc>Subsector Map Grid</desc>
-        <rect width='#{@width}' height='#{@height}' />
-    <rect #{@style[:rect]} width='#{@width}' height='#{@height}' />
+  <desc>Subsector Map Grid</desc>
+  <rect #{@style[:rect]} width='#{@width}' height='#{@height}' />
     EOS
 
   end
@@ -169,18 +157,16 @@ class SvgOutput<WorldGenerator
     c         = center_of(locx) # get Location's x,y Coordinates
     curve = @side / 2
     
-    output =  "<!-- Volume: #{volume.strip} -->"
+    output =  "<!-- Volume: #{volume.strip.gsub(/\t/,' // ')} -->\n"
     output +=  (size == '0') ? draw_belt(c) : draw_planet(c,uwp)
-    output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
-
+    output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{(c[1] + @side / 2).tweak}'>#{spaceport}</text>\n" 
+    output += "    <text #{@style[:Detail]} x='#{c[0]}' y='#{(c[1]+(@side/1.3)).tweak}'>#{uwp}</text>\n"
+    output += "    <text #{@style[:Name]} x='#{c[0]}' y='#{(c[1]-(@side/2.1)).tweak}'>#{name.strip}</text>\n"
+    style = zone + '_zone'
+    output += "    <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />\n" unless zone == '..'
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
-    output += "<text #{@style[:Detail]} x='#{c[0]}' y='#{c[1]+(@side/1.3)}'>#{uwp}</text>\n"
-    output += "<text #{@style[:Name]} x='#{c[0]}' y='#{c[1]-(@side/2.1)}'>#{name.strip}</text>\n"
-    style = zone + '_zone'
-    # raise style.inspect unless zone == '..'
-    output += "<!--BCWI--> <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />" unless zone == '..'
     output
     
   end
@@ -193,7 +179,7 @@ class SvgOutput<WorldGenerator
     7.times do 
       x = c[0] + Random.rand(@side/3) - @side/6
       y = c[1] + Random.rand(@side/3) - @side/6
-      output += "      <circle #{@style[:Belt]} cx='#{x}' cy='#{y}' r='#{(@side/15).tweak}' />\n"
+      output += "      <circle #{@style[:Belt]} cx='#{x.tweak}' cy='#{y.tweak}' r='#{(@side/15).tweak}' />\n"
     end
     output + "    </g>\n"
   end
@@ -215,7 +201,7 @@ class SvgOutput<WorldGenerator
       4.times do |c|
         w1 = w2; w2 += (width - [-4,4,5,-4][c])
         output += "    <text #{@style[:TractID]} x='#{w1 + 70}' y='#{h1 + 110}'>#{letters.shift}</text>\n"
-        output += "    <polyline #{@style[:Tract]} points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />"
+        output += "    <polyline #{@style[:Tract]} points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />\n"
         # raise output
       end
     end
@@ -237,16 +223,16 @@ class SvgOutput<WorldGenerator
     "    <polygon points='#{polygon.join(' ')}' />\n"
   end
   def gas_giant(c)
-    x = c[0]+(@side/1.8); y = c[1]+(@side/3);
+    x = (c[0]+(@side/1.8)).tweak; y = (c[1]+(@side/3)).tweak;
     return<<-GIANT
-        <g>
-          <ellipse #{@style[:ellipse]} cx='#{x}' cy='#{y}' rx='#{(@side/(@mark * 0.5)).tweak}' ry='#{(@side/@mark * 0.3).tweak}' />
-          <circle  cx='#{x}' cy='#{y}' r='#{(@side/(@mark * 1.2)).tweak}' />
-        </g>
+    <g><!-- Has Gas Giant -->
+      <ellipse #{@style[:ellipse]} cx='#{x}' cy='#{y}' rx='#{(@side/(@mark * 0.5)).tweak}' ry='#{(@side/@mark * 0.3).tweak}' />
+      <circle  cx='#{x}' cy='#{y}' r='#{(@side/(@mark * 1.2)).tweak}' />
+    </g>
     GIANT
   end
-  def scout_base(c); '<!--SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3); end
-  def navy_base(c); '<!--NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); end
+  def scout_base(c); '<!-- SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3); end
+  def navy_base(c); '<!-- NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); end
   def hex_grid; (@rows * 3 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) }; 
   end
   def hex_row(row, top=false)
