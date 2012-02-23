@@ -70,28 +70,36 @@ class SvgOutput<WorldGenerator
     @stroke = {
       :zone => {'AZ' => '1%,1%', 'RZ' => '%3,%3'}
     }
+    text = " text-anchor='middle'"
+    # normaltext = " "
+    @style = {
+      # :circle    => '',
+      # :body      => "fill='red'",
+      :circle    => "fill='#{@color[:black]}' stroke='#{@color[:white]}' stroke-width='1'",
+      :polyline  => "fill='none'",
+      :polygon   => "fill='#{@color[:black]}' stroke='none' stroke-width='1'",
+      :ellipse   => "fill='none' stroke='#{@color[:base02]}' stroke-width='1'",
+      # :text      => "fill='#{@color[:world_text]}' font-size='#{@side/5}px' font-family='Sans-Serif' text-anchor='middle'",
+      :Belt      => "stroke='#{@color[:white]}' stroke-width='1'",
+      :AZ_zone   => "fill='none' stroke='#{@color[:zone]['AZ']}' stroke-width='3' stroke-dasharray='2%,0.5%'",
+      :RZ_zone   => "fill='none' stroke='#{@color[:zone]['RZ']}' stroke-width='3'",
+      :Planet    => "fill='#{@color[:black]}' stroke='#{@color[:black]}' stroke-width='1'",
+      :Desert    => "fill='none' stroke='#{@color[:black]}' stroke-width='2'",
+      :Frame     => "fill='none' stroke='#{@color[:black]}' stroke-width='4'",
+      :Tract     => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
+      :Hexgrid   => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
+      :Name      => "#{text} font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
+      :Spaceport => "#{text} font-size='#{@side/3}px' font-family='Verdana'",
+      :TractID   => "#{text} font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
+      :VolumeId  => "#{text} font-size='#{@side/5}px' fill='#{@color[:hex_id]}'",
+      :rect      => "fill='#{@color[:background]}'"
+    }
+    @style[:Detail] = @style[:Name]
   end
   def from_file
-    text=<<-TEXT
-
-J1 0104 0406 0508 0807
-J2 0406 0706 0704 0802
-    TEXT
-    
-    # lines = text.split(/\n/)
     lines = File.open(@source_filename,'r').readlines
-    # raise lines.inspect
-    #0000 D200233-8 F G ..... ..»Lo,Va          »S,F     »·Phoenix
-    
     lines.each do |line|
       @volumes << line if /^\d{4}/.match(line)
-      # last if 
-      # case
-      # when /^\d{4}/.match(line) then
-      #   @volumes << line.split(/\t/)
-      # when /^(A|R)Z/.match(line) then 
-      #   @zones << line
-      # end
     end
   end
   def print
@@ -105,7 +113,7 @@ J2 0406 0706 0704 0802
     svg << volumes
     svg << frame
     svg << footer
-    File.open(@svg_filename,'w').write(svg.flatten.join('\n'))
+    File.open(@svg_filename,'w').write(svg.flatten.join("\n"))
   end
   def footer
     return "</svg>"
@@ -117,28 +125,8 @@ J2 0406 0706 0704 0802
     "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="#{@width}px" height="#{@height}px" version="1.1" xmlns="http://www.w3.org/2000/svg" blackground-color='#{@color[:white]}'>
     <desc>Subsector Map Grid</desc>
-    <style type="text/css"><![CDATA[
-        body      { fill: red; }
-        circle          { fill: #{@color[:black]}; stroke: #{@color[:white]}; stroke-width: 1; }
-        polyline        { fill: none; }
-        polygon         { fill: #{@color[:black]}; stroke: none; stroke-width:1;}
-        ellipse         { fill: none; stroke: #{@color[:base02]}; stroke-width:1;}
-        text            { fill: #{@color[:world_text]}; font-size: #{@side/5}px; font-family: Sans-Serif; text-anchor: middle; }
-        .Belt           { stroke: #{@color[:white]}; stroke-width: 1}
-        .AZ_zone        { fill: none; stroke: #{@color[:zone]['AZ']}; stroke-width:3; stroke-dasharray:2%,0.5% }
-        .RZ_zone        { fill: none; stroke: #{@color[:zone]['RZ']}; stroke-width:3;  }
-        .Planet         { fill: #{@color[:black]}; stroke: #{@color[:black]}; stroke-width: 1; }
-        .Desert         { fill: none; stroke: #{@color[:black]}; stroke-width: 2; }
-        polyline.Frame  { fill: none; stroke: #{@color[:black]}; stroke-width:4; }
-        polyline.Tract  { fill: none; stroke: #{@color[:hex]}; stroke-width: 1; }
-        polyline.Hexgrid{ fill: none; stroke: #{@color[:hex]}; stroke-width: 1;}
-        text.Name       { font-family: Verdana;}
-        text.Spaceport  { font-size: #{@side/3}px}
-        text.TractID    { font-size: #{@side*3}px; fill: #{@color[:tract_id]}}
-        text.VolumeId   { fill: #{@color[:hex_id]}}
-        rect            { fill: #{@color[:background]}
-      ]]></style>
-    <rect width='#{@width}' height='#{@height}' />
+        <rect width='#{@width}' height='#{@height}' />
+    <rect #{@style[:rect]} width='#{@width}' height='#{@height}' />
     EOS
 
   end
@@ -183,33 +171,36 @@ J2 0406 0706 0704 0802
     
     output =  "<!-- Volume: #{volume.strip} -->"
     output +=  (size == '0') ? draw_belt(c) : draw_planet(c,uwp)
-    output += "    <text class='Spaceport' x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
+    output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{c[1] + @side / 2}'>#{spaceport}</text>\n" 
 
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
-    output += "<text class='Detail' fill='#{@color[:world_text]}' x='#{c[0]}' y='#{c[1]+(@side/1.3)}'>#{uwp}</text>\n"
-    output += "<text class='Name'   fill='#{@color[:world_text]}' x='#{c[0]}' y='#{c[1]-(@side/2.1)}'>#{name}</text>\n"
-    output += "<path class='#{zone}_zone' d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />" unless zone == '..'
+    output += "<text #{@style[:Detail]} x='#{c[0]}' y='#{c[1]+(@side/1.3)}'>#{uwp}</text>\n"
+    output += "<text #{@style[:Name]} x='#{c[0]}' y='#{c[1]-(@side/2.1)}'>#{name.strip}</text>\n"
+    style = zone + '_zone'
+    # raise style.inspect unless zone == '..'
+    output += "<!--BCWI--> <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />" unless zone == '..'
     output
     
   end
   def draw_planet(c,w)
     k = (w[3] == '0') ? 'Desert' : 'Planet'
-     "    <circle class='#{k}' cx='#{c[0]}' cy='#{c[1]}' r='#{@side/7}' />\n"
+     "    <circle #{@style[:circle]} cx='#{c[0]}' cy='#{c[1]}' r='#{@side/7}' />\n"
   end
   def draw_belt(c)
-    output = "    <g stroke='none' fill='black'>\n"
+    output = "    <g stroke='none' fill='none'>\n"
     7.times do 
       x = c[0] + Random.rand(@side/3) - @side/6
       y = c[1] + Random.rand(@side/3) - @side/6
-      output += "      <circle class='Belt' cx='#{x}' cy='#{y}' r='#{(@side/15).tweak}' />\n"
+      output += "      <circle #{@style[:Belt]} cx='#{x}' cy='#{y}' r='#{(@side/15).tweak}' />\n"
     end
     output + "    </g>\n"
   end
   def frame(k='Frame')
+    style = k.to_sym
     z = 0; w = @width - 0; h = @height - z;
-    "    <polyline class='#{k}' points='#{z},#{z} #{w},#{z} #{w},#{h} #{z},#{h} #{z},#{z}' />"
+    "    <polyline #{@style[style]} points='#{z},#{z} #{w},#{z} #{w},#{h} #{z},#{h} #{z},#{z}' />"
   end
   def tract_marks
     height = (@height / 4).floor 
@@ -223,8 +214,9 @@ J2 0406 0706 0704 0802
       w2 = 0
       4.times do |c|
         w1 = w2; w2 += (width - [-4,4,5,-4][c])
-        output += "    <text class='TractID' x='#{w1 + 70}' y='#{h1 + 110}'>#{letters.shift}</text>\n"
-        output += "    <polyline class='Tract' points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />"
+        output += "    <text #{@style[:TractID]} x='#{w1 + 70}' y='#{h1 + 110}'>#{letters.shift}</text>\n"
+        output += "    <polyline #{@style[:Tract]} points='#{w1},#{h1} #{w2},#{h1} #{w2},#{h2} #{w1},#{h2} #{w1},#{h1}' />"
+        # raise output
       end
     end
     return output
@@ -235,7 +227,7 @@ J2 0406 0706 0704 0802
       (@columns+1).times do |c|
         x = @side + ((c-1) * @side * 1.5)
         y = (c % 2 == 1) ? (r-1) * @side * @factor + (0.2 * @side) : (r-1) * @side * @factor + @hex[:side_h]+ (0.2 * @side)
-        output += "<text class='VolumeId' x='#{x.tweak}' y='#{y.tweak}'>%02d%02d</text>\n" % [c,r]
+        output += "<text #{@style[:VolumeId]} x='#{x.tweak}' y='#{y.tweak}'>%02d%02d</text>\n" % [c,r]
       end
     end
     output
@@ -248,7 +240,7 @@ J2 0406 0706 0704 0802
     x = c[0]+(@side/1.8); y = c[1]+(@side/3);
     return<<-GIANT
         <g>
-          <ellipse cx='#{x}' cy='#{y}' rx='#{(@side/(@mark * 0.5)).tweak}' ry='#{(@side/@mark * 0.3).tweak}' />
+          <ellipse #{@style[:ellipse]} cx='#{x}' cy='#{y}' rx='#{(@side/(@mark * 0.5)).tweak}' ry='#{(@side/@mark * 0.3).tweak}' />
           <circle  cx='#{x}' cy='#{y}' r='#{(@side/(@mark * 1.2)).tweak}' />
         </g>
     GIANT
@@ -283,6 +275,6 @@ J2 0406 0706 0704 0802
     x += @hex[:side_w]
     y = (top) ? y - @hex[:side_h] : y + @hex[:side_h]
     points << "#{x.tweak},#{y.tweak}"
-    "    <polyline class='Hexgrid' points='#{points.join(' ')}' />"
+    "    <polyline #{@style[:Hexgrid]} points='#{points.join(' ')}' />"
   end
 end
