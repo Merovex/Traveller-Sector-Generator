@@ -1,12 +1,18 @@
 require 'yaml'
+require 'pathname'
 require './worldgen/init'
 
+desc "Convert Traveller output to SVG"
 task :svg, :filename do |t,args| 
-  s = SvgOutput.new(args[:filename])
+  filename = args[:filename] || Dir.entries('.').sort_by {|f| File.mtime(f)}.reverse.map{|x| x if (/\.sector$/).match(x)}.compact[0] if filename.nil?
+  s = SvgOutput.new(filename)
   s.print
 end
+
+desc "Generate Traveller Sector"
 task :worldgen, :sector_name do |t,args| 
-  name = args[:sector_name] || nil
+  name = args[:sector_name]
+  # raise name.inspect
   read_config
   s = Sector.new(name)
   s.generate

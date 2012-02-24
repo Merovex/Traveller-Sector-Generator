@@ -20,6 +20,9 @@ class WorldGenerator
   def d66
     2.times.map { @@dice.roll.to_s }.inject{ |s,x| s + x}
   end
+  def self.getname
+    return @@names.sample
+  end
 end
 class Float
   def tweak
