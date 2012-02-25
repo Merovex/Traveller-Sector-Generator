@@ -168,6 +168,8 @@ class SvgOutput<WorldGenerator
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
+    # c[0]-(@side/1.8),c[1]+(@side/3.7)
+    output += "    <text #{@style[:Name]} x='#{(c[0]+(@side/1.8)).tweak}' y='#{(c[1]-(@side/3)).tweak}'>#{star[0..1].strip}</text>\n"
     output
     
   end
