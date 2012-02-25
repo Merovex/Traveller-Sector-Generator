@@ -22,7 +22,7 @@ class Orbit<WorldGenerator
   end
   def populate
     case
-      when @au > 2500 then return self
+      when @au > @star.outer_limit then return self
       when limit? then return self
       when inner? then populate_inner
       when outer? then populate_outer

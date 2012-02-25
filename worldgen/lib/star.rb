@@ -113,7 +113,9 @@ class Star<WorldGenerator
     # Ensure last orbits are not empty.
     tk = false
     @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
+    # raise [@star_type, mass, @outer_limit, orbits_to_ascii].inspect
   end
+  def outer_limit; 40 * mass; end
   def orbits_to_ascii
     return '' if @orbits.empty?
     "\n" + @orbits.map{|o| o.to_ascii}.join("\n") + "\n"
