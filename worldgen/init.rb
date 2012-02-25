@@ -75,5 +75,7 @@ end
 
 require './worldgen/lib/sector'
 require './worldgen/lib/volume'
+require './worldgen/lib/star'
+require './worldgen/lib/orbit'
 require './worldgen/lib/svg'
     

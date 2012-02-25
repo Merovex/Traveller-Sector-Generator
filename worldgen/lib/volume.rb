@@ -1,5 +1,8 @@
 class Volume<WorldGenerator
+  attr_accessor :gas_giant
   def initialize(c,r)
+    
+    # raise       @star.classification.inspect
     
     @name      = @@names.sample
     @column    = c
@@ -80,6 +83,8 @@ class Volume<WorldGenerator
     @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
   
     @code   = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
+    @star      = Star.new(self)
+    @star.populate!
   end
   def bases
     return [@navy,@scout,@gas_giant,'.','.'].join('')
@@ -119,8 +124,11 @@ class Volume<WorldGenerator
     code << 'Wa' if (@hydro == 10)
     code
   end
+  def star_dm
+    ((4..9).include?(@atmo) or @popx > 7) ? 4 : 0
+  end
   def to_s
-    "%s %s %s %s %s\t%-15s\t%-8s\t%s" % [location, uwp, @temp, bases, @code, trade_codes.join(','), @factions.join(','), @name]
+    "%s %s %s %s %s\t%-15s\t%-8s\t%-5s\t%s" % [location, uwp, @temp, bases, @code, trade_codes.join(','), @factions.join(','), @star.classification, @name]
   end
   def uwp
     "%s%s%s%s%s%s%s-%s" % [ port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]

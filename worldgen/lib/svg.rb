@@ -86,7 +86,7 @@ class SvgOutput<WorldGenerator
       :VolumeId  => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:hex_id]}' font-family='Verdana'",
       :rect      => "fill='#{@color[:background]}'"
     }
-    @style[:Detail] = @style[:Name]
+    @style[:UWP] = @style[:Name]
   end
   def from_file
     File.open(@source_filename,'r').readlines.each { |line| @volumes << line if /^\d{4}/.match(line) }
@@ -159,8 +159,8 @@ class SvgOutput<WorldGenerator
     
     output =  "<!-- Volume: #{volume.strip.gsub(/\t/,' // ')} -->\n"
     output +=  (size == '0') ? draw_belt(c) : draw_planet(c,uwp)
-    output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{(c[1] + @side / 2).tweak}'>#{spaceport}</text>\n" 
-    output += "    <text #{@style[:Detail]} x='#{c[0]}' y='#{(c[1]+(@side/1.3)).tweak}'>#{uwp}</text>\n"
+    output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{(c[1] + @side / 2).tweak}'>#{spaceport.strip}</text>\n" 
+    output += "    <text #{@style[:UWP]} x='#{c[0]}' y='#{(c[1]+(@side/1.3)).tweak}'>#{uwp.strip}</text>\n"
     output += "    <text #{@style[:Name]} x='#{c[0]}' y='#{(c[1]-(@side/2.1)).tweak}'>#{name.strip}</text>\n"
     style = zone + '_zone'
     output += "    <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />\n" unless zone == '..'

@@ -5,7 +5,7 @@ class Sector<WorldGenerator
     @volumes = []
   end
   def to_s
-    puts "SECTOR '#{@name}'\n"
+    # puts "SECTOR '#{@name}'\n"
     # puts @volumes
     filename = @name.downcase + '.sector'
     # puts filename
@@ -17,6 +17,7 @@ class Sector<WorldGenerator
         next unless has_system?
         v = Volume.new(c+1,r+1) 
         @volumes << v unless v.empty?
+        # puts v.star.inspect unless v.empty?
       end
     end
   end
