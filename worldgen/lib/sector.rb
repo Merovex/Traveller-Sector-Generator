@@ -9,7 +9,7 @@ class Sector<WorldGenerator
     # puts @volumes
     filename = @name.downcase + '.sector'
     # puts filename
-    File.open(filename,'w').write(@volumes.join("\n"))
+    File.open(filename,'w').write(@volumes.map{|v| v.to_ascii}.join("\n"))
   end
   def generate
     40.times do |r|
@@ -17,7 +17,6 @@ class Sector<WorldGenerator
         next unless has_system?
         v = Volume.new(c+1,r+1) 
         @volumes << v unless v.empty?
-        # puts v.star.inspect unless v.empty?
       end
     end
   end

@@ -4,17 +4,18 @@ class Volume<WorldGenerator
     @name      = @@names.sample
     @column    = c
     @row       = r
-    @navy      = '.'
-    @scout     = '.'
-    # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
-    @port_roll = toss(2,0)
+    
+
     @star      = Star.new(self)
+    nature = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2][toss(2,0)].times do
+      nova = Star.new(self)
+    end
   end
   def star_dm
     return 0 if @atmo.nil? or @popx.nil?
     ((4..9).include?(@atmo) or @popx > 7) ? 4 : 0
   end
-  def to_s
+  def to_ascii
     w = @star.world
     sumy = "%s %s %s %s %s\t%-15s\t%-8s\t%s\t%s" % [location, w.uwp, w.temp, w.bases, w.travel_code, w.trade_codes.join(','), w.factions.join(','), @star.crib, @name]
     sumy += @star.orbits_to_ascii

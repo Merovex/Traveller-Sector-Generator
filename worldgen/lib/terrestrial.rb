@@ -6,12 +6,12 @@ class Terrestrial<Planet
     @kid       = 'R'
     # @column    = c
     # @row       = r
-    @navy      = '.'
-    @scout     = '.'
-    # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
-    @gas_giant = '.'
-    @port_roll = toss(2,0)
-    @world     = nil
+    # @navy      = '.'
+    #  @scout     = '.'
+    #  # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
+    #  @gas_giant = '.'
+    #  @port_roll = toss(2,0)
+    #  @world     = nil
     
     # Size, Climae & Biosphere. MgT 170--71.
     @size      = toss(2,1)
@@ -54,6 +54,11 @@ class World<Terrestrial
   attr_accessor :factions, :temp, :gas_giant
   def initialize(star,orbit_number)
     super
+    
+    @navy      = '.'
+    @scout     = '.'
+    @port_roll = toss(2,0)
+    
     @kid = 'W'
     @popx = toss()
     if ('firm' == @@config['genre'].downcase)

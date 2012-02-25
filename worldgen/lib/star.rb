@@ -113,9 +113,11 @@ class Star<WorldGenerator
     # Ensure last orbits are not empty.
     tk = false
     @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
-    # raise [@star_type, mass, @outer_limit, orbits_to_ascii].inspect
+    
   end
-  def outer_limit; 40 * mass; end
+  def radius; (155000 * Math.sqrt(luminosity)) ** 2; end # Gurpse Space 4e p. 1004
+  def snow_line; 4.85 * Math.sqrt(luminosity); end # Gurps Space 4e p. 106
+  def outer_limit; 40 * mass; end # Gurps Space 4e p. 107
   def orbits_to_ascii
     return '' if @orbits.empty?
     "\n" + @orbits.map{|o| o.to_ascii}.join("\n") + "\n"
