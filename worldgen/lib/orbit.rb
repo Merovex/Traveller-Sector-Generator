@@ -1,5 +1,4 @@
 class Orbit<WorldGenerator
-  @@orbits
   attr_accessor :id, :uwp, :kid
   def initialize(star,orbit_number,companion=nil)
     @orbit_number = orbit_number
@@ -7,6 +6,7 @@ class Orbit<WorldGenerator
     @au = (star.bode_constant * (2 ** orbit_number)).round(1)
     @kid = '.'
     @star = star
+    @moons = 0
     begin
       @zone = case
         when @au < @star.biozone[0] then -1 # Inside
@@ -19,7 +19,6 @@ class Orbit<WorldGenerator
       @zone = -1
       @distant = 1000
     end
-    
   end
   def populate
     case
@@ -32,12 +31,7 @@ class Orbit<WorldGenerator
   end
   def populate_biozone
     roll = toss(2,0)
-    return case
-      when roll < 4 then self
-      when (4..10) === roll then World.new(@star, @orbit_number)
-      when 11 == roll then Belt.new(@star, @orbit_number) 
-      else GasGiant.new(@star, @orbit_number)
-    end
+    return (roll < 12) ? World.new(@star, @orbit_number) : GasGiant.new(@star, @orbit_number)
   end
   def populate_inner
     roll = toss(2,0)
@@ -53,7 +47,7 @@ class Orbit<WorldGenerator
     roll = 1.d6
     roll += 1 if distant?
     return case
-      when roll == 1 then Terrestrial.new(@star, @orbit_number)
+      when roll == 1 then Rockball.new(@star, @orbit_number)
       when roll == 2 then Belt.new(@star, @orbit_number)
       when roll == 3 then self
       when (4..7) === roll then GasGiant.new(@star, @orbit_number)
@@ -62,18 +56,8 @@ class Orbit<WorldGenerator
   end
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
-    "  -- %2s. %s (%7.2f) %s" % [@orbit_number, bio, @au, @kid]
+    "  -- %2s. %s (%7.2f) %s >> %-2s // %s" % [@orbit_number, bio, @au, @kid, @moons, self.uwp]
   end
-  # def to_ascii
-  #   details = (self.is_a?(World)) ? self.uwp : ''
-  #   bio = (@zone == 0 ) ? '*' : ' '
-  #   if (self.class.name == 'Orbit') 
-  #     "      %2s. %s %-11s %-9s" % [@orbit_number + 1, bio, '...', '...']
-  #   else
-  #     "      %2s. (%7.2f) %s %-11s %-9s // %s >> %s" % [@orbit_number + 1, @au, bio, self.class.name, @uwp, @tc,  @moons]
-  #   end
-  #   # self.inspect
-  # end
   def period; (@au * 365.25).round(2); end
   def km; return (150000000 * @au).to_i; end
   def radii; (@au * 200).to_i; end
@@ -83,7 +67,6 @@ class Orbit<WorldGenerator
   def biozone?; return @zone == 0; end
   def distant?; @distant; end
 end
-
 class Companion<Orbit
   def initialize(star,orbit_number,companion)
     
@@ -94,7 +77,6 @@ class Companion<Orbit
   end
 end
 class Belt<Orbit; end
-
 class Planet<Orbit
   def initialize(star,orbit_number)
     @size = 2.dn(5) if @size.nil?
@@ -102,23 +84,21 @@ class Planet<Orbit
     super
   end
 end
-
-class Rockball<Planet; end
-class World<Planet; end
-class Terrestrial<Planet; end
+class Rockball<Planet
+  @kid = 'R'
+end
 class Hostile<Planet
   def initialize(star,orbit_number)
-    
+    super
     @atmo = (10..15).to_a.sample
     @hydro = 2.dn(4) - 2
     @kid = 'H'
     while @atmo == 15
       @atmo = (10..15).to_a.sample
     end
-    super
+    # super
   end
 end
-
 class GasGiant<Planet
   def initialize(star,orbit_number)
     super
@@ -128,6 +108,7 @@ class GasGiant<Planet
     @moons = (@moons - 4).whole if size == 'S'
     @kid = 'G'
   end
+  # def uwp
 end
 class Moon
   def initalize(planet)

@@ -1,5 +1,5 @@
 class Star<WorldGenerator
-  attr_accessor :star_size, :mass, :bode_constant, :biozone, :type_dm, :size_dm, :orbits, :primary, :orbit, :id, :volume
+  attr_accessor :star_size, :mass, :bode_constant, :biozone, :type_dm, :size_dm, :orbits, :primary, :orbit, :id, :volume, :world
   @@stars   = {}
   STAR_CHART = {
     #type => 0)example,        1)temp, 2)lux,    3)mass, 4)radius
@@ -71,6 +71,7 @@ class Star<WorldGenerator
     @volume = volume
     @primary = primary
     @orbits = []
+    @world  = nil
         
     @star_id = (primary.nil?) ? primary : primary.id
     @type_dm = 0
@@ -110,9 +111,11 @@ class Star<WorldGenerator
     # raise [orbits,dm,self].inspect
     orbits.times do |i|
       @orbits << Orbit.new(self,i).populate
+      @world = @orbits.last if @orbits.last.is_a?(World)
     end
-    puts @orbits.map{|o| o.to_ascii}.join("\n")
-    exit
+    # puts @orbits.map{|o| o.to_ascii}.join("\n")
+    # puts self.world.inspect
+    # exit
     # raise @orbits.inspect
   end
   # def to_ascii
