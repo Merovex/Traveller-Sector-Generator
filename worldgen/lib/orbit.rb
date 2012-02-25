@@ -30,6 +30,7 @@ class Orbit<WorldGenerator
     end
   end
   def populate_biozone
+    return World.new(@star, @orbit_number)
     roll = toss(2,0)
     return (roll < 12) ? World.new(@star, @orbit_number) : GasGiant.new(@star, @orbit_number)
   end
@@ -56,7 +57,7 @@ class Orbit<WorldGenerator
   end
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
-    "  -- %2s. %s (%7.2f) %s >> %-2s // %s" % [@orbit_number, bio, @au, @kid, @moons, self.uwp]
+    "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
   end
   def period; (@au * 365.25).round(2); end
   def km; return (150000000 * @au).to_i; end

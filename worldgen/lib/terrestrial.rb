@@ -8,7 +8,8 @@ class Terrestrial<Planet
     # @row       = r
     @navy      = '.'
     @scout     = '.'
-    @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
+    # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
+    @gas_giant = '.'
     @port_roll = toss(2,0)
     @world     = nil
     
@@ -50,7 +51,7 @@ class Terrestrial<Planet
   end
 end
 class World<Terrestrial
-  attr_accessor :factions
+  attr_accessor :factions, :temp, :gas_giant
   def initialize(star,orbit_number)
     super
     @kid = 'W'
@@ -92,7 +93,8 @@ class World<Terrestrial
     # Fix temperature
     @temp = 'F' if (trade_codes.include?('IC') or trade_codes.include?('Va'))
     @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
-  
+  end
+  def travel_code
     @code   = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
   end
   def gravity
@@ -100,6 +102,7 @@ class World<Terrestrial
     @gravity
   end
   def bases
+    # raise [@navy,@scout,@gas_giant,'.','.'].inspect
     return [@navy,@scout,@gas_giant,'.','.'].join('')
   end
   def port

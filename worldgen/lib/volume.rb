@@ -9,7 +9,6 @@ class Volume<WorldGenerator
     # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
     @port_roll = toss(2,0)
     @star      = Star.new(self)
-    @star.populate!
   end
   def star_dm
     return 0 if @atmo.nil? or @popx.nil?
@@ -17,7 +16,9 @@ class Volume<WorldGenerator
   end
   def to_s
     w = @star.world
-    "%s %s %s %s %s\t%-15s\t%-8s\t%-5s\t%s" % [location, w.uwp, @temp, w.bases, @code, w.trade_codes.join(','), w.factions.join(','), @star.classification, @name]
+    sumy = "%s %s %s %s %s\t%-15s\t%-8s\t%s\t%s" % [location, w.uwp, w.temp, w.bases, w.travel_code, w.trade_codes.join(','), w.factions.join(','), @star.crib, @name]
+    sumy += @star.orbits_to_ascii
+    return sumy
   end
   def empty?
     return true if @star.world.nil? or @star.world.empty?

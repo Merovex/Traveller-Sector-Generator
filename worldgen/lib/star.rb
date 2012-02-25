@@ -1,6 +1,6 @@
 class Star<WorldGenerator
   attr_accessor :star_size, :mass, :bode_constant, :biozone, :type_dm, :size_dm, :orbits, :primary, :orbit, :id, :volume, :world
-  @@stars   = {}
+  # @@stars   = {}
   STAR_CHART = {
     #type => 0)example,        1)temp, 2)lux,    3)mass, 4)radius
     'B0' => ['Becrux',           30000, 16000,     16.0,  5.70],
@@ -45,7 +45,6 @@ class Star<WorldGenerator
     'M' => [  [100,150],   [50,76],   [16,24], [5.0,7.5], [0,0], [0.1,0.2], [0.1,0.1] ],
     'D' => [  [0.03, 0.03] ],
   }
-
   SPECTRAL = {
     'O' => [9],
     'B' => [0,2,5,8],
@@ -66,8 +65,7 @@ class Star<WorldGenerator
     'D' => [0.8,0.8,0.8,0.8,0.8,0.8,]
   }
   def initialize(volume, primary=nil,ternary=0)
-    @id = @@stars.count + 1
-    # @@stars[@id] = self
+    # @id = @@stars.count + 1
     @volume = volume
     @primary = primary
     @orbits = []
@@ -76,7 +74,7 @@ class Star<WorldGenerator
     @star_id = (primary.nil?) ? primary : primary.id
     @type_dm = 0
     @size_dm = 0
-    @has_gg  = (@volume.gas_giant == 'G')
+    @has_gg  = false
     
     # What orbit a companion star has
     @orbit = (primary.nil?) ? 0 : [0, 0, 0, 0, 1, 2, 3, 4 + d6, 5 + d6, 6 + d6,7 + d6,8 + d6, 15][toss(2,0) + (4 * ternary) - 2]
@@ -99,31 +97,29 @@ class Star<WorldGenerator
       @star_subtype = (true) ? 'B' : @star_type
       @star_type = 'D'
     end
-    # @biozone = BIOZONE[@star_type][@star_size % 10] or []
-  end
-  def populate!
+
     dm = 0
     dm += 4 if @star_size == 3
     dm += 8 if @star_size < 3
     dm -= 4 if @star_type == 'M'
     dm -= 2 if @star_type == 'K'
-    orbits = (toss(2,0) + dm).whole
-    # raise [orbits,dm,self].inspect
-    orbits.times do |i|
+    
+    (toss(2,0) + dm).whole.times do |i|
       @orbits << Orbit.new(self,i).populate
       @world = @orbits.last if @orbits.last.is_a?(World)
     end
-    # puts @orbits.map{|o| o.to_ascii}.join("\n")
-    # puts self.world.inspect
-    # exit
-    # raise @orbits.inspect
+    @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.' unless @world.nil?
+
+    # Ensure last orbits are not empty.
+    tk = false
+    @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
   end
-  # def to_ascii
-  #   output = "      Star: #{classification} [#{nil}]\n"
-  #   @orbits.map{|o| output += "#{o.to_ascii}\n" }
-  #   output
-  # end
-  def orbits
+  def orbits_to_ascii
+    return '' if @orbits.empty?
+    "\n" + @orbits.map{|o| o.to_ascii}.join("\n") + "\n"
+  end
+  def crib
+    "%-5s %-16s" % [classification, @orbits.map{|o| o.kid}.join('')]
   end
   def classification
     return @star_type + @star_subtype if (@star_type == 'D')

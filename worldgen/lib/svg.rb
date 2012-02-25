@@ -146,11 +146,10 @@ class SvgOutput<WorldGenerator
     # TAB 1 - Trade Codes
     # TAB 2 - Factions
     # TAB 3 - Name
-    #0000 D200233-8 F G ..... ..»Lo,Va          »S,F     »·Phoenix
-    details, trades, factions, name = volume.split(/\t/)    
+    #1101 A505223-B  ..G.. »·IC,Lo,Va       »N,O,N   »·G0V  »Omivarium
+    details, trades, factions, star, name = volume.split(/\t/)    
     
     locx, uwp, temp, nsg, zone = details.split(/\s+/)
-    @zones << "#{locx} #{zone}" unless zone=='..'
 
     spaceport = uwp[0]
     size      = uwp[1]
@@ -162,8 +161,10 @@ class SvgOutput<WorldGenerator
     output += "    <text #{@style[:Spaceport]} x='#{c[0]}' y='#{(c[1] + @side / 2).tweak}'>#{spaceport.strip}</text>\n" 
     output += "    <text #{@style[:UWP]} x='#{c[0]}' y='#{(c[1]+(@side/1.3)).tweak}'>#{uwp.strip}</text>\n"
     output += "    <text #{@style[:Name]} x='#{c[0]}' y='#{(c[1]-(@side/2.1)).tweak}'>#{name.strip}</text>\n"
-    style = zone + '_zone'
-    output += "    <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />\n" unless zone == '..'
+    unless zone == '..'
+      style = zone + '_zone' 
+      output += "    <path #{@style[style.to_sym]} d='M #{c[0] - curve/2;} #{c[1] - (curve/1.4)} a #{curve} #{curve} 0 1 0 20 0' />\n"
+    end
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
