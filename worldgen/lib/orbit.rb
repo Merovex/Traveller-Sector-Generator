@@ -1,5 +1,5 @@
 class Orbit<WorldGenerator
-  attr_accessor :id, :kid, :au, :port, :orbit_number
+  attr_accessor :id, :kid, :au, :port, :orbit_number, :xsize
   def initialize(star,orbit_number,companion=nil)
     @orbit_number = orbit_number.round
     @tc    = ''
@@ -16,6 +16,7 @@ class Orbit<WorldGenerator
     @port  = 'X'
     @govm  = 0
     @law   = 0
+    @xsize = '.'
     begin
       @zone = case
         when @au < @star.biozone[0] then -1 # Inside
@@ -76,7 +77,10 @@ class Orbit<WorldGenerator
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
     bio = '-' if @au > @star.outer_limit
-    "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
+    output = "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
+    @moons.each {|m| output += m.to_ascii} unless @moons.nil? or @moons == 0
+    output
+    
   end
   def period; (@au * 365.25).round(2); end
   def km; return (150000000 * @au).to_i; end
@@ -101,9 +105,17 @@ end
 class Belt<Orbit; end
 class Planet<Orbit
   def initialize(star,orbit_number)
-    @moons = toss(1,3)
     super
+    @moons = make_moons(toss(1,3))
     @size = toss if @size.nil? or @size == 0
+  end
+  def make_moons(c)
+    moons = {}
+    c.times { |i|
+      m = Moon.new(self,i)
+      moons["#{m.orbit}"] = m
+    }
+    moons.values.sort{ |a,b| a.orbit <=> b.orbit } unless @moons.size < 2
   end
   def uwp
     "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
@@ -127,16 +139,58 @@ class GasGiant<Planet
   def initialize(star,orbit_number)
     super
     @xsize = (1.d6 < 4) ? 'L' : 'S'
-    @moons = toss(2,0)
-    @moons = (@moons - 4).whole if @xsize == 'S'
+    moons = toss(2,0)
+    moons = (moons - 4).whole if @xsize == 'S'
+    @moons = make_moons(moons)
     @kid = 'G'
   end
   def uwp
     "XGG#{@xsize}000-0"
   end
 end
-class Moon
-  def initalize(planet)
-    @size = (toss(2,0) - planet.size).whole
+class Moon<WorldGenerator
+  attr_accessor :orbit, :size, :h20
+  @@orbits = { 'C' => (1..14).to_a, 'R' => [1,1,1,2,2,3] }
+  @@orbits['F'] = @@orbits['C'].map{|c| c * 5}
+  @@orbits['E'] = @@orbits['C'].map{|c| c * 25}
+  
+  def initialize(planet,i=0)
+    @planet = planet
+    @popx = 0
+    @law  = 0
+    @tek  = 0
+    @size = case
+      when @planet.xsize = 'L' then toss(2,4)
+      when @planet.xsize = 'S' then toss(2,6)
+      else (@planet.size - toss(1,0)).whole
+    end
+    orbit = toss(2,i)
+    @orbit = (case
+      when (@size < 1) then @@orbits['R'][toss(1,1)]
+      when (orbit == 12 and @planet.xsize == 'L') then @@orbits['E'][toss(2,0)]
+      when (orbit < 8) then @@orbits['C'][toss(2,0)]
+      when (orbit > 7) then @@orbits['C'][toss(2,0)]
+      else 0
+    end).whole
+    @h20 = (case
+      when (@planet.inner?) then 0
+      when (@size == 0)    then 0
+      when (@planet.outer?) then toss(2,4)
+      when (@planet.biozone?) then toss(2,7)
+      else 0
+    end).whole
+    @atmo = toss(2,7) + @size
+    @atmo = (case
+      when (@size == 0) then 0
+      when (@planet.inner?) then @atmo - 4
+      when (@planet.outer?) then @atmo - 4 
+      else 0
+    end).whole
+  end
+  def to_ascii
+    "\n           %3d - %s" % [@orbit, uwp]
+  end
+  def uwp
+    "%s%s%s%s..." % ['x', @size,@atmo,@h20]
   end
 end
