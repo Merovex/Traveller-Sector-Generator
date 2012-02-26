@@ -14,6 +14,9 @@ class WorldGenerator
   def toss(a=2,b=2)
     (@@dice.roll(a) - b).whole
   end
+  def d6
+    toss(1,0)
+  end
   def d3
     (@@dice.roll() / 2).ceil
   end

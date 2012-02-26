@@ -1,7 +1,7 @@
 class Orbit<WorldGenerator
-  attr_accessor :id, :uwp, :kid
+  attr_accessor :id, :uwp, :kid, :au
   def initialize(star,orbit_number,companion=nil)
-    @orbit_number = orbit_number
+    @orbit_number = orbit_number.round
     @tc       = ''
     @au = (star.bode_constant * (2 ** orbit_number)).round(1)
     @kid = '.'
@@ -55,6 +55,9 @@ class Orbit<WorldGenerator
       else Rockball.new(@star, @orbit_number)
     end
   end
+  def to_s
+    @kid
+  end
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
     "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
@@ -72,8 +75,9 @@ class Companion<Orbit
   def initialize(star,orbit_number,companion)
     
     @star = companion
-    @au = 1.d6 * 1000 if @star.orbit > 15
+    # @au = 1.d6 * 1000 if @star.orbit > 15
     super
+    @kid = 'S'
     @uwp = @star.classification
   end
 end

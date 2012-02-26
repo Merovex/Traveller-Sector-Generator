@@ -1,5 +1,5 @@
 class Star<WorldGenerator
-  attr_accessor :star_size, :mass, :bode_constant, :biozone, :type_dm, :size_dm, :orbits, :primary, :orbit, :id, :volume, :world
+  attr_accessor :star_size, :mass, :bode_constant, :biozone, :type_dm, :size_dm, :orbits, :primary, :orbit, :id, :volume, :world, :companions
   # @@stars   = {}
   STAR_CHART = {
     #type => 0)example,        1)temp, 2)lux,    3)mass, 4)radius
@@ -64,34 +64,36 @@ class Star<WorldGenerator
     'M' => [20, 16, 8, 4, 0.3, 0.2],
     'D' => [0.8,0.8,0.8,0.8,0.8,0.8,]
   }
+  COMPANION_SEPARATION = [[0.05]*2, [0.5]*3, [2.0]*2, [10.0]*3, [50.0] * 10].flatten
+  BODE_RATIO           = [[0.3] * 4, [0.35] * 3, [0.4] * 4].flatten
   def initialize(volume, primary=nil,ternary=0)
-    # @id = @@stars.count + 1
-    @volume = volume
-    @primary = primary
-    @orbits = []
-    @world  = nil
+    @volume     = volume
+    @primary    = primary
+    @orbits     = []
+    @companions = []
+    @world      = nil
         
-    @star_id = (primary.nil?) ? primary : primary.id
     @type_dm = 0
     @size_dm = 0
     @has_gg  = false
     
-    # What orbit a companion star has
-    @orbit = (primary.nil?) ? 0 : [0, 0, 0, 0, 1, 2, 3, 4 + d6, 5 + d6, 6 + d6,7 + d6,8 + d6, 15][toss(2,0) + (4 * ternary) - 2]
-    
     if primary.nil?
+      @orbit   = 0
       @type_dm = (toss(2,0) + @volume.star_dm ).max(12)
       @size_dm = (toss(2,0) + 0 ).max(12)
       @star_type = %w{B B A M M M M M K G F F F}[@type_dm] 
       @star_size = %w{0 1 2 3 4 5 5 5 5 5 5 6 500}[@size_dm].to_i
     else
-      @star_type = %w{X B A F F G G K K M M M M}[(toss(2,0) + primary.type_dm).roof(12)]
-      @star_size = %w{0 1 2 3 4 500 500 5 5 6 500 500 500 500}[(toss(2,0) + primary.size_dm).roof(12)].to_i
+      separation = (toss(2,0) * COMPANION_SEPARATION[toss(3) + (4 * ternary) - 2]).round(2) # Gurps Space 4e p.105
+
+      @orbit = au_to_orbit(separation)
+      @star_type = %w{X B A F F G G K K M M M M}[(toss(2,0) + primary.type_dm).max(12)]
+      @star_size = %w{0 1 2 3 4 500 500 5 5 6 500 500 500 500}[(toss(2,0) + primary.size_dm).max(12)].to_i
     end
     @spectral = @star_type + SPECTRAL[@star_type].sample.to_s
     @star_size ||= 500
 
-    @bode_constant = (@star_type=='M' and @star_size==5) ? 0.2 : [ [0.3] * 5, [0.35]  * 2, 0.4].flatten.sample
+    @bode_constant = (@star_type=='M' and @star_size==5) ? 0.2 : BODE_RATIO[toss]
       
     if @star_size == 500
       @star_subtype = (true) ? 'B' : @star_type
@@ -104,19 +106,44 @@ class Star<WorldGenerator
     dm -= 4 if @star_type == 'M'
     dm -= 2 if @star_type == 'K'
     
+    # Populate Orbits
     (toss(2,0) + dm).whole.times do |i|
       @orbits << Orbit.new(self,i).populate
       @world = @orbits.last if @orbits.last.is_a?(World)
     end
     @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.' unless @world.nil?
 
+    # # Ensure last orbits are not empty.
+    # tk = false
+    # @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
+    prune!
+  end
+  def prune!
     # Ensure last orbits are not empty.
     tk = false
     @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
-    
   end
-  def radius; (155000 * Math.sqrt(luminosity)) ** 2; end # Gurpse Space 4e p. 1004
-  def snow_line; 4.85 * Math.sqrt(luminosity); end # Gurps Space 4e p. 106
+  def au_to_orbit(au)
+    constant = (@primary.nil?) ? @bode_constant : @primary.bode_constant
+    (Math.log(au / constant) / Math.log(2) ).round(2).abs
+  end
+  def companions=(star)
+    orbit = star.orbit.abs
+    companion = Companion.new(self, orbit, star)
+
+    inner = au_to_orbit((companion.au * 0.67).round(2)).floor
+    outer = au_to_orbit(companion.au * 3).ceil
+    @forbidden = (inner .. outer)
+    @forbidden.each  { |x| @orbits[x] = nil }
+    @orbits[orbit] = companion
+    @orbits.each_index { |x| @orbits[x] = Orbit.new(self,x) if @orbits[x].nil?}
+    prune!
+        # puts [@orbits, @forbidden].inspect
+  end
+  def to_s; kid; end
+  def kid; 'C'; end
+  def radius; (155000 * Math.sqrt(luminosity)) ** 2; end # Gurps Space 4e p. 104
+  def snow_line; 4.85 * Math.sqrt(luminosity);       end # Gurps Space 4e p. 106
   def outer_limit; 40 * mass; end # Gurps Space 4e p. 107
   def orbits_to_ascii
     return '' if @orbits.empty?
@@ -124,6 +151,9 @@ class Star<WorldGenerator
   end
   def crib
     "%-5s %-16s" % [classification, @orbits.map{|o| o.kid}.join('')]
+  end
+  def to_ascii
+    classification
   end
   def classification
     return @star_type + @star_subtype if (@star_type == 'D')

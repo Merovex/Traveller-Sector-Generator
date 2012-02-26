@@ -5,10 +5,7 @@ class Sector<WorldGenerator
     @volumes = []
   end
   def to_s
-    # puts "SECTOR '#{@name}'\n"
-    # puts @volumes
     filename = @name.downcase + '.sector'
-    # puts filename
     File.open(filename,'w').write(@volumes.map{|v| v.to_ascii}.join("\n"))
   end
   def generate

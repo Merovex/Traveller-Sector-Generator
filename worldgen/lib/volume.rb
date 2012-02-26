@@ -7,8 +7,11 @@ class Volume<WorldGenerator
     
 
     @star      = Star.new(self)
-    nature = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2][toss(2,0)].times do
-      nova = Star.new(self)
+    nature = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2][toss(2,0)].times do |i|
+      # @star.companions << Star.new(self, @star,i)
+      @star.companions = Star.new(self, @star,i)
+      # @star.orbits[nova.orbit.abs] = nova
+      #       @star.orbits = @star.orbits.map{ |o| Orbit.new if o.nil?}
     end
   end
   def star_dm
