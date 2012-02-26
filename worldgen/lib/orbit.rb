@@ -159,10 +159,11 @@ class Moon<WorldGenerator
     @popx = 0
     @law  = 0
     @tek  = 0
+    @govm = 0
     @size = case
       when @planet.xsize = 'L' then toss(2,4)
       when @planet.xsize = 'S' then toss(2,6)
-      else (@planet.size - toss(1,0)).whole
+      else @planet.size - toss(1,0)
     end
     orbit = toss(2,i)
     @orbit = (case
@@ -191,6 +192,12 @@ class Moon<WorldGenerator
     "\n           %3d - %s" % [@orbit, uwp]
   end
   def uwp
-    "%s%s%s%s..." % ['x', @size,@atmo,@h20]
+    size = case
+      when @size < 0 then 'S'
+      when @size == 0 then 'R'
+      else @size.hexd
+    end
+    # size = (@size == 0) ? 'R' : @size.hexd
+    "%s%s%s%s%s%s%s" % ['x', size,@atmo.hexd,@h20.hexd,@popx.hexd,@govm.hexd,@law.hexd]
   end
 end
