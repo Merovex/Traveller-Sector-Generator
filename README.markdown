@@ -3,7 +3,7 @@ Traveller Sector Generator
 
 The **Traveller Sector Generator** (TSG) creates random Traveller star maps intended for YOTS.
 
-The maps are generated using an amalgam of [Mongoose](http://www.mongoosepublishing.com/rpgs/traveller/core-rulebooks-accessories.html) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
+The maps are generated using an inspired amalgam of [Mongoose](http://www.mongoosepublishing.com/rpgs/traveller/core-rulebooks-accessories.html) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
 Mongoose rules are used when generating the World characteristics. Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
 
 * Sector: 40x32 hex grid
