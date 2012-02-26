@@ -3,7 +3,7 @@ Traveller Sector Generator
 
 The **Traveller Sector Generator** (TSG) creates random Traveller star maps intended for YOTS.
 
-The maps are generated using an amalgam of Mongoose and Classic Traveller rules, with some Gurps Space 4e and 3e.
+The maps are generated using an amalgam of [Mongoose](http://www.mongoosepublishing.com/rpgs/traveller/core-rulebooks-accessories.html) and [Classic Traveller](http://www.farfuture.net/) rules, with some [Gurps Space](http://www.sjgames.com/gurps/books/space/) 4e and 3e.
 Mongoose rules are used when generating the World characteristics. Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
 
 * Sector: 40x32 hex grid
@@ -75,15 +75,26 @@ Copyright
 Copyright 2012, Benjamin C. Wilson. All Rights Reserved.
 
 You may not use this work for commercial purposes. You may not alter, transform or build upon this work. Any of the above conditions can be waived if you get permission from the copyright holder. Where the work or any of its elements is in the public domain under applicable law, that status is in no way affected by the license. For any reuse or distribution, you must make clear to others the license terms of this work. In no way are any of the following rights affected by the license:
+
 * Your fair dealing or fair use rights, or other applicable copyright exceptions and limitations;
 * The author's moral rights;
 * Rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
 
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+Product names, logos, brands, and other trademarks featured or referred to in TSG software are the property of their respective trademark holders. Usage of those marks does not convey sponsorship or endorsement of this generator.
 
 Credits
 =======
 
 SVG Output uses some algorithms from [phreeow.net Perl mapping software](http://www.phreeow.net/wiki/tiki-index.php?page=Subsector+mapping+and+generating+software) with drawing hexes in the Classic Traveller way.
+
+Known bugs
+===========
+* If the dice pool is too small, the generated output will repeat.
+
+Troubleshooting
+===============
 
 Changelog
 =========
@@ -95,10 +106,5 @@ Version 0.1 (1 March 2012)
 * Convert to SVG
 
 
-* Copyright and licensing information
-* Contact information for the distributor or programmer
-* Known bugs
-* Troubleshooting
-* Credits and acknowledgments
 
 * A News sections might also be include to lists project updates for users.
