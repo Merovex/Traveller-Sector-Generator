@@ -21,6 +21,6 @@ def read_config
   @config = YAML::load(IO.read('_config.yml'))
 end
 task :setup do
-  @rolls = 6667.times.map { 1.d6 }
-  File.open('pregen_rolls.yml','w').write( @rolls.to_yaml )
+  @rolls = 100000.times.map { 1.d6 }
+  File.open('pregen_rolls.yml','w+').write( @rolls.to_yaml )
 end

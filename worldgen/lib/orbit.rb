@@ -5,7 +5,6 @@ class Orbit<WorldGenerator
     @au = star.orbit_to_au(orbit_number)
     @kid   = '.'
     @star  = star
-    @size  = 0
     @atmo  = 0
     @moons = 0
     @h20   = 0
@@ -52,8 +51,8 @@ class Orbit<WorldGenerator
     roll = toss(2,0)
     return case
       when roll < 5 then self
-      when (5..6) === roll then Hostile.new(@star, @orbit_number)
-      when (7..9) === roll then Rockball.new(@star, @orbit_number)
+      when (5..6) === roll   then Hostile.new(@star, @orbit_number)
+      when (7..9) === roll   then Rockball.new(@star, @orbit_number)
       when (10..11) === roll then Belt.new(@star, @orbit_number)   
       else GasGiant.new(@star, @orbit_number)
     end
@@ -75,7 +74,7 @@ class Orbit<WorldGenerator
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
     bio = '-' if @au > @star.outer_limit
-    output = "  -- %2s. %s  %s // %s // (%7.2f)" % [@orbit_number + 1, bio, @kid, self.uwp, @au]
+    output = "  -- %2s. %s  %s // %s // %4.1f au" % [@orbit_number + 1, bio, @kid, self.uwp, @au]
     @moons.each {|m| output += m.to_ascii} unless @moons.nil? or @moons == 0
     output
     
@@ -97,10 +96,18 @@ class Companion<Orbit
     @kid = 'S'
   end
   def uwp
-    @comp.classification
+    "%-9s" % [@comp.classification]
   end
 end
-class Belt<Orbit; end
+class Belt<Orbit
+  def initialize(star,orbit_number)
+    super
+    @kid = 'B'
+  end
+  def uwp
+    'XR00000-0'
+  end
+end
 class Planet<Orbit
   def initialize(star,orbit_number)
     super
@@ -143,7 +150,7 @@ class GasGiant<Planet
     @kid = 'G'
   end
   def uwp
-    (@xsize == 'S') ? 'SmallGG' : 'LargeGG'
+    (@xsize == 'S') ? 'Small GG ' : 'Large GG '
   end
 end
 class Moon<WorldGenerator
@@ -187,7 +194,7 @@ class Moon<WorldGenerator
     end).whole
   end
   def to_ascii
-    "\n                %3d - %s" % [@orbit, uwp]
+    "\n%28s/  %3d rad. %s" % ['', @orbit, uwp]
   end
   def uwp
     size = case
@@ -196,6 +203,6 @@ class Moon<WorldGenerator
       else @size.hexd
     end
     # size = (@size == 0) ? 'R' : @size.hexd
-    "%s%s%s%s%s%s%s" % ['x', size,@atmo.hexd,@h20.hexd,@popx.hexd,@govm.hexd,@law.hexd]
+    "%s%s%s%s%s%s%s" % ['X', size,@atmo.hexd,@h20.hexd,@popx.hexd,@govm.hexd,@law.hexd]
   end
 end
