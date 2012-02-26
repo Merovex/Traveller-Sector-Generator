@@ -112,14 +112,9 @@ class Star<WorldGenerator
       @world = @orbits.last if @orbits.last.is_a?(World)
     end
     @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.' unless @world.nil?
-
-    # # Ensure last orbits are not empty.
-    # tk = false
-    # @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
     prune!
   end
-  def prune!
-    # Ensure last orbits are not empty.
+  def prune! # Ensure last orbits are not empty.
     tk = false
     @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
   end
@@ -131,14 +126,15 @@ class Star<WorldGenerator
     orbit = star.orbit.abs
     companion = Companion.new(self, orbit, star)
 
-    inner = au_to_orbit((companion.au * 0.67).round(2)).floor
+    # Gurps Space 4e p.107 - Clear Forbidden orbits
+    inner = au_to_orbit(companion.au * 0.67).floor
     outer = au_to_orbit(companion.au * 3).ceil
     @forbidden = (inner .. outer)
     @forbidden.each  { |x| @orbits[x] = nil }
     @orbits[orbit] = companion
+    @companions << star
     @orbits.each_index { |x| @orbits[x] = Orbit.new(self,x) if @orbits[x].nil?}
     prune!
-        # puts [@orbits, @forbidden].inspect
   end
   def to_s; kid; end
   def kid; 'C'; end
@@ -150,7 +146,11 @@ class Star<WorldGenerator
     "\n" + @orbits.map{|o| o.to_ascii}.join("\n") + "\n"
   end
   def crib
-    "%-5s %-16s" % [classification, @orbits.map{|o| o.kid}.join('')]
+    stars = [classification]
+    @companions.each { |s|
+      stars << s.classification
+    }
+    "%-10s %-16s" % [stars.join('/'), @orbits.map{|o| o.kid}.join('')]
   end
   def to_ascii
     classification

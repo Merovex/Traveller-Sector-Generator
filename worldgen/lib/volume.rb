@@ -1,17 +1,12 @@
 class Volume<WorldGenerator
   attr_accessor :gas_giant
   def initialize(c,r)
-    @name      = @@names.sample
-    @column    = c
-    @row       = r
-    
-
-    @star      = Star.new(self)
-    nature = [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2][toss(2,0)].times do |i|
-      # @star.companions << Star.new(self, @star,i)
+    @name   = @@names.sample
+    @column = c
+    @row    = r
+    @star   = Star.new(self)
+    [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2][toss(2,0)].times do |i|
       @star.companions = Star.new(self, @star,i)
-      # @star.orbits[nova.orbit.abs] = nova
-      #       @star.orbits = @star.orbits.map{ |o| Orbit.new if o.nil?}
     end
   end
   def star_dm

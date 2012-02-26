@@ -168,9 +168,21 @@ class SvgOutput<WorldGenerator
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
-    output += "    <text #{@style[:Name]} x='#{(c[0]+(@side/1.8)).tweak}' y='#{(c[1]-(@side/3)).tweak}'>#{star[0..1].strip}</text>\n"
+    # output += "    <text #{@style[:Name]} x='#{(c[0]+(@side/1.8)).tweak}' y='#{(c[1]-(@side/3)).tweak}'>#{star[0..1].strip}</text>\n"
+    output += stars(c,star)
     output
     
+  end
+  def stars(c,stars)
+    output = ''
+    x = (c[0]+(@side/1.8)).tweak + 2
+    y = (c[1]-(@side/3)).tweak + 3
+    stars.split('/').each do |star|
+      output += "    <text #{@style[:Name]} x='#{x}' y='#{y}'>#{star[0..1].strip}</text>\n"
+      x += 3
+      y += 7
+    end
+    output
   end
   def draw_planet(c,w)
     k = (w[3] == '0') ? 'Desert' : 'Planet'
