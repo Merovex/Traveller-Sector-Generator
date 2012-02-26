@@ -2,8 +2,6 @@ class Orbit<WorldGenerator
   attr_accessor :id, :kid, :au, :port, :orbit_number, :xsize
   def initialize(star,orbit_number,companion=nil)
     @orbit_number = orbit_number.round
-    @tc    = ''
-    # @au    = (star.bode_constant * (2 ** orbit_number)).round(1)
     @au = star.orbit_to_au(orbit_number)
     @kid   = '.'
     @star  = star
@@ -31,7 +29,7 @@ class Orbit<WorldGenerator
     end
   end
   def uwp
-    '...' # "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
+    '.......-.' # "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
   end
   def port
     @port || 'X'
@@ -77,7 +75,7 @@ class Orbit<WorldGenerator
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
     bio = '-' if @au > @star.outer_limit
-    output = "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
+    output = "  -- %2s. %s  %s // %s // (%7.2f)" % [@orbit_number + 1, bio, @kid, self.uwp, @au]
     @moons.each {|m| output += m.to_ascii} unless @moons.nil? or @moons == 0
     output
     
@@ -145,7 +143,7 @@ class GasGiant<Planet
     @kid = 'G'
   end
   def uwp
-    "XGG#{@xsize}000-0"
+    (@xsize == 'S') ? 'SmallGG' : 'LargeGG'
   end
 end
 class Moon<WorldGenerator
@@ -189,7 +187,7 @@ class Moon<WorldGenerator
     end).whole
   end
   def to_ascii
-    "\n           %3d - %s" % [@orbit, uwp]
+    "\n                %3d - %s" % [@orbit, uwp]
   end
   def uwp
     size = case
