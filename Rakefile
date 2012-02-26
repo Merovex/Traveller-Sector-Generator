@@ -14,10 +14,9 @@ task :worldgen, :sector_name do |t,args|
   name = args[:sector_name]
   # raise name.inspect
   read_config
-  s = Sector.new(name)#.generate
+  s = Sector.new(name)
   s.generate!
   s.to_file
-  # s.print
 end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))

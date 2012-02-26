@@ -1,9 +1,10 @@
 class Orbit<WorldGenerator
-  attr_accessor :id, :kid, :au, :port
+  attr_accessor :id, :kid, :au, :port, :orbit_number
   def initialize(star,orbit_number,companion=nil)
     @orbit_number = orbit_number.round
     @tc    = ''
-    @au    = (star.bode_constant * (2 ** orbit_number)).round(1)
+    # @au    = (star.bode_constant * (2 ** orbit_number)).round(1)
+    @au = star.orbit_to_au(orbit_number)
     @kid   = '.'
     @star  = star
     @size  = 0
@@ -29,7 +30,7 @@ class Orbit<WorldGenerator
     end
   end
   def uwp
-    "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
+    '...' # "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
   end
   def port
     @port || 'X'
@@ -74,6 +75,7 @@ class Orbit<WorldGenerator
   end
   def to_ascii
     bio = (@zone == 0 ) ? '*' : ' '
+    bio = '-' if @au > @star.outer_limit
     "  -- %2s. %s (%7.2f) %s // %s" % [@orbit_number + 1, bio, @au, @kid, self.uwp]
   end
   def period; (@au * 365.25).round(2); end
@@ -87,12 +89,13 @@ class Orbit<WorldGenerator
 end
 class Companion<Orbit
   def initialize(star,orbit_number,companion)
-    @star = companion
+    @star = star
+    @comp = companion
     super
     @kid = 'S'
   end
   def uwp
-    @star.classification
+    @comp.classification
   end
 end
 class Belt<Orbit; end
@@ -101,6 +104,9 @@ class Planet<Orbit
     @moons = (1.d6 - 3).whole
     super
     @size = toss if @size.nil? or @size == 0
+  end
+  def uwp
+    "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
   end
 end
 class Rockball<Planet
@@ -112,16 +118,10 @@ end
 class Hostile<Planet
   def initialize(star,orbit_number)
     super
-    @atmo = (10..15).to_a.sample
-    @hydro = 2.dn(4) - 2
+    @atmo = [10,11,12,13,14].sample
+    @hydro = toss(2,4)
     @kid = 'H'
-    while @atmo == 15
-      @atmo = (10..15).to_a.sample
-    end
   end
-  # def uwp
-  #   'FU'
-  # end
 end
 class GasGiant<Planet
   def initialize(star,orbit_number)

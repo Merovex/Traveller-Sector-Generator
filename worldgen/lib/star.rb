@@ -27,12 +27,12 @@ class Star<WorldGenerator
   }
   INNER_LIMIT = {
     'O' => [  16, 13, 10 ],
-    'B' => [  10, 6.3, 5.0, 4.0, 3.8, 0.6   ],
-    'A' => [  4, 1, 0.4, 0, 0, 0 ],
-    'F' => [  4, 1, 0,3, 0.1, 0, 0 ],
-    'G' => [  3.1, 1, 0.3, 0.1, 0, 0, 0 ],
-    'K' => [  2.5, 1, 0.3, 0.1, 0,0,0 ],
-    'M' => [  2, 1, 0.3, 0.1, 0,0 ],
+    'B' => [   10, 6.3, 5.0, 4.0, 3.8, 0.6, 0],
+    'A' => [    4,   1, 0.4,   0,   0,   0, 0],
+    'F' => [    4,   1, 0.3, 0.1,   0,   0, 0],
+    'G' => [  3.1,   1, 0.3, 0.1,   0,   0, 0],
+    'K' => [  2.5,   1, 0.3, 0.1,   0,   0, 0],
+    'M' => [    2,   1, 0.3, 0.1,   0,   0, 0],
     'D' => [  0 ],
   }
   BIOZONE = {
@@ -86,7 +86,7 @@ class Star<WorldGenerator
     else
       separation = (toss(2,0) * COMPANION_SEPARATION[toss(3) + (4 * ternary) - 2]).round(2) # Gurps Space 4e p.105
 
-      @orbit = au_to_orbit(separation)
+      @orbit = au_to_orbit(separation) - 1
       @star_type = %w{X B A F F G G K K M M M M}[(toss(2,0) + primary.type_dm).max(12)]
       @star_size = %w{0 1 2 3 4 500 500 5 5 6 500 500 500 500}[(toss(2,0) + primary.size_dm).max(12)].to_i
     end
@@ -108,19 +108,33 @@ class Star<WorldGenerator
     
     # Populate Orbits
     (toss(2,0) + dm).whole.times do |i|
-      @orbits << Orbit.new(self,i).populate
+      @orbits << Orbit.new(self,i).populate unless orbit_to_au(i) > outer_limit
       @world = @orbits.last if @orbits.last.is_a?(World)
     end
     @world.gas_giant = (@orbits.map{|o| o.kid}.include?('G')) ? 'G' : '.' unless @world.nil?
     prune!
   end
   def prune! # Ensure last orbits are not empty.
+    @orbits.each_index { |x| @orbits[x] = Orbit.new(self,x) if @orbits[x].nil?}
+    c = @orbits
+    # exit
     tk = false
-    @orbits = @orbits.reverse.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
+    @orbits = @orbits.sort{|b,a| a.orbit_number <=> b.orbit_number}.map {|o| tk = true unless (o.kid == '.' or tk); o if tk }.reverse.compact
+    # @orbits.each_index { |x| @orbits[x] = Orbit.new(self,x) if @orbits[x].nil?}
+
+    return if @orbits.size < 2
+    @orbits.length.times do |i|
+      @orbits[i].orbit_number = i
+      @orbits[i].au = self.orbit_to_au(i)
+    end
+
+  end
+  def orbit_to_au(o)
+    inner_limit + (self.bode_constant * (2 ** o)).round(1)
   end
   def au_to_orbit(au)
     constant = (@primary.nil?) ? @bode_constant : @primary.bode_constant
-    (Math.log(au / constant) / Math.log(2) ).round(2).abs
+    (Math.log(au / constant) / Math.log(2) ).round(2).abs - inner_limit
   end
   def companions=(star)
     orbit = star.orbit.abs
@@ -131,9 +145,8 @@ class Star<WorldGenerator
     outer = au_to_orbit(companion.au * 3).ceil
     @forbidden = (inner .. outer)
     @forbidden.each  { |x| @orbits[x] = nil }
-    @orbits[orbit] = companion
+    @orbits[orbit - 1] = companion
     @companions << star
-    @orbits.each_index { |x| @orbits[x] = Orbit.new(self,x) if @orbits[x].nil?}
     prune!
   end
   def to_s; kid; end
@@ -165,7 +178,11 @@ class Star<WorldGenerator
   def type=(s); @star_type = s; end
   def size; @star_size; end
   def size=(s); @star_size = s; end 
-  def limit; INNER_LIMIT[@star_type][@star_size % 10] or 0; end
+  def inner_limit; limit; end
+  def limit
+    return 0 if @star_size.nil?
+    INNER_LIMIT[@star_type][@star_size % 10]
+  end
   def biozone; BIOZONE[@star_type][@star_size % 10] or []; end
   def luminosity; STAR_CHART[@spectral][2]; end
   def temperature; @temperature = STAR_CHART[@spectral][1].around(20) if @temperature.nil?; end

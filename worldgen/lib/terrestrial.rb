@@ -1,19 +1,9 @@
 class Terrestrial<Planet  
   def initialize(star,orbit_number)
     super
-
-    # @name      = @@names.sample
     @kid       = 'R'
-    # @column    = c
-    # @row       = r
-    # @navy      = '.'
-    #  @scout     = '.'
-    #  # @gas_giant = (@@config['giant_on'].include?(toss(2,2))) ? 'G' : '.'
-    #  @gas_giant = '.'
-    #  @port_roll = toss(2,0)
-    #  @world     = nil
     
-    # Size, Climae & Biosphere. MgT 170--71.
+    # Size, Climate & Biosphere. MgT 170--71.
     @size      = toss(2,1)
     @atmo      = toss()
                             # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F 
@@ -42,12 +32,6 @@ class Terrestrial<Planet
       @h20 -= 6 if (((3..4).include?(@size) and @atmo == 'A' ) or @atmo < 2)
       @h20 -= 4 if ([2,3,11,12].include?(@atmo))
     end
-    
-    # unless biozone?
-    #   @hydro = (@hydro - 1.d6).whole
-    #   @atmo  = (@atmo - 1.d6).whole
-    # end
-    
   end
 end
 class World<Terrestrial
@@ -90,24 +74,23 @@ class World<Terrestrial
     @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limites
     
     # For those who want to limit technology
-    @tek = @tek.max(@@config['tech_cap']) unless @@config['tech_cap'].nil?
-    @popx = @law = @govm = @tek = 0 if (@tek < tek_limit)
-    @tek = @tek.min(@popx)
-    @law = @govm = @tek = 0 if @popx == 0
+    @tek  = @tek.max(@@config['tech_cap']) unless @@config['tech_cap'].nil?
+    @tek  = @tek.min(tek_limit)
+    @tek  = @tek.min(@popx)
+    @law  = @govm = @tek = 0 if @popx == 0
     
-    # Fix temperature
+    # Fix temperature (Me)
     @temp = 'F' if (trade_codes.include?('IC') or trade_codes.include?('Va'))
     @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
   end
   def travel_code
-    @code   = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
+    @code = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
   end
   def gravity
     @gravity = [0,0.05,0.15,0.25,0.35,0.45,0.7,0.9,1.0,1.25,1.4][@size] if @gravity.nil?
     @gravity
   end
   def bases
-    # raise [@navy,@scout,@gas_giant,'.','.'].inspect
     return [@navy,@scout,@gas_giant,'.','.'].join('')
   end
   def port
