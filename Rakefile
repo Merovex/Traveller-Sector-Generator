@@ -14,14 +14,13 @@ task :worldgen, :sector_name do |t,args|
   name = args[:sector_name]
   # raise name.inspect
   read_config
-  s = Sector.new(name)
-  s.generate
-  puts s
+  Sector.new(name).generate
+  # s.generate
 end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))
 end
 task :setup do
-  @rolls = 60000.times.map { 1.d6 }
+  @rolls = 6667.times.map { 1.d6 }
   File.open('pregen_rolls.yml','w').write( @rolls.to_yaml )
 end

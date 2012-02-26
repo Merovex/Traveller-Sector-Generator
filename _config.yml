@@ -1,6 +1,6 @@
 genre: normal
 pregen: false
-density: 'sparse'
+density: 'scattered'
 giant_on: !ruby/range 0..9
 tech_cap: 11
 svg_theme: lite

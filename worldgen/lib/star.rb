@@ -147,10 +147,8 @@ class Star<WorldGenerator
   end
   def crib
     stars = [classification]
-    @companions.each { |s|
-      stars << s.classification
-    }
-    "%-10s %-16s" % [stars.join('/'), @orbits.map{|o| o.kid}.join('')]
+    @companions.each { |s| stars << s.classification }
+    "%-17s %-16s" % [stars.join('/'), @orbits.map{|o| o.kid}.join('')]
   end
   def to_ascii
     classification
