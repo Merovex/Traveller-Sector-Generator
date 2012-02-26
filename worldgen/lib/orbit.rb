@@ -101,7 +101,7 @@ end
 class Belt<Orbit; end
 class Planet<Orbit
   def initialize(star,orbit_number)
-    @moons = (1.d6 - 3).whole
+    @moons = toss(1,3)
     super
     @size = toss if @size.nil? or @size == 0
   end

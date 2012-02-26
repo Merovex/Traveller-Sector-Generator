@@ -170,6 +170,10 @@ class Star<WorldGenerator
     return @star_type + @star_subtype if (@star_type == 'D')
     "#{@spectral}#{@star_size.roman}"
   end
+  def world?
+    return @orbits.join('').include?('W')
+    return false
+  end
   def column; @volume.column; end
   def row; @volume.row; end
   def sector; @volume.sector; end

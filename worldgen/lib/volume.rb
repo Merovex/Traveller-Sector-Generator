@@ -20,7 +20,7 @@ class Volume<WorldGenerator
     return sumy
   end
   def empty?
-    return true if @star.world.nil? or @star.world.empty?
+    return true if @star.world.nil? or @star.world.empty? or !@star.world?
   end
   def location
     "%02d%02d" % [@column,@row]
