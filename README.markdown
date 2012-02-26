@@ -1,7 +1,7 @@
-Description
-===========
+Traveller Sector Generator
+==========================
 
-The **Traveller Sector Generator** (TSG) creates random Traveller star maps.
+The **Traveller Sector Generator** (TSG) creates random Traveller star maps intended for YOTS.
 
 The maps are generated using an amalgam of Mongoose and Classic Traveller rules, with some Gurps Space 4e and 3e.
 Mongoose rules are used when generating the World characteristics. Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
@@ -41,6 +41,18 @@ SVG Output
 ----------
 
 TSG converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
+
+Configuration
+=============
+
+```yaml
+genre: normal
+pregen: false
+density: 'scattered'
+giant_on: !ruby/range 0..9
+tech_cap: 11
+svg_theme: lite
+```
 
 Changelog
 =========
