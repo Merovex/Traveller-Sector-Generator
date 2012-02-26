@@ -59,7 +59,7 @@ class Orbit<WorldGenerator
     end
   end
   def populate_outer
-    roll = 1.d6
+    roll = toss(1,0)
     roll += 1 if distant?
     return case
       when roll == 1 then Rockball.new(@star, @orbit_number)
@@ -136,7 +136,7 @@ end
 class GasGiant<Planet
   def initialize(star,orbit_number)
     super
-    @xsize = (1.d6 < 4) ? 'L' : 'S'
+    @xsize = (toss(1,0) < 4) ? 'L' : 'S'
     moons = toss(2,0)
     moons = (moons - 4).whole if @xsize == 'S'
     @moons = make_moons(moons)

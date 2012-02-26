@@ -74,6 +74,9 @@ class Array
   def roll(n=1)
     n.times.map{ self.rotate!; self.first }.inject{|s,x| s + x}
   end
+  def sample
+    self[0]
+  end
 end
 
 require './worldgen/lib/sector'

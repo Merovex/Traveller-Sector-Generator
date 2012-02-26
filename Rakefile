@@ -12,7 +12,6 @@ end
 desc "Generate Traveller Sector"
 task :worldgen, :sector_name do |t,args| 
   name = args[:sector_name]
-  # raise name.inspect
   read_config
   s = Sector.new(name)
   s.generate!
