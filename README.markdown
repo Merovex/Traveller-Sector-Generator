@@ -42,6 +42,16 @@ SVG Output
 
 TSG converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
 
+Installation
+============
+
+This software relies upon Ruby 1.9.2+. To convert from SVG to JPG, PNG, GIF you will need to install Imagemagick with -rsvg flag.
+
+Operating Instructions
+======================
+
+TSG is a command-line tool using the rake command. Use 'rake -T' to see options.
+
 Configuration
 =============
 
@@ -54,6 +64,21 @@ tech_cap: 11
 svg_theme: lite
 ```
 
+* **density** Can be [dense, standard, scattered, sparse, rift]. Determines the likelihood of a volume having a habitable star system. (Non-habitable star systems are ignored.) Default is standard.
+* **tech_cap** sets a maximum technology level for those wishing to limit tech.
+* **genre** Can be [normal, firm, opera], which primarily affects the World. Described in _Mongoose Traveller_ (MgT) p. 173. Default is **normal**.
+* **svg_theme** Can be [lite, dark] and determines the color scheme for the SVG output.
+
+Copyright
+=========
+
+Copyright 2012, Benjamin C. Wilson. All Rights Reserved. You may not use this work for commercial purposes. You may not alter, transform or build upon this work. You may not copy, distribute or transmit the work without the author's prior written approval.
+
+Credits
+=======
+
+SVG Output based on [phreeow.net Perl mapping software](http://www.phreeow.net/wiki/tiki-index.php?page=Subsector+mapping+and+generating+software), though heavily modified.
+
 Changelog
 =========
 
@@ -64,14 +89,10 @@ Version 0.1 (1 March 2012)
 * Convert to SVG
 
 
-* Configuration instructions
-* Installation instructions
-* Operating instructions
-
 * Copyright and licensing information
 * Contact information for the distributor or programmer
 * Known bugs
 * Troubleshooting
 * Credits and acknowledgments
-* A changelog lists project changes. This is usually intended for programmers
+
 * A News sections might also be include to lists project updates for users.

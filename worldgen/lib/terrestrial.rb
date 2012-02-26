@@ -71,7 +71,7 @@ class World<Terrestrial
     tek_dm += [0,1,1,1,1,1,0,0,0,1,2,3,4][@popx]
     tek_dm += [1,0,0,0,0,1,0,2,0,0,0,0,0,-2,-2,0][@govm]
     tek_limit = environmental_tek_limits[@atmo]
-    @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limites
+    @tek = (toss(1,0) + tek_dm).min( tek_limit ) # MgT p. 179 Environmental Limits
     
     # For those who want to limit technology
     @tek  = @tek.max(@@config['tech_cap']) unless @@config['tech_cap'].nil?
