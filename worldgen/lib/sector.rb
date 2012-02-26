@@ -4,11 +4,11 @@ class Sector<WorldGenerator
     @name = name || WorldGenerator.getname
     @volumes = []
   end
-  def to_s
+  def to_file
     filename = @name.downcase + '.sector'
     File.open(filename,'w').write(@volumes.map{|v| v.to_ascii}.join("\n"))
   end
-  def generate
+  def generate!
     40.times do |r|
       32.times do |c|
         next unless has_system?

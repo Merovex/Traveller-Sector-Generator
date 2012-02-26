@@ -119,9 +119,6 @@ class World<Terrestrial
   def empty?
     (uwp.include?('X000000'))
   end
-  def uwp
-    "%s%s%s%s%s%s%s-%s" % [ port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
-  end
   def trade_codes
     code = []
     code << 'Ag' if ((4..9) === @atmo and (4..8) === @h20 and  (5..7) === @popx)

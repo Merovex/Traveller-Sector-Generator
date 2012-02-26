@@ -1,12 +1,20 @@
 class Orbit<WorldGenerator
-  attr_accessor :id, :uwp, :kid, :au
+  attr_accessor :id, :kid, :au, :port
   def initialize(star,orbit_number,companion=nil)
     @orbit_number = orbit_number.round
-    @tc       = ''
-    @au = (star.bode_constant * (2 ** orbit_number)).round(1)
-    @kid = '.'
-    @star = star
+    @tc    = ''
+    @au    = (star.bode_constant * (2 ** orbit_number)).round(1)
+    @kid   = '.'
+    @star  = star
+    @size  = 0
+    @atmo  = 0
     @moons = 0
+    @h20   = 0
+    @popx  = 0
+    @tek   = 0
+    @port  = 'X'
+    @govm  = 0
+    @law   = 0
     begin
       @zone = case
         when @au < @star.biozone[0] then -1 # Inside
@@ -19,6 +27,12 @@ class Orbit<WorldGenerator
       @zone = -1
       @distant = 1000
     end
+  end
+  def uwp
+    "%s%s%s%s%s%s%s-%s" % [port, @size.hexd, @atmo.hexd, @h20.hexd, @popx.hexd, @govm.hexd, @law.hexd, @tek.hexd]
+  end
+  def port
+    @port || 'X'
   end
   def populate
     case
@@ -73,24 +87,27 @@ class Orbit<WorldGenerator
 end
 class Companion<Orbit
   def initialize(star,orbit_number,companion)
-    
     @star = companion
-    # @au = 1.d6 * 1000 if @star.orbit > 15
     super
     @kid = 'S'
-    @uwp = @star.classification
+  end
+  def uwp
+    @star.classification
   end
 end
 class Belt<Orbit; end
 class Planet<Orbit
   def initialize(star,orbit_number)
-    @size = 2.dn(5) if @size.nil?
     @moons = (1.d6 - 3).whole
     super
+    @size = toss if @size.nil? or @size == 0
   end
 end
 class Rockball<Planet
-  @kid = 'R'
+  def initialize(star,orbit_number)
+    super
+    @kid = 'R'
+  end
 end
 class Hostile<Planet
   def initialize(star,orbit_number)
@@ -101,19 +118,22 @@ class Hostile<Planet
     while @atmo == 15
       @atmo = (10..15).to_a.sample
     end
-    # super
   end
+  # def uwp
+  #   'FU'
+  # end
 end
 class GasGiant<Planet
   def initialize(star,orbit_number)
     super
-    size = (1.d6 < 4) ? 'L' : 'S'
-    @uwp  = "XGG#{size}000-0"
+    @xsize = (1.d6 < 4) ? 'L' : 'S'
     @moons = toss(2,0)
-    @moons = (@moons - 4).whole if size == 'S'
+    @moons = (@moons - 4).whole if @xsize == 'S'
     @kid = 'G'
   end
-  # def uwp
+  def uwp
+    "XGG#{@xsize}000-0"
+  end
 end
 class Moon
   def initalize(planet)
