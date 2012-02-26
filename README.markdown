@@ -1,14 +1,21 @@
 Description
 ===========
 
-The **Traveller Sector Generator** creates random Traveller star maps.
+The **Traveller Sector Generator** (TSG) creates random Traveller star maps.
 
-The maps are generated using an amalgam of Mongoose and Classic Traveller rules, with some Gurps Space 4e. The Mongoose core rules are predominately used, with Classic Traveller used in creating moons and assigning non-World
+The maps are generated using an amalgam of Mongoose and Classic Traveller rules, with some Gurps Space 4e and 3e.
+Mongoose rules are used when generating the World characteristics. Classic Traveller is used when fleshing out star system details such as stars, non-world orbits, presence of companion stars. Gurps is used to flesh out star characteristics and the impact of a companion star on the primary's orbits.
 
 * Sector: 40x32 hex grid
 * Tract:  8x10 hex grid (Traveller Subsector)
 * Volume: 1-hex
 * World: primary inhabited planet.
+* Orbit: A
+
+ASCII Output
+------------
+
+The block below shows TSG's ASCII output. The top row is the key system aspects: Volume ID, World UWP, Temperature, Presence of Bases & Gas Giants, Trade Codes, Stars, Primary Star's Orbits, Name. The rows that follow elaborate the primary star's orbits. Rows with two dashes are the Primary's orbits, orbit type, UWP, and orbit distance (usable for travel and year length). Other rows with the '/' are that orbit's satellites. When the UWP is dots, that orbit is empty.
 
 ```
 1201 E949556-5 T ..G.. ..	Lt,NI          	        	F0IV/DB           R..WGG..S       	Secundus
@@ -30,12 +37,20 @@ The maps are generated using an amalgam of Mongoose and Classic Traveller rules,
   --  9. -  S // DB        // 89.6 au
 ```
 
+SVG Output
+----------
+
+TSG converts the ASCII output as described above to create an SVG file describing the key aspects of a volume. This includes the Star type, Starport, Name and the presence of bases (Navy, Scout, etc.) and Gas Giants.
 
 Changelog
 =========
 
 Version 0.1 (1 March 2012) 
 --------------------------
+* Initially written
+* Generate Sector Map
+* Convert to SVG
+
 
 * Configuration instructions
 * Installation instructions
