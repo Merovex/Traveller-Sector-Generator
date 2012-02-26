@@ -8,14 +8,18 @@ task :svg, :filename do |t,args|
   s = SvgOutput.new(filename)
   s.print
 end
+task :jpg, :filename do |t,args|
+  
+end
 
 desc "Generate Traveller Sector"
-task :worldgen, :sector_name do |t,args| 
+task :sector, :sector_name do |t,args| 
   name = args[:sector_name]
   read_config
   s = Sector.new(name)
   s.generate!
   s.to_file
+  puts "Created Sector '#{s.name}'"
 end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))

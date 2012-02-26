@@ -1,5 +1,5 @@
 class Sector<WorldGenerator
-  attr_accessor :volumes
+  attr_accessor :volumes, :name
   def initialize(name=nil)
     @name = name || WorldGenerator.getname
     @volumes = []
