@@ -3,5 +3,5 @@ pregen: false
 density: 'scattered'
 giant_on: !ruby/range 0..9
 tech_cap: 11
-svg_theme: dark
+svg_theme: lite
 named: true

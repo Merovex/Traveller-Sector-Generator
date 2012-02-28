@@ -1,4 +1,4 @@
-0801 D739333-7 F ..... ..	Lo             	N,S     	M4V/DB/DB         W.BBS....S      	Teta
+0801 D739333-7 F .S... ..	Lo             	N,S     	M4V/DB/DB         W.BBS....S      	Anacreon
   --  1. *  W // D739333-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
@@ -10,7 +10,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-1201 E949556-5 T ..G.. ..	Lt,NI          	        	F0IV/DB           R..WGG..S       	Secundus
+1201 E949556-5 T ..G.. ..	Lt,NI          	        	F5IV/DB           R..WGG..S       	Pradesh
   --  1.    R // X600000-0 //  0.4 au
                             /    7 rad. X420000
                             /    9 rad. X620000
@@ -28,18 +28,18 @@
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // DB        // 89.6 au
 
-2001 BB28555-9 H ..... ..	NI             	        	M2V/DB            W.RBS           	Derby
+2001 BB28555-9 H ..... ..	NI             	        	M0V/DB            W.RBS           	Byway
   --  1. *  W // BB28555-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X200000-0 //  0.8 au
   --  4.    B // XR00000-0 //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2301 X2626AA-6 T ..... AZ	NI,Ri          	F       	M4V               WB              	Praclush Toanas
+2301 X2626AA-6 T ..... AZ	NI,Ri          	F       	M2V               WB              	Dragon End
   --  1. *  W // X2626AA-6 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
 
-3001 D252667-6 T ..G.. ..	NI,Po          	O       	M4V               WGG             	Clonclurry
+3001 D252667-6 T ..G.. ..	NI,Po          	O       	M6V               WGG             	Elan
   --  1. *  W // D252667-6 //  0.2 au
                             /   11 rad. X703000
   --  2.    G // Small GG  //  0.4 au
@@ -50,10 +50,10 @@
                             /    9 rad. X302000
                             /   10 rad. X407000
 
-0102 EA3A225-9 T ..G.. ..	Lo             	        	F5III/DB          HRHWG.S         	Beylix
-  --  1.    H // X4C0000-0 //  0.5 au
+0102 EA3A225-9 T ..G.. ..	Lo             	        	F0III/DB          HRHWG.S         	Sayshell
+  --  1.    H // X4D0000-0 //  0.5 au
   --  2.    R // X700000-0 //  0.8 au
-  --  3.    H // X6D0000-0 //  1.5 au
+  --  3.    H // X6A0000-0 //  1.5 au
                             /    1 rad. XR00000
                             /   12 rad. X840000
                             /   13 rad. X420000
@@ -65,7 +65,7 @@
   --  6.    . // .......-. // 11.3 au
   --  7.    S // DB        // 22.5 au
 
-0402 D262466-4 T ..G.. ..	Lt,NI          	O       	M2V/DB            WG.R..S         	Planter Delight
+0402 D262466-4 T .SG.. ..	Lt,NI          	O       	M4V/DB            WG.R..S         	G'iri
   --  1. *  W // D262466-4 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -74,7 +74,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-1002 E679789-7 T ..... AZ	               	N,F     	M4V/DB            W........S      	Londinium
+1002 E679789-7 T ..... AZ	               	N,F     	M0V/DB            W........S      	Hamshiltristia
   --  1. *  W // E679789-7 //  0.2 au
                             /    5 rad. X400000
                             /    9 rad. X400000
@@ -88,7 +88,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-1402 BA4A111-B T ..... ..	Lo             	F       	F5V               .HRWRR          	Pakhome
+1402 BA4A111-B T NS... ..	Lo             	F       	F5V               .HRWRR          	Tiercel
   --  1.    . // .......-. //  0.3 au
   --  2.    H // X7E0000-0 //  0.6 au
   --  3.    R // X500000-0 //  1.2 au
@@ -96,14 +96,14 @@
   --  5.    R // X400000-0 //  4.8 au
   --  6.    R // X300000-0 //  9.6 au
 
-2202 A75779A-8 T ..G.. AZ	Ag             	O       	M6V               WG              	Maoli
+2202 A75779A-8 T ..GC. AZ	Ag             	O       	M4V               WG              	Hablu
   --  1. *  W // A75779A-8 //  0.2 au
                             /    7 rad. X200000
   --  2.    G // Large GG  //  0.4 au
 
-3002 AA7A9DD-B T ..... AZ	Hi,In          	F,N     	K2IV/DB           HHWB....S       	Delfi
+3002 AA7A9DD-B T ..... AZ	Hi,In          	F,N     	K0IV/DB           HHWB....S       	Artifactovol
   --  1.    H // X5D0000-0 //  0.4 au
-  --  2.    H // X0A0000-0 //  0.7 au
+  --  2.    H // X0D0000-0 //  0.7 au
                             /   10 rad. X310000
   --  3. *  W // AA7A9DD-B //  1.4 au
                             /    1 rad. XR00000
@@ -115,14 +115,14 @@
   --  8.    . // .......-. // 44.8 au
   --  9.    S // DB        // 89.6 au
 
-0103 C222888-8 T ..... ..	Na,Po          	N       	M0V/DB            W..S            	Konom
+0103 C222888-8 T ....P ..	Na,Po          	N       	M0V/DB            W..S            	Cheeringboda
   --  1. *  W // C222888-8 //  0.2 au
                             /    3 rad. X301000
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-0703 C95A122-7 T ..G.. ..	Lo             	F,M,N   	F0V/DB            H..WG.S         	Trion
+0703 C95A122-7 T ..G.P ..	Lo             	F,M,N   	F5V/DB            H..WG.S         	Golter
   --  1.    H // X2C0000-0 //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -131,7 +131,7 @@
   --  6.    . // .......-. //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-0903 C76AAAA-A T ..G.. AZ	Hi             	        	F2V               RRWGB           	Paramay
+0903 C76AAAA-A T ..G.. AZ	Hi             	        	F0V               RRWGB           	Korvel
   --  1.    R // X700000-0 //  0.4 au
   --  2.    R // X700000-0 //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
@@ -143,9 +143,9 @@
                             /   12 rad. X100000
   --  5.    B // XR00000-0 //  6.4 au
 
-2403 E491666-8 R ..G.. ..	NI             	        	G8V               HHWGB           	Ingstel
-  --  1.    H // X3B0000-0 //  0.4 au
-  --  2.    H // X1D0000-0 //  0.8 au
+2403 E491666-8 R ..G.. ..	NI             	        	G2V               HHWGB           	Sargon
+  --  1.    H // X3D0000-0 //  0.4 au
+  --  2.    H // X1A0000-0 //  0.8 au
                             /    3 rad. X540000
                             /    8 rad. X100000
   --  3. *  W // E491666-8 //  1.6 au
@@ -155,7 +155,7 @@
   --  4.    G // Large GG  //  3.2 au
   --  5.    B // XR00000-0 //  6.4 au
 
-2703 C959555-A T ..G.. ..	NI             	N       	M6V               W.BBBG          	Gummidgy
+2703 C959555-A T ..G.. ..	NI             	N       	M2V               W.BBBG          	Flobee Mission
   --  1. *  W // C959555-A //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
@@ -163,14 +163,14 @@
   --  5.    B // XR00000-0 //  3.2 au
   --  6.    G // Small GG  //  6.4 au
 
-3103 D777566-6 T ..... ..	Ag,NI          	M       	M0V/DB            WB..S           	Nielad
+3103 D777566-6 T .S... ..	Ag,NI          	M       	M0V/DB            WB..S           	Muldavia
   --  1. *  W // D777566-6 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-0504 E82A669-6 T ..G.. AZ	NI             	M       	M4V/DB            W.B.G....S      	Helicon
+0504 E82A669-6 T ..G.. AZ	NI             	M       	M4V/DB            W.B.G....S      	Borthal
   --  1. *  W // E82A669-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
@@ -185,22 +185,22 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-0604 E658777-7 T ..G.. AZ	Ag             	M,M,N,S 	M6V               W.G.B           	Klairos
+0604 E658777-7 T ..G.. AZ	Ag             	M,M,N,S 	M4V               W.G.B           	Arachna
   --  1. *  W // E658777-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    B // XR00000-0 //  3.2 au
 
-1104 E569888-8 T ..G.. ..	Ri             	        	M2V/DB            WGGGS           	Quopp
+1104 E569888-8 T ..G.. ..	Ri             	        	M0V/DB            WGGGS           	Q
   --  1. *  W // E569888-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1304 C26599D-9 H ..... AZ	Hi             	M       	M0II              HHRHRHWRRR      	Far Away
-  --  1.    H // X3C0000-0 //  0.7 au
+1304 C26599D-9 H .S... AZ	Hi             	M       	M6II              HHRHRHWRRR      	Flesk
+  --  1.    H // X3A0000-0 //  0.7 au
   --  2.    H // X7B0000-0 //  1.0 au
                             /    8 rad. X100000
                             /   12 rad. X840000
@@ -210,7 +210,7 @@
                             /    8 rad. X200000
                             /   11 rad. X510000
   --  5.    R // X200000-0 //  5.9 au
-  --  6.    H // X0E0000-0 // 11.5 au
+  --  6.    H // X0B0000-0 // 11.5 au
                             /    1 rad. XR00000
                             /    6 rad. X730000
                             /    9 rad. X400000
@@ -221,7 +221,7 @@
   --  9.    R // X500000-0 // 89.9 au
   -- 10.    R // X400000-0 // 179.5 au
 
-0305 D7698AA-8 T ..G.. AZ	Ri             	N       	M0V               WG              	Audhumla
+0305 D7698AA-8 T .SG.. AZ	Ri             	N       	M4V               WG              	Arwy
   --  1. *  W // D7698AA-8 //  0.2 au
                             /    6 rad. X600000
                             /   11 rad. X700000
@@ -230,11 +230,11 @@
                             /    8 rad. X304000
                             /    9 rad. X104000
 
-0405 C464666-6 T ..G.. ..	Ag,NI,Ri       	M       	F2III             HRHWGRBGB       	Starkad
-  --  1.    H // X6C0000-0 //  0.4 au
+0405 C464666-6 T ..G.. ..	Ag,NI,Ri       	M       	F0III             HRHWGRBGB       	Midworld
+  --  1.    H // X6D0000-0 //  0.4 au
   --  2.    R // X300000-0 //  0.7 au
                             /    8 rad. X200000
-  --  3.    H // X5A0000-0 //  1.3 au
+  --  3.    H // X5E0000-0 //  1.3 au
   --  4. *  W // C464666-6 //  2.5 au
   --  5.    G // Large GG  //  4.9 au
   --  6.    R // X600000-0 //  9.7 au
@@ -252,7 +252,7 @@
                             /   13 rad. X313000
   --  9.    B // XR00000-0 // 76.9 au
 
-0505 B5A558A-B T ..G.. AZ	Fl,NI          	M       	G2V               RRWGRB          	Appelobetnees
+0505 B5A558A-B T ..G.. AZ	Fl,NI          	M       	G5V               RRWGRB          	Cerklicing
   --  1.    R // X400000-0 //  0.4 au
   --  2.    R // X300000-0 //  0.8 au
                             /    8 rad. X200000
@@ -263,13 +263,13 @@
                             /    8 rad. X513000
   --  6.    B // XR00000-0 // 12.8 au
 
-0805 C515599-9 F ..... AZ	IC,NI          	F       	M6V               W               	Marglot
+0805 C515599-9 F ....P AZ	IC,NI          	F       	M6V               W               	Bizmant
   --  1. *  W // C515599-9 //  0.2 au
                             /    1 rad. XR00000
                             /    8 rad. X203000
 
-1105 D646333-4 T ..... ..	Lo,Lt          	        	F2V/DB            H.RWRBS         	Gurgain
-  --  1.    H // X5C0000-0 //  0.3 au
+1105 D646333-4 T ..... ..	Lo,Lt          	        	F0V/DB            H.RWRBS         	Tintamarre
+  --  1.    H // X5D0000-0 //  0.3 au
                             /    7 rad. X740000
                             /    9 rad. X200000
   --  2.    . // .......-. //  0.6 au
@@ -282,7 +282,7 @@
   --  6.    B // XR00000-0 //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-1205 DA4A788-7 T ..... ..	               	F       	M0V/DB            WR..S           	Vexvelt
+1205 DA4A788-7 T .S... ..	               	F       	M6V/DB            WR..S           	Agora
   --  1. *  W // DA4A788-7 //  0.2 au
   --  2.    R // X300000-0 //  0.4 au
                             /    1 rad. XR00000
@@ -292,14 +292,14 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1405 D53A111-8 C ..G.. ..	Lo             	O       	M4V/DB            WGG.S           	Ree'hdworld
+1405 D53A111-8 C .SG.. ..	Lo             	O       	M0V/DB            WGG.S           	Telmun
   --  1. *  W // D53A111-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1805 C727222-8 T ..G.. ..	Lo             	        	M4V/DB            WBG....S        	Atab Abas
+1805 C727222-8 T ..G.. ..	Lo             	        	M4V/DB            WBG....S        	Navaros
   --  1. *  W // C727222-8 //  0.2 au
                             /    1 rad. XR00000
                             /   10 rad. X101000
@@ -311,7 +311,7 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-1905 D363444-4 T ..... ..	Lt,NI          	S       	M2V/DB            W.......S       	Westerix
+1905 D363444-4 T .S... ..	Lt,NI          	S       	M4V/DB            W.......S       	Denaria
   --  1. *  W // D363444-4 //  0.2 au
                             /    6 rad. X302000
                             /   10 rad. X401000
@@ -324,15 +324,15 @@
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // DB        // 51.2 au
 
-2705 DA5A67A-A T ..... AZ	NI             	M       	M4V               WBR             	Korvel
+2705 DA5A67A-A T ..... AZ	NI             	M       	M6V               WBR             	Tock
   --  1. *  W // DA5A67A-A //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    R // X000000-0 //  0.8 au
 
-2805 C696448-9 T ..... ..	NI             	O,N     	M2V               W               	Arachna
+2805 C696448-9 T .S... ..	NI             	O,N     	M2V               W               	Jm'ho
   --  1. *  W // C696448-9 //  0.2 au
 
-2905 B828222-8 T ..G.. ..	Lo             	F,M,F   	M0II              RRRRBRWGRG      	Gloob
+2905 B828222-8 T ..GC. ..	Lo             	F,M,F   	M4II              RRRRBRWGRG      	Dregocia
   --  1.    R // X600000-0 //  0.7 au
   --  2.    R // X100000-0 //  1.0 au
   --  3.    R // X200000-0 //  1.7 au
@@ -349,7 +349,7 @@
                             /    9 rad. X102000
   -- 10.    G // Large GG  // 179.5 au
 
-3005 B802337-B F ..... ..	IC,Lo,Va       	N,M,M   	M0V/DB            WR..S           	Florana
+3005 B802337-B F ...C. ..	IC,Lo,Va       	N,M,M   	M6V/DB            WR..S           	Germania
   --  1. *  W // B802337-B //  0.2 au
                             /   13 rad. X300000
   --  2.    R // X400000-0 //  0.4 au
@@ -357,7 +357,7 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2706 C536335-5 F ..G.. ..	Lo,Lt          	F       	G2V               RRWGBGB         	Eagle
+2706 C536335-5 F .SG.. ..	Lo,Lt          	F       	G0V               RRWGBGB         	Cheyne
   --  1.    R // X500000-0 //  0.4 au
                             /    6 rad. X100000
                             /    8 rad. X300000
@@ -371,10 +371,10 @@
   --  6.    G // Large GG  // 12.8 au
   --  7.    B // XR00000-0 // 25.6 au
 
-0207 AB3A155-B F ..... ..	Lo             	M,M,O   	M0V               W               	Boodie Nen
+0207 AB3A155-B F N.... ..	Lo             	M,M,O   	M4V               W               	Nhar-Gk'ok
   --  1. *  W // AB3A155-B //  0.2 au
 
-0307 D579889-8 T ..... AZ	               	M       	M6V               WBR             	Locris
+0307 D579889-8 T ..... AZ	               	M       	M4V               WBR             	Labura
   --  1. *  W // D579889-8 //  0.2 au
                             /    1 rad. XR00000
   --  2.    B // XR00000-0 //  0.4 au
@@ -383,8 +383,8 @@
                             /    8 rad. X626000
                             /    9 rad. X303000
 
-0607 E747333-5 T ..... ..	Lo,Lt          	N       	F0V               HBRWR           	Rhodia
-  --  1.    H // X7B0000-0 //  0.3 au
+0607 E747333-5 T ..... ..	Lo,Lt          	N       	F2V               HBRWR           	Van Maanan
+  --  1.    H // X7A0000-0 //  0.3 au
                             /    6 rad. X730000
   --  2.    B // XR00000-0 //  0.6 au
   --  3.    R // X400000-0 //  1.2 au
@@ -396,25 +396,25 @@
                             /    1 rad. XR00000
                             /    3 rad. XR00000
 
-1507 C243777-9 C ..G.. AZ	Po             	M,O     	M0V/DB            WRGGS           	Quarta
+1507 C243777-9 C .SG.. AZ	Po             	M,O     	M2V/DB            WRGGS           	Cynthia
   --  1. *  W // C243777-9 //  0.2 au
   --  2.    R // X400000-0 //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2007 C4547BB-7 T ..... AZ	Ag             	N,N     	G2V               RBRW            	Sandurst
+2007 C4547BB-7 T .S..P AZ	Ag             	N,N     	G5V               RBRW            	Ragnarok
   --  1.    R // X400000-0 //  0.3 au
                             /    1 rad. XR00000
   --  2.    B // XR00000-0 //  0.6 au
   --  3.    R // X400000-0 //  1.2 au
   --  4. *  W // C4547BB-7 //  2.4 au
 
-2107 CB7A335-A T ..... ..	Lo             	M,N,F   	M6V               W               	Koozebane
+2107 CB7A335-A T .S.C. ..	Lo             	M,N,F   	M0V               W               	Pern
   --  1. *  W // CB7A335-A //  0.2 au
                             /    9 rad. X300000
 
-2407 DBA86AA-9 H ..G.. AZ	Fl,NI          	F       	M4V/M0V           WGG....S        	Lucifer
+2407 DBA86AA-9 H ..G.P AZ	Fl,NI          	F       	M6V/M6V           WGG....S        	Rohini
   --  1. *  W // DBA86AA-9 //  0.2 au
   --  2.    G // Small GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -425,9 +425,9 @@
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
-  --  8. -  S // M0V       // 25.6 au
+  --  8. -  S // M6V       // 25.6 au
 
-2607 D688599-5 T ..G.. AZ	Ag,Lt,NI       	N       	F0V               R.WGRGGG        	Hawk
+2607 D688599-5 T .SG.. AZ	Ag,Lt,NI       	N       	F5V               R.WGRGGG        	Jast
   --  1.    R // X500000-0 //  0.4 au
                             /    2 rad. XR00000
                             /    9 rad. X520000
@@ -449,7 +449,7 @@
                             /    9 rad. X304000
                             /   12 rad. X347000
 
-2707 D929222-9 C ..G.. ..	Lo             	N,N     	M4V/DB            WGR....S        	Omagh
+2707 D929222-9 C .SG.. ..	Lo             	N,N     	M2V/DB            WGR....S        	Carsus
   --  1. *  W // D929222-9 //  0.2 au
                             /    1 rad. XR00000
                             /    8 rad. X200000
@@ -464,7 +464,7 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-0108 B767000-0 T ..G.. AZ	Ba,Lt          	        	F5V               HBWGGR          	Kolo
+0108 B767000-0 T ..GC. AZ	Ba,Lt          	        	F0V               HBWGGR          	Wardhaven
   --  1.    H // X2C0000-0 //  0.4 au
   --  2.    B // XR00000-0 //  0.8 au
   --  3. *  W // B767000-0 //  1.6 au
@@ -477,11 +477,11 @@
                             /   13 rad. X408000
   --  6.    R // X600000-0 // 12.8 au
 
-0208 EB4A555-6 F ..G.. ..	NI             	N,M,O   	M2V               WG              	Timdo
+0208 EB4A555-6 F ..G.. ..	NI             	N,M,O   	M2V               WG              	Orsha
   --  1. *  W // EB4A555-6 //  0.2 au
   --  2.    G // Small GG  //  0.4 au
 
-0908 D565555-5 T ..G.. ..	Ag,Lt,NI       	M       	M4V               WGRGGG          	Aspahan
+0908 D565555-5 T .SG.. ..	Ag,Lt,NI       	M       	M0V               WGRGGG          	Folsom
   --  1. *  W // D565555-5 //  0.2 au
                             /    4 rad. X603000
                             /  250 rad. X600000
@@ -500,7 +500,7 @@
                             /    9 rad. X304000
                             /   10 rad. X106000
 
-2708 C8A6777-9 H ..G.. AZ	Fl             	O,O     	G8V/DB            R.RWBGS         	Vinci
+2708 C8A6777-9 H .SG.. AZ	Fl             	O,O     	G2V/DB            R.RWBGS         	Kegron Pluva
   --  1.    R // X300000-0 //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    R // X100000-0 //  1.2 au
@@ -512,7 +512,7 @@
   --  6.    G // Large GG  //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-2908 E9797AA-7 T ..G.. AZ	               	        	M6V               WBGG            	Barter
+2908 E9797AA-7 T ..G.. AZ	               	        	M4V               WBGG            	Jm'ho
   --  1. *  W // E9797AA-7 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -521,7 +521,7 @@
                             /    7 rad. X103000
   --  4.    G // Large GG  //  1.6 au
 
-0109 B637599-B F ..G.. AZ	NI             	        	M0V               WBR.GG          	Zeltoldimar
+0109 B637599-B F NSGC. AZ	NI             	        	M6V               WBR.GG          	We Made It
   --  1. *  W // B637599-B //  0.2 au
                             /    3 rad. XR00000
   --  2.    B // XR00000-0 //  0.4 au
@@ -530,10 +530,10 @@
   --  5.    G // Large GG  //  3.2 au
   --  6.    G // Large GG  //  6.4 au
 
-0309 B647444-9 T ..G.. ..	NI             	F       	M0III             HHHRWBG         	Caligula
-  --  1.    H // X3D0000-0 //  0.5 au
-  --  2.    H // X5A0000-0 //  0.9 au
-  --  3.    H // X8A0000-0 //  1.7 au
+0309 B647444-9 T N.G.. ..	NI             	F       	M2III             HHHRWBG         	Alexandria
+  --  1.    H // X3A0000-0 //  0.5 au
+  --  2.    H // X5B0000-0 //  0.9 au
+  --  3.    H // X8D0000-0 //  1.7 au
   --  4.    R // X600000-0 //  3.3 au
                             /    2 rad. XR00000
   --  5. *  W // B647444-9 //  6.5 au
@@ -542,13 +542,13 @@
   --  7.    G // Large GG  // 25.7 au
                             /    8 rad. X102000
 
-0409 B72779C-7 T ..G.. AZ	               	M       	F2V               RRHWG.G         	Los Vada
+0409 B72779C-7 T .SGC. AZ	               	M       	F0V               RRHWG.G         	Pirri
   --  1.    R // X800000-0 //  0.3 au
                             /    2 rad. XR00000
                             /    7 rad. X400000
   --  2.    R // X600000-0 //  0.6 au
                             /    3 rad. X300000
-  --  3.    H // X3D0000-0 //  1.2 au
+  --  3.    H // X3C0000-0 //  1.2 au
                             /    6 rad. X760000
                             /   10 rad. X410000
                             /   11 rad. X320000
@@ -565,8 +565,8 @@
                             /    9 rad. X203000
                             /   12 rad. X303000
 
-0809 D5858DF-8 T ..G.. ..	Ri             	N,M     	G5V               H.WG.GG         	Grindal
-  --  1.    H // X6C0000-0 //  0.4 au
+0809 D5858DF-8 T .SG.. ..	Ri             	N,M     	G2V               H.WG.GG         	Orban
+  --  1.    H // X6D0000-0 //  0.4 au
                             /    6 rad. X100000
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // D5858DF-8 //  1.6 au
@@ -577,10 +577,10 @@
   --  6.    G // Large GG  // 12.8 au
   --  7.    G // Large GG  // 25.6 au
 
-2209 B767344-B F ..... ..	Lo             	N       	M6V               W               	Refusis
+2209 B767344-B F .S.C. ..	Lo             	N       	M0V               W               	Catarkhus
   --  1. *  W // B767344-B //  0.2 au
 
-2909 C898000-0 T ..G.. AZ	Ba,Lt          	        	M4V               WRG             	Tarn Vedra
+2909 C898000-0 T .SG.. AZ	Ba,Lt          	        	M0V               WRG             	Dracon
   --  1. *  W // C898000-0 //  0.2 au
                             /    6 rad. X200000
   --  2.    R // X300000-0 //  0.4 au
@@ -592,7 +592,7 @@
                             /   10 rad. X404000
                             /   12 rad. X733000
 
-1710 B356566-A T ..G.. ..	Ag,NI          	N,O,F   	M2V/DB            WG.......S      	Cerberi
+1710 B356566-A T .SG.. ..	Ag,NI          	N,O,F   	M0V/DB            WG.......S      	Hospital
   --  1. *  W // B356566-A //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -604,13 +604,13 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2010 D757999-9 C ..... AZ	Hi             	N       	G0V               .BHW            	Thuban
+2010 D757999-9 C ..... AZ	Hi             	N       	G5V               .BHW            	Reesethree
   --  1.    . // .......-. //  0.3 au
   --  2.    B // XR00000-0 //  0.6 au
-  --  3.    H // X5E0000-0 //  1.2 au
+  --  3.    H // X5A0000-0 //  1.2 au
   --  4. *  W // D757999-9 //  2.4 au
 
-2510 E212666-8 F ..... ..	IC,Na,NI       	N       	M2V/DB            W...S           	Mysterio
+2510 E212666-8 F ..... ..	IC,Na,NI       	N       	M2V/DB            W...S           	Bucol
   --  1. *  W // E212666-8 //  0.2 au
                             /    1 rad. XR00000
                             /    9 rad. X301000
@@ -619,7 +619,7 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-3010 C84A788-7 F ..... ..	               	N       	F0IV/DB           RHBWB....S      	Fasser
+3010 C84A788-7 F ..... ..	               	N       	F0IV/DB           RHBWB....S      	Camelot
   --  1.    R // X400000-0 //  0.3 au
   --  2.    H // X7D0000-0 //  0.6 au
                             /    2 rad. XR00000
@@ -633,7 +633,7 @@
   --  9.    . // .......-. // 76.8 au
   -- 10. -  S // DB        // 153.6 au
 
-0111 C545888-8 T ..G.. ..	               	N       	M6V/DB            WR.S            	Demos
+0111 C545888-8 T .SG.. ..	               	N       	M6V/DB            WR.S            	Rigel
   --  1. *  W // C545888-8 //  0.2 au
                             /    3 rad. XR00000
                             /    4 rad. X400000
@@ -643,7 +643,7 @@
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-0811 A73A68A-A F ..G.. AZ	NI             	S,F     	G0V               BRW.G           	Moy
+0811 A73A68A-A F ..GC. AZ	NI             	S,F     	G5V               BRW.G           	Kaihapa
   --  1.    B // XR00000-0 //  0.4 au
   --  2.    R // X600000-0 //  0.8 au
   --  3. *  W // A73A68A-A //  1.6 au
@@ -658,11 +658,11 @@
                             /   10 rad. X101000
                             /   11 rad. X105000
 
-1111 B546444-B T ..G.. ..	NI             	N,S     	M4III             HHH.WG          	Jijo
+1111 B546444-B T ..GC. ..	NI             	N,S     	M0III             HHH.WG          	Aganip
   --  1.    H // X7E0000-0 //  0.5 au
                             /    1 rad. XR00000
   --  2.    H // X0A0000-0 //  0.8 au
-  --  3.    H // X6C0000-0 //  1.5 au
+  --  3.    H // X6B0000-0 //  1.5 au
                             /    6 rad. X200000
                             /    7 rad. X100000
                             /   13 rad. X200000
@@ -670,7 +670,7 @@
   --  5. *  W // B546444-B //  5.7 au
   --  6.    G // Large GG  // 11.3 au
 
-1311 D445688-7 T ..G.. ..	Ag,NI          	P,N,F   	M4V               WGR.GB          	Prima
+1311 D445688-7 T ..G.. ..	Ag,NI          	P,N,F   	M2V               WGR.GB          	Ithavoll
   --  1. *  W // D445688-7 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /   13 rad. X313000
@@ -679,7 +679,7 @@
   --  5.    G // Large GG  //  3.2 au
   --  6.    B // XR00000-0 //  6.4 au
 
-1411 B95A7AA-A F ..... AZ	               	F       	F0V/DB            ..RW.S          	Oseidon
+1411 B95A7AA-A F ..... AZ	               	F       	F5V/DB            ..RW.S          	Mollan
   --  1.    . // .......-. //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    R // X900000-0 //  1.2 au
@@ -688,7 +688,7 @@
   --  5.    . // .......-. //  4.8 au
   --  6.    S // DB        //  9.6 au
 
-1711 C9A9777-A T ..G.. AZ	Fl             	M,M     	M4V/DB            WGB..S          	Thesalina
+1711 C9A9777-A T ..G.. AZ	Fl             	M,M     	M4V/DB            WGB..S          	Fomalhaut
   --  1. *  W // C9A9777-A //  0.2 au
                             /   13 rad. X405000
   --  2.    G // Small GG  //  0.4 au
@@ -697,7 +697,7 @@
   --  5.    . // .......-. //  3.2 au
   --  6.    S // DB        //  6.4 au
 
-2111 E566000-0 F ..G.. AZ	Ba,Lt          	        	M6V/DB            WGG.GB...S      	Minerva
+2111 E566000-0 F ..G.. AZ	Ba,Lt          	        	M0V/DB            WGG.GB...S      	Moyaba
   --  1. *  W // E566000-0 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -709,7 +709,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2411 B668899-9 T ..G.. AZ	Ri             	N,P,M   	M6V/DB            W.RBG..S        	Osiris
+2411 B668899-9 T N.G.. AZ	Ri             	N,P,M   	M4V/DB            W.RBG..S        	Tymbrim
   --  1. *  W // B668899-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X700000-0 //  0.8 au
@@ -728,7 +728,7 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-2511 E356335-5 C ..G.. ..	Lo,Lt          	        	M6V/DB            WB..G.S         	Capaise
+2511 E356335-5 C ..G.. ..	Lo,Lt          	        	M4V/DB            WB..G.S         	Justicia
   --  1. *  W // E356335-5 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -737,7 +737,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-3111 E130333-7 T ..G.. ..	De,Lo,Po       	O,F     	G2IV              HRRWG.BG        	Albemarle
+3111 E130333-7 T ..G.. ..	De,Lo,Po       	O,F     	G8IV              HRRWG.BG        	York
   --  1.    H // X6D0000-0 //  0.4 au
   --  2.    R // X700000-0 //  0.7 au
   --  3.    R // X300000-0 //  1.4 au
@@ -755,7 +755,7 @@
   --  7.    B // XR00000-0 // 22.4 au
   --  8.    G // Large GG  // 44.8 au
 
-3211 EB5A344-8 T ..G.. ..	Lo             	M,S     	M6V               W.RG            	Tloona
+3211 EB5A344-8 T ..G.. ..	Lo             	M,S     	M4V               W.RG            	Candela
   --  1. *  W // EB5A344-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X700000-0 //  0.8 au
@@ -765,23 +765,23 @@
                             /    8 rad. X756000
                             /   10 rad. X510000
 
-0212 CA7A000-0 T ..... AZ	Ba,Lt          	        	M0V               W               	Dog
+0212 CA7A000-0 T ..... AZ	Ba,Lt          	        	M2V               W               	Plookesia
   --  1. *  W // CA7A000-0 //  0.2 au
 
-0612 DB3A666-6 T ..... ..	NI             	N,S     	M6V               W               	Livia
+0612 DB3A666-6 T .S... ..	NI             	N,S     	M6V               W               	Timdo
   --  1. *  W // DB3A666-6 //  0.2 au
 
-0812 C474555-8 T ..... ..	Ag,NI          	F,S     	F0V/DB            HBHW..S         	Endsa
-  --  1.    H // X5B0000-0 //  0.3 au
+0812 C474555-8 T ....P ..	Ag,NI          	F,S     	F5V/DB            HBHW..S         	Arrakis
+  --  1.    H // X5A0000-0 //  0.3 au
                             /    6 rad. X730000
   --  2.    B // XR00000-0 //  0.6 au
-  --  3.    H // X3A0000-0 //  1.2 au
+  --  3.    H // X3C0000-0 //  1.2 au
   --  4. *  W // C474555-8 //  2.4 au
   --  5.    . // .......-. //  4.8 au
   --  6.    . // .......-. //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-1612 D694555-8 T ..G.. ..	Ag,NI          	F,N,M   	M2V/DB            WBGRBB...S      	Down
+1612 D694555-8 T .SG.. ..	Ag,NI          	F,N,M   	M4V/DB            WBGRBB...S      	Sicily
   --  1. *  W // D694555-8 //  0.2 au
                             /    4 rad. X800000
                             /    8 rad. X300000
@@ -798,11 +798,11 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-0313 D556266-4 C ..... ..	Lo,Lt          	S       	M2V               WB              	Joao
+0313 D556266-4 C .S... ..	Lo,Lt          	S       	M2V               WB              	Clom
   --  1. *  W // D556266-4 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
 
-0413 B748999-9 T ..G.. AZ	Hi,In          	S       	M6V/DB            WG..S           	Hulle
+0413 B748999-9 T NSG.. AZ	Hi,In          	S       	M2V/DB            WG..S           	Shoa
   --  1. *  W // B748999-9 //  0.2 au
                             /    2 rad. XR00000
                             /    6 rad. X500000
@@ -817,14 +817,14 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-0813 C68A223-A T ..G.. ..	Lo             	N,O     	K5III             R.RHWBGGG       	Magha
+0813 C68A223-A T ..G.. ..	Lo             	N,O     	K5III             R.RHWBGGG       	Silvergalde
   --  1.    R // X200000-0 //  0.5 au
                             /    5 rad. X430000
   --  2.    . // .......-. //  0.8 au
   --  3.    R // X000000-0 //  1.5 au
                             /    6 rad. X330000
                             /    7 rad. X340000
-  --  4.    H // X5D0000-0 //  2.9 au
+  --  4.    H // X5C0000-0 //  2.9 au
   --  5. *  W // C68A223-A //  5.7 au
                             /    3 rad. XR00000
                             /    6 rad. X600000
@@ -843,7 +843,7 @@
                             /   10 rad. X105000
   --  9.    G // Large GG  // 89.7 au
 
-1313 C548555-6 T ..G.. ..	Ag,NI          	F,S,F   	G5V/DB            RRWS            	Tenebra
+1313 C548555-6 T ..G.. ..	Ag,NI          	F,S,F   	G0V/DB            RRWS            	Plateau
   --  1.    R // X300000-0 //  0.4 au
                             /    6 rad. X510000
                             /    7 rad. X200000
@@ -855,15 +855,15 @@
   --  3. *  W // C548555-6 //  1.6 au
   --  4.    S // DB        //  3.2 au
 
-2013 A535888-B T ..... ..	               	F,M,N   	M2V               W               	Shada
+2013 A535888-B T N.... ..	               	F,M,N   	M2V               W               	Melbourne
   --  1. *  W // A535888-B //  0.2 au
                             /    7 rad. X601000
 
-2713 E668888-8 T ..G.. ..	Ri             	M       	M4V               WG              	Margbwar
+2713 E668888-8 T ..G.. ..	Ri             	M       	M2V               WG              	Abaddon
   --  1. *  W // E668888-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
 
-2813 C567466-4 T ..G.. ..	Lt,NI          	F       	M2V               WBGGG           	Ratoon
+2813 C567466-4 T ..GC. ..	Lt,NI          	F       	M0V               WBGGG           	Far Dingle
   --  1. *  W // C567466-4 //  0.2 au
                             /   13 rad. X500000
   --  2.    B // XR00000-0 //  0.4 au
@@ -879,7 +879,7 @@
                             /    9 rad. X304000
   --  5.    G // Large GG  //  3.2 au
 
-2913 E74A444-9 T ..G.. ..	NI             	F       	K5V               .WGGBGG         	Argus
+2913 E74A444-9 T ..G.. ..	NI             	F       	K5V               .WGGBGG         	Bohraj
   --  1.    . // .......-. //  0.3 au
   --  2. *  W // E74A444-9 //  0.6 au
                             /    7 rad. X200000
@@ -895,9 +895,9 @@
                             /    9 rad. X422000
   --  7.    G // Large GG  // 19.2 au
 
-3213 E658445-7 T ..G.. ..	NI             	        	F2V               HHRWBGGB        	Buchad
-  --  1.    H // X8B0000-0 //  0.3 au
-  --  2.    H // X5D0000-0 //  0.6 au
+3213 E658445-7 T ..G.. ..	NI             	        	F5V               HHRWBGGB        	Brevor
+  --  1.    H // X8A0000-0 //  0.3 au
+  --  2.    H // X5B0000-0 //  0.6 au
                             /    2 rad. XR00000
                             /    8 rad. X100000
   --  3.    R // X700000-0 //  1.2 au
@@ -917,11 +917,11 @@
                             /   11 rad. X103000
   --  8.    B // XR00000-0 // 38.4 au
 
-0614 CA5A88A-8 T ..... AZ	               	        	M2V               W               	Tasir Var
+0614 CA5A88A-8 T ..... AZ	               	        	M4V               W               	Tnp
   --  1. *  W // CA5A88A-8 //  0.2 au
                             /    9 rad. X303000
 
-1414 BA84779-B T ..G.. AZ	Ag,Ri          	        	M2V/DB            WG.S            	Tragona
+1414 BA84779-B T ..GC. AZ	Ag,Ri          	        	M4V/DB            WG.S            	Vanaheim
   --  1. *  W // BA84779-B //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    6 rad. X100000
@@ -931,7 +931,7 @@
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-1514 A787445-B T ..G.. ..	NI             	S,S     	M6V               WRGRG           	Metaluna
+1514 A787445-B T N.G.. ..	NI             	S,S     	M4V               WRGRG           	Maugham Station
   --  1. *  W // A787445-B //  0.2 au
                             /    4 rad. X100000
                             /    6 rad. X404000
@@ -947,7 +947,7 @@
                             /   11 rad. X514000
   --  5.    G // Large GG  //  3.2 au
 
-2514 D83A556-9 T ..G.. ..	NI             	M       	M0V               WGBG            	Yalerta
+2514 D83A556-9 T .SG.. ..	NI             	M       	M6V               WGBG            	Alzarius
   --  1. *  W // D83A556-9 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    2 rad. XR00000
@@ -956,14 +956,14 @@
   --  3.    B // XR00000-0 //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-2814 E377578-9 T ..G.. AZ	Ag,NI          	M       	M6V               WGGG            	Ayisha
+2814 E377578-9 T ..G.. AZ	Ag,NI          	M       	M2V               WGGG            	Riddle
   --  1. *  W // E377578-9 //  0.2 au
                             /   11 rad. X600000
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-3014 C677666-6 T ..... ..	Ag,NI          	M,S,M   	M6V/DB            W...S           	Pirri
+3014 C677666-6 T ..... ..	Ag,NI          	M,S,M   	M4V/DB            W...S           	Jean
   --  1. *  W // C677666-6 //  0.2 au
                             /   10 rad. X501000
                             /   12 rad. X204000
@@ -972,24 +972,24 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-0315 C64677B-A T ..... AZ	Ag             	F,M     	A0IV              RHRBW           	Wizard
+0315 C64677B-A T ..... AZ	Ag             	F,M     	A5IV              RHRBW           	Dinadh
   --  1.    R // X700000-0 //  0.3 au
                             /    7 rad. X510000
                             /    8 rad. X200000
-  --  2.    H // X5C0000-0 //  0.6 au
+  --  2.    H // X5D0000-0 //  0.6 au
   --  3.    R // X300000-0 //  1.2 au
   --  4.    B // XR00000-0 //  2.4 au
   --  5. *  W // C64677B-A //  4.8 au
                             /    5 rad. X501000
 
-1815 B616999-9 F ..... AZ	Hi,IC,In       	        	A2IV/G0V          S...W           	Retha
+1815 B616999-9 F NS... AZ	Hi,IC,In       	        	A0IV/G0V          S...W           	Sulla
   --  1.    S // G0V       //  0.4 au
   --  2.    . // .......-. //  0.7 au
   --  3.    . // .......-. //  1.4 au
   --  4.    . // .......-. //  2.8 au
   --  5. *  W // B616999-9 //  5.6 au
 
-1915 B949111-7 F ..G.. ..	Lo             	        	M4V               WGRG            	Bija'dom
+1915 B949111-7 F NSGC. ..	Lo             	        	M0V               WGRG            	Hippolyte
   --  1. *  W // B949111-7 //  0.2 au
   --  2.    G // Small GG  //  0.4 au
   --  3.    R // XA00000-0 //  0.8 au
@@ -999,8 +999,8 @@
   --  4.    G // Large GG  //  1.6 au
                             /    8 rad. X308000
 
-2115 B868558-B T ..G.. ..	Ag,NI          	N,N,S   	F5V/DB            HRWG...S        	Sontara
-  --  1.    H // X8C0000-0 //  0.4 au
+2115 B868558-B T ..G.. ..	Ag,NI          	N,N,S   	F5V/DB            HRWG...S        	Zenno
+  --  1.    H // X8A0000-0 //  0.4 au
   --  2.    R // XA00000-0 //  0.8 au
                             /   10 rad. X100000
   --  3. *  W // B868558-B //  1.6 au
@@ -1010,7 +1010,7 @@
   --  7.    . // .......-. // 25.6 au
   --  8.    S // DB        // 51.2 au
 
-2815 E858112-7 T ..... ..	Lo             	        	M0V               WRBR            	Ridgetop
+2815 E858112-7 T ..... ..	Lo             	        	M2V               WRBR            	Jawbone
   --  1. *  W // E858112-7 //  0.2 au
                             /    2 rad. XR00000
                             /    9 rad. X500000
@@ -1018,17 +1018,17 @@
   --  3.    B // XR00000-0 //  0.8 au
   --  4.    R // X600000-0 //  1.6 au
 
-3115 C535ADF-A T ..... ..	Hi             	S       	F2V               .H.W            	Fatawa
+3115 C535ADF-A T ...C. ..	Hi             	S       	F2V               .H.W            	Chronos
   --  1.    . // .......-. //  0.3 au
-  --  2.    H // X5D0000-0 //  0.6 au
+  --  2.    H // X5C0000-0 //  0.6 au
                             /    3 rad. XR00000
                             /    7 rad. X100000
                             /   11 rad. X300000
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C535ADF-A //  2.4 au
 
-1516 B242555-A T ..G.. ..	NI,Po          	M       	G5V               HBWGBBG         	Aedl
-  --  1.    H // X5B0000-0 //  0.4 au
+1516 B242555-A T NSG.. ..	NI,Po          	M       	G5V               HBWGBBG         	Sharya
+  --  1.    H // X5A0000-0 //  0.4 au
                             /    1 rad. XR00000
                             /    7 rad. X120000
   --  2.    B // XR00000-0 //  0.8 au
@@ -1041,11 +1041,11 @@
                             /    7 rad. X420000
                             /    9 rad. X212000
 
-2016 B606555-B F ..G.. ..	IC,NI,Va       	N       	G0V/DB            HHRWBS          	Olar
-  --  1.    H // X3A0000-0 //  0.3 au
+2016 B606555-B F .SG.. ..	IC,NI,Va       	N       	G0V/DB            HHRWBS          	Jean
+  --  1.    H // X3D0000-0 //  0.3 au
                             /   10 rad. X620000
                             /   12 rad. X410000
-  --  2.    H // X1C0000-0 //  0.6 au
+  --  2.    H // X1B0000-0 //  0.6 au
   --  3.    R // X300000-0 //  1.2 au
                             /   11 rad. X620000
   --  4. *  W // B606555-B //  2.4 au
@@ -1055,7 +1055,7 @@
   --  5.    B // XR00000-0 //  4.8 au
   --  6.    S // DB        //  9.6 au
 
-2316 C264333-A C ..G.. ..	Lo             	F,N,S   	K0V               RWRGGGG         	Ley
+2316 C264333-A C ..G.. ..	Lo             	F,N,S   	K2V               RWRGGGG         	Patel
   --  1.    R // X300000-0 //  0.3 au
                             /    6 rad. X620000
   --  2. *  W // C264333-A //  0.6 au
@@ -1065,7 +1065,7 @@
   --  6.    G // Large GG  //  9.6 au
   --  7.    G // Large GG  // 19.2 au
 
-2916 C604336-8 F ..G.. ..	IC,Lo,Va       	N,N     	M6V               WGG             	Dhennar
+2916 C604336-8 F ..G.. ..	IC,Lo,Va       	N,N     	M6V               WGG             	The Pit
   --  1. *  W // C604336-8 //  0.2 au
                             /   11 rad. X400000
   --  2.    G // Large GG  //  0.4 au
@@ -1074,7 +1074,7 @@
                             /    6 rad. X225000
                             /    7 rad. X843000
 
-3016 B676444-7 T ..... ..	NI             	N,S,M   	M4V/G5VI          WRB....S        	Zoni
+3016 B676444-7 T .S.C. ..	NI             	N,S,M   	M4V/G0VI          WRB....S        	Moni
   --  1. *  W // B676444-7 //  0.2 au
   --  2.    R // X300000-0 //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
@@ -1082,9 +1082,9 @@
   --  5.    . // .......-. //  3.2 au
   --  6.    . // .......-. //  6.4 au
   --  7. -  . // .......-. // 12.8 au
-  --  8. -  S // G5VI      // 25.6 au
+  --  8. -  S // G0VI      // 25.6 au
 
-3116 D767257-8 T ..G.. ..	Lo             	M,O,M   	G5V/DB            GRWRGR..S       	Shen Xiu
+3116 D767257-8 T .SG.. ..	Lo             	M,O,M   	G0V/DB            GRWRGR..S       	Valhalla
   --  1.    G // Large GG  //  0.4 au
                             /    4 rad. X530000
                             /    6 rad. X730000
@@ -1112,7 +1112,7 @@
   --  8. -  . // .......-. // 51.2 au
   --  9. -  S // DB        // 102.4 au
 
-1017 D50366B-8 F ..G.. AZ	IC,Na,NI,Va    	N,M     	F2V               BHWR.BG         	Hooper
+1017 D50366B-8 F ..G.. AZ	IC,Na,NI,Va    	N,M     	F0V               BHWR.BG         	Rezerval
   --  1.    B // XR00000-0 //  0.4 au
   --  2.    H // X5D0000-0 //  0.8 au
   --  3. *  W // D50366B-8 //  1.6 au
@@ -1125,10 +1125,10 @@
   --  6.    B // XR00000-0 // 12.8 au
   --  7.    G // Large GG  // 25.6 au
 
-1217 EA8A8AA-8 T ..G.. AZ	Ri             	N       	F0V/DB            RHRW.S          	Van de Kamp
+1217 EA8A8AA-8 T ..G.. AZ	Ri             	N       	F0V/DB            RHRW.S          	Pellin
   --  1.    R // X200000-0 //  0.3 au
                             /  300 rad. X510000
-  --  2.    H // X3B0000-0 //  0.6 au
+  --  2.    H // X3D0000-0 //  0.6 au
                             /    6 rad. X760000
                             /   11 rad. X730000
   --  3.    R // X900000-0 //  1.2 au
@@ -1138,12 +1138,12 @@
   --  5.    . // .......-. //  4.8 au
   --  6.    S // DB        //  9.6 au
 
-1617 C150556-B C ..G.. ..	De,NI,Po       	M       	M0V               WG              	Fulgar
+1617 C150556-B C ..G.. ..	De,NI,Po       	M       	M4V               WG              	Archimedes
   --  1. *  W // C150556-B //  0.2 au
                             /    4 rad. X400000
   --  2.    G // Large GG  //  0.4 au
 
-2017 B838699-8 F ..G.. AZ	NI             	M,S     	M2V               WGGGG           	Alexandria
+2017 B838699-8 F N.G.. AZ	NI             	M,S     	M2V               WGGGG           	Rigel
   --  1. *  W // B838699-8 //  0.2 au
                             /    5 rad. X600000
                             /    9 rad. X300000
@@ -1155,8 +1155,8 @@
                             /    6 rad. X201000
                             /    9 rad. X102000
 
-2217 C767777-7 T ..G.. AZ	Ag,Ri          	N,M,S   	F5V               HR.WG           	Circe
-  --  1.    H // X9B0000-0 //  0.3 au
+2217 C767777-7 T .SG.. AZ	Ag,Ri          	N,M,S   	F5V               HR.WG           	Kegron Pluva
+  --  1.    H // X9C0000-0 //  0.3 au
                             /    5 rad. X200000
   --  2.    R // X000000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
@@ -1165,7 +1165,7 @@
                             /    5 rad. X401000
   --  5.    G // Large GG  //  4.8 au
 
-2717 C82A588-B F ..G.. ..	NI             	O       	M0V               WGGG            	Spiridon
+2717 C82A588-B F ..GCP ..	NI             	O       	M2V               WGGG            	Eros
   --  1. *  W // C82A588-B //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    1 rad. XR00000
@@ -1178,17 +1178,17 @@
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-0418 C86A9DE-9 T ..G.. ..	Hi             	        	M4V               WGGG            	Morglay
+0418 C86A9DE-9 T .SG.. ..	Hi             	        	M6V               WGGG            	Mynjhiro
   --  1. *  W // C86A9DE-9 //  0.2 au
                             /   10 rad. X201000
   --  2.    G // Small GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-0718 C919222-8 F ..... ..	IC,Lo          	F,S,M   	M6V               W               	Mahamba
+0718 C919222-8 F .S.C. ..	IC,Lo          	F,S,M   	M2V               W               	Tollana
   --  1. *  W // C919222-8 //  0.2 au
 
-0818 B676333-7 T ..... ..	Lo             	M       	M4III/M0VI        RBBRWS          	Moyaba
+0818 B676333-7 T .S.C. ..	Lo             	M       	M4III/M2VI        RBBRWS          	Zurnl
   --  1.    R // X200000-0 //  0.5 au
   --  2.    B // XR00000-0 //  0.8 au
   --  3.    B // XR00000-0 //  1.5 au
@@ -1196,9 +1196,9 @@
   --  5. *  W // B676333-7 //  5.7 au
                             /    8 rad. X600000
                             /   10 rad. X102000
-  --  6.    S // M0VI      // 11.3 au
+  --  6.    S // M2VI      // 11.3 au
 
-1718 B898ACC-A T ..... AZ	Hi,In          	N       	M0V/DB            W........S      	Grindal
+1718 B898ACC-A T N.... AZ	Hi,In          	N       	M2V/DB            W........S      	Aler
   --  1. *  W // B898ACC-A //  0.2 au
                             /    2 rad. XR00000
                             /    6 rad. X100000
@@ -1212,7 +1212,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2018 C343577-8 T ..G.. AZ	NI,Po          	M,N,N   	M4V               W.R.G           	Ghonsilya
+2018 C343577-8 T ..G.. AZ	NI,Po          	M,N,N   	M2V               W.R.G           	Chiron
   --  1. *  W // C343577-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X400000-0 //  0.8 au
@@ -1223,7 +1223,7 @@
                             /    8 rad. X303000
                             /    9 rad. X511000
 
-2218 D636569-5 C ..G.. AZ	Lt,NI          	N       	M0V               WRGG            	Narvi
+2218 D636569-5 C ..G.. AZ	Lt,NI          	N       	M2V               WRGG            	Galway
   --  1. *  W // D636569-5 //  0.2 au
                             /    9 rad. X300000
   --  2.    R // X500000-0 //  0.4 au
@@ -1233,15 +1233,15 @@
   --  3.    G // Large GG  //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-2718 A666335-B C ..G.. ..	Lo             	O       	F5V               .RWGG           	Candela
+2718 A666335-B C ..GC. ..	Lo             	O       	F5V               .RWGG           	Casagan
   --  1.    . // .......-. //  0.4 au
   --  2.    R // X200000-0 //  0.8 au
   --  3. *  W // A666335-B //  1.6 au
   --  4.    G // Large GG  //  3.2 au
   --  5.    G // Large GG  //  6.4 au
 
-3218 D82A9BE-9 F ..G.. ..	Hi,In          	        	M4II              HRRHRGWGRB      	Ellna
-  --  1.    H // X5B0000-0 //  0.7 au
+3218 D82A9BE-9 F .SG.. ..	Hi,In          	        	M6II              HRRHRGWGRB      	Aldebaran
+  --  1.    H // X5C0000-0 //  0.7 au
                             /    5 rad. X400000
   --  2.    R // X200000-0 //  1.0 au
                             /    6 rad. X510000
@@ -1260,7 +1260,7 @@
                             /   12 rad. X540000
   -- 10.    B // XR00000-0 // 179.5 au
 
-0219 A676666-8 T ..... ..	Ag,NI          	M,F     	M4V/DB            WR.S            	Flash
+0219 A676666-8 T NS... ..	Ag,NI          	M,F     	M4V/DB            WR.S            	Miranda
   --  1. *  W // A676666-8 //  0.2 au
                             /    2 rad. XR00000
                             /    4 rad. X101000
@@ -1269,9 +1269,9 @@
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-0419 CA2A666-7 T ..G.. ..	NI             	N,F     	F0III             .HBW.BGB        	Rossem
+0419 CA2A666-7 T ..G.. ..	NI             	N,F     	F2III             .HBW.BGB        	Asagarth
   --  1.    . // .......-. //  0.5 au
-  --  2.    H // X4A0000-0 //  0.9 au
+  --  2.    H // X4E0000-0 //  0.9 au
                             /    2 rad. XR00000
                             /    5 rad. X400000
                             /    8 rad. X200000
@@ -1288,7 +1288,7 @@
                             /    9 rad. X764000
   --  8.    B // XR00000-0 // 51.3 au
 
-1219 CA18555-9 F ..G.. ..	IC,NI          	N       	M4V/DB            WG.RG..S        	Ogron
+1219 CA18555-9 F ..GC. ..	IC,NI          	N       	M6V/DB            WG.RG..S        	Guna
   --  1. *  W // CA18555-9 //  0.2 au
                             /    1 rad. XR00000
   --  2.    G // Large GG  //  0.4 au
@@ -1300,16 +1300,16 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-1619 D457477-6 T ..G.. AZ	NI             	M       	M6V               WBGB            	Hekate
+1619 D457477-6 T .SG.. AZ	NI             	M       	M0V               WBGB            	Bravo
   --  1. *  W // D457477-6 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    G // Small GG  //  0.8 au
   --  4.    B // XR00000-0 //  1.6 au
 
-1719 C959888-8 T ..... ..	               	        	M0V               W               	Angvia
+1719 C959888-8 T .S... ..	               	        	M6V               W               	Vanaheim
   --  1. *  W // C959888-8 //  0.2 au
 
-2019 C280448-A R ..... ..	De,NI          	S,M,M   	F0V               RRRW            	Rimway
+2019 C280448-A R .S... ..	De,NI          	S,M,M   	F2V               RRRW            	Smyrno
   --  1.    R // X700000-0 //  0.3 au
                             /    1 rad. XR00000
                             /    7 rad. X300000
@@ -1323,7 +1323,7 @@
                             /    1 rad. XR00000
                             /    9 rad. X700000
 
-2219 X767235-2 T ..G.. ..	Lo,Lt          	S,F     	K2IV              RRWGRGGGB       	Calpurnia
+2219 X767235-2 T ..G.. ..	Lo,Lt          	S,F     	K5IV              RRWGRGGGB       	Harmonious Repose
   --  1.    R // X200000-0 //  0.4 au
                             /    4 rad. X220000
                             /    5 rad. X100000
@@ -1341,7 +1341,7 @@
   --  8.    G // Small GG  // 44.8 au
   --  9.    B // XR00000-0 // 89.6 au
 
-2519 A93A777-B C ..... AZ	               	S,O     	F0V               RBRWBRB         	Plastreodus
+2519 A93A777-B C ...C. AZ	               	S,O     	F2V               RBRWBRB         	Madrona
   --  1.    R // X700000-0 //  0.3 au
   --  2.    B // XR00000-0 //  0.6 au
   --  3.    R // X300000-0 //  1.2 au
@@ -1353,17 +1353,17 @@
                             /    7 rad. X104000
   --  7.    B // XR00000-0 // 19.2 au
 
-2619 C748237-9 F ..G.. ..	Lo             	F,N,M   	F0IV              HHBWRGB         	Quin
+2619 C748237-9 F ..GC. ..	Lo             	F,N,M   	F5IV              HHBWRGB         	Cynthia
   --  1.    H // X4A0000-0 //  0.4 au
                             /  125 rad. X630000
-  --  2.    H // XAD0000-0 //  0.7 au
+  --  2.    H // XAB0000-0 //  0.7 au
   --  3.    B // XR00000-0 //  1.4 au
   --  4. *  W // C748237-9 //  2.8 au
   --  5.    R // XA00000-0 //  5.6 au
   --  6.    G // Large GG  // 11.2 au
   --  7.    B // XR00000-0 // 22.4 au
 
-2719 D548233-7 T ..G.. ..	Lo             	N,O,F   	M4II              RRR.R.WGGGG     	Yiktor
+2719 D548233-7 T .SG.. ..	Lo             	N,O,F   	M6II              RRR.R.WGGGG     	Yandro
   --  1.    R // X300000-0 //  0.6 au
   --  2.    R // X300000-0 //  0.9 au
                             /    1 rad. XR00000
@@ -1380,7 +1380,7 @@
   -- 10.    G // Small GG  // 153.9 au
   -- 11.    G // Large GG  // 307.5 au
 
-0720 E797122-8 T ..G.. ..	Lo             	S       	M4V               WGGGGB          	Gulltopp
+0720 E797122-8 T ..G.. ..	Lo             	S       	M2V               WGGGGB          	Aries
   --  1. *  W // E797122-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -1397,12 +1397,12 @@
   --  5.    G // Large GG  //  3.2 au
   --  6.    B // XR00000-0 //  6.4 au
 
-0920 C5538BB-8 H ..... AZ	Po             	        	M6V               WB              	Grand Teton
+0920 C5538BB-8 H .S... AZ	Po             	        	M2V               WB              	Dreaden
   --  1. *  W // C5538BB-8 //  0.2 au
                             /    2 rad. XR00000
   --  2.    B // XR00000-0 //  0.4 au
 
-2320 C61688A-8 F ..G.. AZ	IC             	S,O     	K2V/M0VI/M2V      HWB.S....S      	Sarip
+2320 C61688A-8 F .SG.P AZ	IC             	S,O     	K5V/M0VI/M6V      HWB.S....S      	SK
   --  1.    H // X4E0000-0 //  0.3 au
                             /    9 rad. X840000
   --  2. *  W // C61688A-8 //  0.6 au
@@ -1413,16 +1413,16 @@
   --  7.    . // .......-. // 19.2 au
   --  8. -  . // .......-. // 38.4 au
   --  9. -  . // .......-. // 76.8 au
-  -- 10. -  S // M2V       // 153.6 au
+  -- 10. -  S // M6V       // 153.6 au
 
-0121 B8389CC-A T ..G.. AZ	Hi             	P,N     	M4V/DB            WG.S            	Chudra
+0121 B8389CC-A T ..GC. AZ	Hi             	P,N     	M4V/DB            WG.S            	Big Ben
   --  1. *  W // B8389CC-A //  0.2 au
                             /    3 rad. X300000
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-0321 EA4A666-6 T ..G.. ..	NI             	        	A2V               R.HWGG.G        	Bandraginus
+0321 EA4A666-6 T ..G.. ..	NI             	        	A5V               R.HWGG.G        	Tintamarre
   --  1.    R // X600000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3.    H // X5C0000-0 //  1.6 au
@@ -1435,7 +1435,7 @@
   --  7.    . // .......-. // 25.6 au
   --  8.    G // Large GG  // 51.2 au
 
-1021 C646345-8 T ..G.. ..	Lo             	        	F5II              R..RHWG.GB      	Ganzer
+1021 C646345-8 T ..G.P ..	Lo             	        	F2II              R..RHWG.GB      	Proamon
   --  1.    R // X200000-0 //  0.7 au
                             /    2 rad. XR00000
   --  2.    . // .......-. //  1.1 au
@@ -1458,7 +1458,7 @@
                             /   13 rad. X413000
   -- 10.    B // XR00000-0 // 205.1 au
 
-1421 D676578-6 T ..G.. AZ	Ag,NI          	M       	M2V               WGR             	Omivarium
+1421 D676578-6 T ..G.. AZ	Ag,NI          	M       	M2V               WGR             	Kingdom
   --  1. *  W // D676578-6 //  0.2 au
                             /    1 rad. XR00000
                             /    3 rad. XR00000
@@ -1466,7 +1466,7 @@
   --  2.    G // Large GG  //  0.4 au
   --  3.    R // X200000-0 //  0.8 au
 
-1921 B242888-A T ..G.. ..	Po             	P       	M4V/DB            WG.G.....S      	Caligula
+1921 B242888-A T ..G.. ..	Po             	P       	M2V/DB            WG.G.....S      	Tananius
   --  1. *  W // B242888-A //  0.2 au
                             /   11 rad. X600000
   --  2.    G // Large GG  //  0.4 au
@@ -1481,13 +1481,13 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2421 C565556-7 T ..G.. ..	Ag,NI          	        	M0V               WG              	Petaybee
+2421 C565556-7 T .SG.P ..	Ag,NI          	        	M6V               WG              	Decapod
   --  1. *  W // C565556-7 //  0.2 au
                             /    3 rad. X401000
                             /    8 rad. X402000
   --  2.    G // Large GG  //  0.4 au
 
-2521 B311558-B F ..G.. ..	IC,NI          	O,F     	M2V               WGRGBG          	Alzarius
+2521 B311558-B F ..G.. ..	IC,NI          	O,F     	M0V               WGRGBG          	Dis
   --  1. *  W // B311558-B //  0.2 au
                             /   11 rad. X100000
   --  2.    G // Large GG  //  0.4 au
@@ -1496,7 +1496,7 @@
   --  5.    B // XR00000-0 //  3.2 au
   --  6.    G // Large GG  //  6.4 au
 
-2921 BB88666-9 T ..G.. ..	Ag,NI,Ri       	O       	M4V               WGBRG           	Vhrugy
+2921 BB88666-9 T N.GC. ..	Ag,NI,Ri       	O       	M6V               WGBRG           	Kaesov
   --  1. *  W // BB88666-9 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    4 rad. X303000
@@ -1506,7 +1506,7 @@
   --  4.    R // X400000-0 //  1.6 au
   --  5.    G // Large GG  //  3.2 au
 
-0222 C37377A-A T ..G.. AZ	               	        	M2V/DB            WRBBGS          	Catalan
+0222 C37377A-A T ..G.P AZ	               	        	M4V/DB            WRBBGS          	Signik
   --  1. *  W // C37377A-A //  0.2 au
                             /    2 rad. XR00000
                             /    5 rad. X204000
@@ -1519,9 +1519,9 @@
   --  5.    G // Large GG  //  3.2 au
   --  6.    S // DB        //  6.4 au
 
-0422 B917111-B F ..G.. ..	IC,Lo          	N,N     	F0V/M4VI          RH.WGS          	Sick
+0422 B917111-B F ..G.. ..	IC,Lo          	N,N     	F0V/M2VI          RH.WGS          	Bija'dom
   --  1.    R // X500000-0 //  0.3 au
-  --  2.    H // X1C0000-0 //  0.6 au
+  --  2.    H // X1A0000-0 //  0.6 au
                             /    4 rad. X420000
                             /    5 rad. X100000
                             /    6 rad. X760000
@@ -1530,16 +1530,16 @@
                             /    1 rad. XR00000
                             /    7 rad. X300000
   --  5.    G // Large GG  //  4.8 au
-  --  6.    S // M4VI      //  9.6 au
+  --  6.    S // M2VI      //  9.6 au
 
-1122 D575555-5 T ..... ..	Ag,Lt,NI       	O,N     	M6V               WBB             	Beylix
+1122 D575555-5 T ..... ..	Ag,Lt,NI       	O,N     	M4V               WBB             	Naqsa
   --  1. *  W // D575555-5 //  0.2 au
                             /    2 rad. XR00000
                             /    3 rad. XR00000
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
 
-1622 C739689-7 F ..G.. AZ	NI             	F,F     	G2V               .RWBG           	Los Vada
+1622 C739689-7 F ..GC. AZ	NI             	F,F     	G2V               .RWBG           	Elyssium
   --  1.    . // .......-. //  0.4 au
   --  2.    R // X400000-0 //  0.8 au
                             /    7 rad. X620000
@@ -1550,7 +1550,7 @@
   --  4.    B // XR00000-0 //  3.2 au
   --  5.    G // Large GG  //  6.4 au
 
-2922 B272899-8 T ..G.. AZ	               	M       	M4V/DB            WGGG.....S      	Waterhole
+2922 B272899-8 T ..GC. AZ	               	M       	M6V/DB            WGGG.....S      	G'iri
   --  1. *  W // B272899-8 //  0.2 au
                             /    6 rad. X300000
                             /   12 rad. X501000
@@ -1572,7 +1572,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-3222 C92958B-9 T ..G.. AZ	NI             	        	M0V               WGRG            	Neranigh
+3222 C92958B-9 T ..G.. AZ	NI             	        	M4V               WGRG            	Paquin
   --  1. *  W // C92958B-9 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    R // X700000-0 //  0.8 au
@@ -1580,8 +1580,8 @@
                             /    8 rad. X514000
   --  4.    G // Small GG  //  1.6 au
 
-0823 DA7A688-6 C ..G.. ..	NI             	        	F0V               HRBWBGRG        	Zoranel
-  --  1.    H // X5D0000-0 //  0.3 au
+0823 DA7A688-6 C .SG.. ..	NI             	        	F2V               HRBWBGRG        	Aneth
+  --  1.    H // X5B0000-0 //  0.3 au
   --  2.    R // XA00000-0 //  0.6 au
   --  3.    B // XR00000-0 //  1.2 au
   --  4. *  W // DA7A688-6 //  2.4 au
@@ -1592,7 +1592,7 @@
   --  7.    R // X300000-0 // 19.2 au
   --  8.    G // Large GG  // 38.4 au
 
-0923 D95979D-7 C ..... AZ	               	N       	A5V/DB            HRRW..S         	Andat
+0923 D95979D-7 C ..... AZ	               	N       	A2V/DB            HRRW..S         	Babalu
   --  1.    H // X4D0000-0 //  0.4 au
   --  2.    R // X400000-0 //  0.8 au
                             /    6 rad. X640000
@@ -1607,7 +1607,7 @@
   --  6.    . // .......-. // 12.8 au
   --  7.    S // DB        // 25.6 au
 
-1023 E977899-8 H ..G.. AZ	               	N,F     	M6V/DB            WGGBG.S         	Hearth
+1023 E977899-8 H ..G.. AZ	               	N,F     	M6V/DB            WGGBG.S         	Warhead
   --  1. *  W // E977899-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -1618,7 +1618,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-1523 C494333-8 C ..G.. ..	Lo             	        	M6V               WGGBGB          	Horseye
+1523 C494333-8 C .SG.. ..	Lo             	        	M4V               WGGBGB          	Flamme
   --  1. *  W // C494333-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -1629,7 +1629,7 @@
   --  5.    G // Large GG  //  3.2 au
   --  6.    B // XR00000-0 //  6.4 au
 
-1823 C553557-8 H ..... ..	NI,Po          	F,M,M,F 	F5VI/DB           RWB......S      	Brightkinde
+1823 C553557-8 H ..... ..	NI,Po          	F,M,M,F 	F5VI/DB           RWB......S      	Daedelus
   --  1.    R // X100000-0 //  0.4 au
                             /    5 rad. X510000
                             /    8 rad. X300000
@@ -1647,7 +1647,7 @@
   --  9. -  . // .......-. // 89.6 au
   -- 10. -  S // DB        // 179.2 au
 
-3123 C414669-8 F ..G.. AZ	IC,NI          	F       	K0V/DB            RWRG..S         	Riks
+3123 C414669-8 F .SG.. AZ	IC,NI          	F       	K5V/DB            RWRG..S         	Linnisfarne
   --  1.    R // X600000-0 //  0.3 au
                             /    6 rad. X730000
                             /    8 rad. X640000
@@ -1664,7 +1664,7 @@
   --  6.    . // .......-. //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-0124 D85A333-5 T ..G.. ..	Lo,Lt          	        	M4V/DB            WBG.S           	Jacob Folly
+0124 D85A333-5 T .SG.. ..	Lo,Lt          	        	M0V/DB            WBG.S           	K
   --  1. *  W // D85A333-5 //  0.2 au
                             /   11 rad. X300000
   --  2.    B // XR00000-0 //  0.4 au
@@ -1672,8 +1672,8 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-0524 D130668-6 T ..G.. ..	De,Na,NI,Po    	F,N     	F2V               HRWGGGBG        	Alice
-  --  1.    H // X9D0000-0 //  0.4 au
+0524 D130668-6 T .SG.. ..	De,Na,NI,Po    	F,N     	F0V               HRWGGGBG        	Helion
+  --  1.    H // X9C0000-0 //  0.4 au
   --  2.    R // X500000-0 //  0.8 au
                             /    6 rad. X840000
                             /   11 rad. X740000
@@ -1692,14 +1692,14 @@
                             /    8 rad. X305000
                             /    9 rad. X330000
 
-1224 B86899A-B T ..... AZ	Hi             	        	K2V/DB            RWB.S           	Dirt
+1224 B86899A-B T ...C. AZ	Hi             	        	K5V/DB            RWB.S           	Kyleria
   --  1.    R // X400000-0 //  0.3 au
   --  2. *  W // B86899A-B //  0.6 au
   --  3.    B // XR00000-0 //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    S // DB        //  4.8 au
 
-1324 A838779-B T ..... AZ	               	        	M6V/DB            W......S        	Alexandria
+1324 A838779-B T ..... AZ	               	        	M6V/DB            W......S        	Hadriu
   --  1. *  W // A838779-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1709,7 +1709,7 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-1424 E96A133-4 T ..... ..	Lo,Lt          	        	M6V/DB            W.......S       	Gurgain
+1424 E96A133-4 T ..... ..	Lo,Lt          	        	M6V/DB            W.......S       	Tenebra
   --  1. *  W // E96A133-4 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1720,7 +1720,7 @@
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // DB        // 51.2 au
 
-1724 B748244-9 H ..G.. ..	Lo             	N       	F5III             .GRWGGGG        	Fornacis
+1724 B748244-9 H N.GC. ..	Lo             	N       	F0III             .GRWGGGG        	Tithonus
   --  1.    . // .......-. //  0.5 au
   --  2.    G // Small GG  //  0.9 au
   --  3.    R // X300000-0 //  1.7 au
@@ -1750,14 +1750,14 @@
                             /   11 rad. X411000
   --  8.    G // Large GG  // 51.3 au
 
-1924 C658455-A T ..G.. ..	NI             	M       	M6V               WB.G            	Dara
+1924 C658455-A T ..G.. ..	NI             	M       	M6V               WB.G            	Goat
   --  1. *  W // C658455-A //  0.2 au
                             /    3 rad. X300000
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-1325 B629666-A F ..G.. ..	NI             	F,N     	M2V               WBGBGG          	Baugenphyme
+1325 B629666-A F NSG.. ..	NI             	F,N     	M4V               WBGBGG          	Hyff
   --  1. *  W // B629666-A //  0.2 au
                             /    1 rad. XR00000
                             /    9 rad. X100000
@@ -1772,15 +1772,15 @@
                             /   12 rad. X202000
   --  6.    G // Large GG  //  6.4 au
 
-0726 C626446-9 T ..... ..	NI             	O       	M6V               WB              	Nebiru
+0726 C626446-9 T ..... ..	NI             	O       	M6V               WB              	Enesi
   --  1. *  W // C626446-9 //  0.2 au
                             /    1 rad. XR00000
                             /   10 rad. X800000
                             /   12 rad. X500000
   --  2.    B // XR00000-0 //  0.4 au
 
-1226 B6669CC-9 T ..G.. AZ	Hi             	        	G0V/DB            H.RW..S         	Apollo
-  --  1.    H // X9C0000-0 //  0.3 au
+1226 B6669CC-9 T NSG.. AZ	Hi             	        	G2V/DB            H.RW..S         	Niami
+  --  1.    H // X9D0000-0 //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    R // X400000-0 //  1.2 au
                             /    8 rad. X620000
@@ -1792,12 +1792,12 @@
   --  6.    . // .......-. //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-1526 B76A888-B T ..G.. ..	Ri             	S,F,F   	M0V               WBG             	Aneth
+1526 B76A888-B T .SGC. ..	Ri             	S,F,F   	M4V               WBG             	Golgafrincham
   --  1. *  W // B76A888-B //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    G // Large GG  //  0.8 au
 
-1626 A505000-0 F ..G.. AZ	Ba,IC,Lt,Va    	        	M6V               W.BGBG          	Tukaloose
+1626 A505000-0 F ..G.. AZ	Ba,IC,Lt,Va    	        	M2V               W.BGBG          	Xlephier
   --  1. *  W // A505000-0 //  0.2 au
                             /    2 rad. XR00000
                             /    8 rad. X104000
@@ -1812,7 +1812,7 @@
                             /    9 rad. X106000
                             /   11 rad. X103000
 
-2326 C353555-6 T ..G.. ..	NI,Po          	M,F     	M6V               W.RGGG          	Brezane
+2326 C353555-6 T ..G.. ..	NI,Po          	M,F     	M0V               W.RGGG          	Camden
   --  1. *  W // C353555-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X600000-0 //  0.8 au
@@ -1827,7 +1827,7 @@
                             /    8 rad. X424000
                             /    9 rad. X303000
 
-2526 D555377-8 T ..G.. AZ	Lo             	M,M     	K0V               RW.B.G          	Hekate
+2526 D555377-8 T .SG.. AZ	Lo             	M,M     	K0V               RW.B.G          	Ithavoll
   --  1.    R // X200000-0 //  0.3 au
                             /    2 rad. XR00000
                             /    5 rad. X200000
@@ -1845,7 +1845,7 @@
                             /   10 rad. X203000
                             /   12 rad. X206000
 
-2626 B929888-A T ..... ..	               	N,N     	F2V               .HRW            	Xanadu
+2626 B929888-A T .S... ..	               	N,N     	F2V               .HRW            	TP
   --  1.    . // .......-. //  0.3 au
   --  2.    H // X4D0000-0 //  0.6 au
   --  3.    R // X000000-0 //  1.2 au
@@ -1856,10 +1856,10 @@
                             /    8 rad. X400000
                             /    9 rad. X404000
 
-2926 D73858C-5 T ..... AZ	Lt,NI          	N,M     	M0V               W               	Siren
+2926 D73858C-5 T ..... AZ	Lt,NI          	N,M     	M4V               W               	Teta
   --  1. *  W // D73858C-5 //  0.2 au
 
-3226 C87A9CF-9 C ..G.. ..	Hi,In          	        	M2V/DB            WGGR....S       	Z'Ha'Dum
+3226 C87A9CF-9 C ..G.. ..	Hi,In          	        	M2V/DB            WGGR....S       	Logarto
   --  1. *  W // C87A9CF-9 //  0.2 au
                             /    3 rad. X600000
                             /    5 rad. X200000
@@ -1873,7 +1873,7 @@
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // DB        // 51.2 au
 
-0827 C334555-9 C ..G.. ..	NI             	F       	M6V/DB            WGG...S         	Endsa
+0827 C334555-9 C ..G.. ..	NI             	F       	M4V/DB            WGG...S         	Carsus
   --  1. *  W // C334555-9 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    6 rad. X864000
@@ -1885,7 +1885,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-1027 B738112-A T ..G.. ..	Lo             	M       	F0III             RRHWB..G        	Lacertae
+1027 B738112-A T .SG.. ..	Lo             	M       	F0III             RRHWB..G        	Quinnius
   --  1.    R // X500000-0 //  0.5 au
                             /    1 rad. XR00000
   --  2.    R // X900000-0 //  0.9 au
@@ -1899,7 +1899,7 @@
   --  7.    . // .......-. // 25.7 au
   --  8.    G // Large GG  // 51.3 au
 
-1827 C579111-8 T ..... ..	Lo             	S,N,M   	M2V/DB/DB         WB....S         	Sphinx
+1827 C579111-8 T .S... ..	Lo             	S,N,M   	M4V/DB/DB         WB....S         	Charon
   --  1. *  W // C579111-8 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -1908,14 +1908,14 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-1927 A444557-B T ..G.. ..	Ag,NI          	M,M,P,M 	K5V               RWGGG           	Vox Romanus
+1927 A444557-B T N.GC. ..	Ag,NI          	M,M,P,M 	K0V               RWGGG           	Lahmu
   --  1.    R // X700000-0 //  0.3 au
   --  2. *  W // A444557-B //  0.6 au
   --  3.    G // Large GG  //  1.2 au
   --  4.    G // Large GG  //  2.4 au
   --  5.    G // Large GG  //  4.8 au
 
-2727 C353668-7 T ..G.. ..	NI,Po          	M,N     	M2V/DB            WRG.....S       	Hurria
+2727 C353668-7 T ..G.P ..	NI,Po          	M,N     	M0V/DB            WRG.....S       	Valencia
   --  1. *  W // C353668-7 //  0.2 au
   --  2.    R // X200000-0 //  0.4 au
                             /    6 rad. X512000
@@ -1931,13 +1931,13 @@
   --  8. -  . // .......-. // 25.6 au
   --  9. -  S // DB        // 51.2 au
 
-0228 C52989A-8 F ..G.. AZ	               	M,S     	M2V               WRG             	Djiminid
+0228 C52989A-8 F ..GC. AZ	               	M,S     	M0V               WRG             	Terminus
   --  1. *  W // C52989A-8 //  0.2 au
                             /   10 rad. X600000
   --  2.    R // X200000-0 //  0.4 au
   --  3.    G // Large GG  //  0.8 au
 
-0928 E444569-5 T ..G.. AZ	Ag,Lt,NI       	O,M,M   	M6V/DB            WGRBS           	Zarathustra
+0928 E444569-5 T ..G.. AZ	Ag,Lt,NI       	O,M,M   	M4V/DB            WGRBS           	Xeriphas
   --  1. *  W // E444569-5 //  0.2 au
                             /    2 rad. XR00000
                             /    7 rad. X101000
@@ -1951,7 +1951,7 @@
   --  4.    B // XR00000-0 //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1628 B757479-B T ..G.. AZ	NI             	N       	M2V/DB            WRG....S        	Hablu
+1628 B757479-B T ..GC. AZ	NI             	N       	M4V/DB            WRG....S        	Golgotha
   --  1. *  W // B757479-B //  0.2 au
   --  2.    R // X000000-0 //  0.4 au
                             /    1 rad. XR00000
@@ -1963,7 +1963,7 @@
   --  7. -  . // .......-. // 12.8 au
   --  8. -  S // DB        // 25.6 au
 
-2728 D86A156-6 T ..G.. ..	Lo             	M,O     	F0V/DB            RRWGB.S         	Madrona
+2728 D86A156-6 T .SG.. ..	Lo             	M,O     	F2V/DB            RRWGB.S         	Salusa Secundus
   --  1.    R // X600000-0 //  0.4 au
                             /    1 rad. XR00000
   --  2.    R // X300000-0 //  0.8 au
@@ -1978,15 +1978,15 @@
   --  6.    . // .......-. // 12.8 au
   --  7.    S // DB        // 25.6 au
 
-3228 D494666-8 T ..... ..	Ag,NI          	S       	M4V/M2VI          WBB..S          	Xodo
+3228 D494666-8 T .S... ..	Ag,NI          	S       	M6V/M4VI          WBB..S          	Qamara
   --  1. *  W // D494666-8 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    . // .......-. //  3.2 au
-  --  6.    S // M2VI      //  6.4 au
+  --  6.    S // M4VI      //  6.4 au
 
-0529 C438444-7 T ..G.. ..	NI             	S       	M6V/DB            WS...G          	Tranquille
+0529 C438444-7 T ..GC. ..	NI             	S       	M0V/DB            WS...G          	Rafe
   --  1. *  W // C438444-7 //  0.2 au
                             /    7 rad. X200000
                             /   10 rad. X200000
@@ -1996,7 +1996,7 @@
   --  5.    . // .......-. //  3.2 au
   --  6.    G // Large GG  //  6.4 au
 
-0829 D6567BD-7 T ..G.. AZ	Ag             	M       	M0V               WGGB            	Panna
+0829 D6567BD-7 T ..G.. AZ	Ag             	M       	M6V               WGGB            	Tollana
   --  1. *  W // D6567BD-7 //  0.2 au
                             /    1 rad. XR00000
                             /    8 rad. X400000
@@ -2005,22 +2005,22 @@
   --  3.    G // Small GG  //  0.8 au
   --  4.    B // XR00000-0 //  1.6 au
 
-1229 C1506AA-A C ..G.. AZ	De,NI,Po       	        	M2V/DB            WG..S           	Caduces
+1229 C1506AA-A C .SG.. AZ	De,NI,Po       	        	M2V/DB            WG..S           	Klairos
   --  1. *  W // C1506AA-A //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1429 D849666-6 F ..G.. ..	NI             	N       	M6V/DB            WG..S           	Sepekte
+1429 D849666-6 F .SG.. ..	NI             	N       	M0V/DB            WG..S           	Cerulia
   --  1. *  W // D849666-6 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2129 A949444-A T ..G.. ..	NI             	N,M,S   	M4III             HRRRWG..G       	Adad
-  --  1.    H // X3D0000-0 //  0.5 au
+2129 A949444-A T N.GC. ..	NI             	N,M,S   	M6III             HRRRWG..G       	Dulkis
+  --  1.    H // X3C0000-0 //  0.5 au
                             /    8 rad. X410000
                             /   12 rad. X200000
   --  2.    R // X500000-0 //  0.8 au
@@ -2036,7 +2036,7 @@
   --  8.    . // .......-. // 44.9 au
   --  9.    G // Large GG  // 89.7 au
 
-3029 X737577-6 T ..G.. AZ	NI             	S,F     	M2V               WBGG            	Peladon
+3029 X737577-6 T ..G.. AZ	NI             	S,F     	M6V               WBGG            	Hazard
   --  1. *  W // X737577-6 //  0.2 au
                             /    1 rad. XR00000
                             /    4 rad. X700000
@@ -2049,18 +2049,18 @@
                             /    9 rad. X305000
                             /   11 rad. X516000
 
-3229 D848111-5 F ..G.. ..	Lo,Lt          	F,F     	M0V/DB            W..S            	Fargone
+3229 D848111-5 F .SG.. ..	Lo,Lt          	F,F     	M0V/DB            W..S            	Florana
   --  1. *  W // D848111-5 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-0430 B327222-B T ..... ..	Lo             	M       	M4V               W               	Rochard
+0430 B327222-B T NS... ..	Lo             	M       	M4V               W               	Sandurst
   --  1. *  W // B327222-B //  0.2 au
                             /    5 rad. X100000
                             /    7 rad. X100000
 
-0630 B676355-B H ..G.. ..	Lo             	S       	M4V               W.GGG           	Yravo
+0630 B676355-B H .SGC. ..	Lo             	S       	M6V               W.GGG           	Sangre
   --  1. *  W // B676355-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -2074,13 +2074,13 @@
                             /   12 rad. X303000
   --  5.    G // Large GG  //  3.2 au
 
-2030 B829555-9 C ..... ..	NI             	S       	M4V               W               	TP
+2030 B829555-9 C .S... ..	NI             	S       	M4V               W               	Vampire
   --  1. *  W // B829555-9 //  0.2 au
                             /    3 rad. XR00000
                             /    8 rad. X500000
                             /  100 rad. X400000
 
-2730 B58566A-8 T ..G.. AZ	Ag,NI,Ri       	        	M0V               WRB.BG          	Cordelet
+2730 B58566A-8 T ..GC. AZ	Ag,NI,Ri       	        	M2V               WRB.BG          	Annanworld
   --  1. *  W // B58566A-8 //  0.2 au
                             /    9 rad. X100000
   --  2.    R // X900000-0 //  0.4 au
@@ -2089,9 +2089,9 @@
   --  5.    B // XR00000-0 //  3.2 au
   --  6.    G // Large GG  //  6.4 au
 
-2830 BB4A111-A T ..G.. ..	Lo             	N       	A0II              .HHGHHWG.R      	Bear
+2830 BB4A111-A T N.G.. ..	Lo             	N       	A5II              .HHGHHWG.R      	Resurgam
   --  1.    . // .......-. //  0.8 au
-  --  2.    H // X4D0000-0 //  1.2 au
+  --  2.    H // X4E0000-0 //  1.2 au
                             /    1 rad. XR00000
                             /   11 rad. X300000
   --  3.    H // X2E0000-0 //  2.0 au
@@ -2100,8 +2100,8 @@
                             /    2 rad. XR00000
                             /    6 rad. X730000
                             /   10 rad. X620000
-  --  5.    H // X7E0000-0 //  6.8 au
-  --  6.    H // X5D0000-0 // 13.2 au
+  --  5.    H // X7D0000-0 //  6.8 au
+  --  6.    H // X5A0000-0 // 13.2 au
   --  7. *  W // BB4A111-A // 26.0 au
                             /    6 rad. X302000
                             /    8 rad. X202000
@@ -2110,7 +2110,7 @@
   -- 10.    R // X200000-0 // 205.2 au
                             /    1 rad. XR00000
 
-0831 C5486AA-6 T ..G.. AZ	Ag,NI          	F,O     	M2V               W.R.GG          	Alexandria
+0831 C5486AA-6 T .SG.. AZ	Ag,NI          	F,O     	M0V               W.R.GG          	Harmonia
   --  1. *  W // C5486AA-6 //  0.2 au
                             /    1 rad. XR00000
                             /    5 rad. X300000
@@ -2122,8 +2122,8 @@
                             /    7 rad. X867000
   --  6.    G // Large GG  //  6.4 au
 
-1631 C565AAA-A T ..G.. AZ	Hi             	F,M     	K2V/DB            HWG..S          	Sorrow
-  --  1.    H // X5C0000-0 //  0.3 au
+1631 C565AAA-A T .SG.. AZ	Hi             	F,M     	K0V/DB            HWG..S          	Mercator
+  --  1.    H // X5D0000-0 //  0.3 au
                             /    8 rad. X650000
                             /   10 rad. X840000
                             /   11 rad. X300000
@@ -2136,14 +2136,14 @@
   --  5.    . // .......-. //  4.8 au
   --  6.    S // DB        //  9.6 au
 
-1931 DA2A445-8 T ..G.. ..	NI             	F,F,M   	G0V               GHW.GBG         	Lystera
+1931 DA2A445-8 T ..G.. ..	NI             	F,F,M   	G5V               GHW.GBG         	Eternium
   --  1.    G // Large GG  //  0.4 au
                             /    2 rad. XR00000
                             /    5 rad. X510000
                             /    7 rad. X670000
                             /   11 rad. X620000
                             /   12 rad. X840000
-  --  2.    H // X3C0000-0 //  0.8 au
+  --  2.    H // X3D0000-0 //  0.8 au
                             /    5 rad. X400000
                             /    8 rad. X510000
   --  3. *  W // DA2A445-8 //  1.6 au
@@ -2156,7 +2156,7 @@
                             /   12 rad. X300000
                             /   13 rad. X403000
 
-2331 CB8A336-6 T ..G.. ..	Lo             	N,N,N   	M4V/DB            WGGRG.S         	Allosimanius Syneca
+2331 CB8A336-6 T ..G.P ..	Lo             	N,N,N   	M4V/DB            WGGRG.S         	Leseum
   --  1. *  W // CB8A336-6 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    1 rad. XR00000
@@ -2171,7 +2171,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-3131 E949888-8 T ..G.. ..	               	        	M6V               WGGR            	Salina
+3131 E949888-8 T ..G.. ..	               	        	M6V               WGGR            	Retha
   --  1. *  W // E949888-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    7 rad. X431000
@@ -2180,7 +2180,7 @@
   --  3.    G // Large GG  //  0.8 au
   --  4.    R // X900000-0 //  1.6 au
 
-0832 B82A336-A T ..G.. ..	Lo             	        	M0V/DB            WGGR.B...S      	Uxarieus
+0832 B82A336-A T ..G.. ..	Lo             	        	M6V/DB            WGGR.B...S      	Atab Abas
   --  1. *  W // B82A336-A //  0.2 au
                             /    4 rad. X301000
                             /   11 rad. X200000
@@ -2194,7 +2194,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-0932 B667558-B T ..G.. ..	Ag,NI          	S       	M0V               W.GG            	Xodo
+0932 B667558-B T NSGC. ..	Ag,NI          	S       	M0V               W.GG            	Centuris
   --  1. *  W // B667558-B //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -2204,7 +2204,7 @@
                             /    8 rad. X663000
                             /   13 rad. X201000
 
-2132 D868999-9 T ..... AZ	Hi             	O       	M2V/DB            W........S      	Zokk
+2132 D868999-9 T .S... AZ	Hi             	O       	M2V/DB            W........S      	Agni
   --  1. *  W // D868999-9 //  0.2 au
                             /    1 rad. XR00000
                             /    2 rad. XR00000
@@ -2218,8 +2218,8 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2332 D535337-6 T ..G.. ..	Lo             	N       	K0V/DB            HW.RRGS         	Thesalina
-  --  1.    H // X4A0000-0 //  0.3 au
+2332 D535337-6 T ..G.. ..	Lo             	N       	K0V/DB            HW.RRGS         	Hel
+  --  1.    H // X4D0000-0 //  0.3 au
   --  2. *  W // D535337-6 //  0.6 au
                             /    4 rad. X601000
                             /    5 rad. X100000
@@ -2237,8 +2237,8 @@
                             /    9 rad. X101000
   --  7.    S // DB        // 19.2 au
 
-2432 B3A3336-B T ..G.. AZ	Fl,Lo          	F,O     	F0V               HRWRG           	Krop Tor
-  --  1.    H // X7E0000-0 //  0.4 au
+2432 B3A3336-B T N.G.. AZ	Fl,Lo          	F,O     	F2V               HRWRG           	Serieve
+  --  1.    H // X7B0000-0 //  0.4 au
                             /    8 rad. X520000
                             /   13 rad. X400000
   --  2.    R // X700000-0 //  0.8 au
@@ -2249,9 +2249,9 @@
                             /    9 rad. X423000
   --  5.    G // Large GG  //  6.4 au
 
-0133 C46678D-9 T ..G.. AZ	Ag,Ri          	        	K0IV              .HWGGGG.G       	Stramlu Realm
+0133 C46678D-9 T ..G.P AZ	Ag,Ri          	        	K0IV              .HWGGGG.G       	Elag
   --  1.    . // .......-. //  0.3 au
-  --  2.    H // X7C0000-0 //  0.6 au
+  --  2.    H // X7E0000-0 //  0.6 au
   --  3. *  W // C46678D-9 //  1.2 au
   --  4.    G // Large GG  //  2.4 au
   --  5.    G // Large GG  //  4.8 au
@@ -2260,9 +2260,9 @@
   --  8.    . // .......-. // 38.4 au
   --  9.    G // Large GG  // 76.8 au
 
-0933 E555377-6 F ..G.. AZ	Lo             	M,F,M,O 	M0II              .HBR.RWGG       	Saudade
+0933 E555377-6 F ..G.. AZ	Lo             	M,F,M,O 	M4II              .HBR.RWGG       	Korvel
   --  1.    . // .......-. //  0.7 au
-  --  2.    H // X1A0000-0 //  1.0 au
+  --  2.    H // X1D0000-0 //  1.0 au
                             /    9 rad. X400000
                             /   10 rad. X640000
   --  3.    B // XR00000-0 //  1.7 au
@@ -2277,7 +2277,7 @@
                             /    8 rad. X524000
   --  9.    G // Small GG  // 89.9 au
 
-1633 B76A155-B C ..G.. ..	Lo             	        	M4V               WR.GG           	Delmak-O
+1633 B76A155-B C .SGC. ..	Lo             	        	M4V               WR.GG           	Shora
   --  1. *  W // B76A155-B //  0.2 au
                             /    8 rad. X303000
   --  2.    R // X400000-0 //  0.4 au
@@ -2286,14 +2286,14 @@
   --  4.    G // Large GG  //  1.6 au
   --  5.    G // Large GG  //  3.2 au
 
-1733 D669233-8 T ..G.. ..	Lo             	N,M     	M6V               W.GBG           	Tellantrum
+1733 D669233-8 T ..G.. ..	Lo             	N,M     	M2V               W.GBG           	Tupile
   --  1. *  W // D669233-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    G // Large GG  //  0.8 au
   --  4.    B // XR00000-0 //  1.6 au
   --  5.    G // Large GG  //  3.2 au
 
-2133 B7A5888-B H ..G.. AZ	Fl             	O       	M6V/DB            WGGG.....S      	Primus
+2133 B7A5888-B H ..GC. AZ	Fl             	O       	M4V/DB            WGGG.....S      	Toog
   --  1. *  W // B7A5888-B //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    1 rad. XR00000
@@ -2314,7 +2314,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2233 C5356BD-7 T ..G.. AZ	NI             	        	M6V               WBGR            	Kellac
+2233 C5356BD-7 T ..G.. AZ	NI             	        	M2V               WBGR            	Hurmuptha
   --  1. *  W // C5356BD-7 //  0.2 au
                             /    7 rad. X700000
                             /    8 rad. X500000
@@ -2324,10 +2324,10 @@
                             /    9 rad. X204000
                             /   11 rad. X206000
 
-3233 B33346A-B T ..G.. AZ	NI,Po          	F       	G0IV              RHRWG           	Trade
+3233 B33346A-B T .SG.. AZ	NI,Po          	F       	G5IV              RHRWG           	Capital
   --  1.    R // X200000-0 //  0.4 au
                             /    9 rad. X860000
-  --  2.    H // X6A0000-0 //  0.7 au
+  --  2.    H // X6C0000-0 //  0.7 au
                             /    9 rad. X440000
   --  3.    R // X200000-0 //  1.4 au
                             /    3 rad. XR00000
@@ -2336,14 +2336,14 @@
   --  4. *  W // B33346A-B //  2.8 au
   --  5.    G // Large GG  //  5.6 au
 
-0234 E477000-0 T ..G.. AZ	Ba,Lt          	        	K5V/DB            RW..S           	Blargon
+0234 E477000-0 T ..G.. AZ	Ba,Lt          	        	K2V/DB            RW..S           	Xipotetec
   --  1.    R // X900000-0 //  0.3 au
   --  2. *  W // E477000-0 //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4.    . // .......-. //  2.4 au
   --  5.    S // DB        //  4.8 au
 
-0334 B334112-B F ..G.. ..	Lo             	M,O     	M0V/DB            WGR.G....S      	Jaconda
+0334 B334112-B F ..GC. ..	Lo             	M,O     	M2V/DB            WGR.G....S      	Starkad
   --  1. *  W // B334112-B //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    1 rad. XR00000
@@ -2362,8 +2362,8 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-0834 C160222-9 T ..G.. ..	De,Lo          	O       	K5V               HWG..GG         	Thaleia
-  --  1.    H // X6C0000-0 //  0.3 au
+0834 C160222-9 T ..G.. ..	De,Lo          	O       	K2V               HWG..GG         	Bergerac
+  --  1.    H // X6E0000-0 //  0.3 au
                             /   10 rad. X630000
   --  2. *  W // C160222-9 //  0.6 au
   --  3.    G // Large GG  //  1.2 au
@@ -2372,13 +2372,13 @@
   --  6.    G // Large GG  //  9.6 au
   --  7.    G // Large GG  // 19.2 au
 
-2034 D818344-8 F ..G.. ..	IC,Lo          	N,O     	M0V               W.G             	Orgone
+2034 D818344-8 F .SG.. ..	IC,Lo          	N,O     	M6V               W.G             	Intinogurzibeshilaha
   --  1. *  W // D818344-8 //  0.2 au
                             /    9 rad. X400000
   --  2.    . // .......-. //  0.4 au
   --  3.    G // Large GG  //  0.8 au
 
-2334 D66A666-6 T ..G.. ..	NI,Ri          	M       	M6V/DB            WGR.S           	Redeye
+2334 D66A666-6 T ..G.. ..	NI,Ri          	M       	M4V/DB            WGR.S           	Umber
   --  1. *  W // D66A666-6 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    R // X400000-0 //  0.8 au
@@ -2387,12 +2387,12 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-3134 C6377AA-8 T ..... AZ	               	        	F2V               B.W             	Tammuz
+3134 C6377AA-8 T ..... AZ	               	        	F0V               B.W             	Chorrey
   --  1.    B // XR00000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // C6377AA-8 //  1.6 au
 
-0635 B474223-7 C ..... ..	Lo             	N       	M0III             .RR.W           	Fortunate Child
+0635 B474223-7 C .S.C. ..	Lo             	N       	M2III             .RR.W           	Poowadya
   --  1.    . // .......-. //  0.5 au
   --  2.    R // X200000-0 //  0.8 au
                             /    6 rad. X620000
@@ -2401,14 +2401,14 @@
   --  4.    . // .......-. //  2.9 au
   --  5. *  W // B474223-7 //  5.7 au
 
-0735 E666555-6 T ..G.. ..	Ag,NI          	F       	F5V/DB            R.W.S           	Indi
+0735 E666555-6 T ..G.. ..	Ag,NI          	F       	F2V/DB            R.W.S           	Saudade
   --  1.    R // X600000-0 //  0.4 au
   --  2.    . // .......-. //  0.8 au
   --  3. *  W // E666555-6 //  1.6 au
   --  4.    . // .......-. //  3.2 au
   --  5.    S // DB        //  6.4 au
 
-1535 C879778-7 T ..G.. AZ	               	S,F     	M4II              RRRBRRWGG       	Monet
+1535 C879778-7 T ..G.P AZ	               	S,F     	M4II              RRRBRRWGG       	Heinlein
   --  1.    R // X800000-0 //  0.7 au
                             /    2 rad. XR00000
   --  2.    R // X400000-0 //  1.0 au
@@ -2426,7 +2426,7 @@
   --  9.    G // Large GG  // 89.9 au
                             /   10 rad. X302000
 
-2035 X967222-2 H ..G.. ..	Lo,Lt          	        	M6V/DB            WG..S           	Sylvania
+2035 X967222-2 H ..G.. ..	Lo,Lt          	        	M2V/DB            WG..S           	Wega
   --  1. *  W // X967222-2 //  0.2 au
                             /    9 rad. X500000
   --  2.    G // Large GG  //  0.4 au
@@ -2434,7 +2434,7 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1036 C515238-8 F ..G.. ..	IC,Lo          	O       	G2V               RGWGBRG         	Arcady
+1036 C515238-8 F ..G.P ..	IC,Lo          	O       	G0V               RGWGBRG         	Shadow
   --  1.    R // X900000-0 //  0.4 au
   --  2.    G // Large GG  //  0.8 au
   --  3. *  W // C515238-8 //  1.6 au
@@ -2448,9 +2448,9 @@
   --  6.    R // X400000-0 // 12.8 au
   --  7.    G // Large GG  // 25.6 au
 
-1436 E636112-5 F ..G.. ..	Lo,Lt          	        	G5V/DB            HHWGG.S         	Tyranaël
-  --  1.    H // X5D0000-0 //  0.4 au
-  --  2.    H // X6E0000-0 //  0.8 au
+1436 E636112-5 F ..G.. ..	Lo,Lt          	        	G0V/DB            HHWGG.S         	Boondock
+  --  1.    H // X5E0000-0 //  0.4 au
+  --  2.    H // X6D0000-0 //  0.8 au
                             /    7 rad. X640000
                             /   11 rad. X520000
   --  3. *  W // E636112-5 //  1.6 au
@@ -2465,33 +2465,33 @@
   --  6.    . // .......-. // 12.8 au
   --  7.    S // DB        // 25.6 au
 
-1736 C293389-8 H ..... AZ	Lo             	S       	M0V/DB            W.S             	Arieska
+1736 C293389-8 H ..... AZ	Lo             	S       	M0V/DB            W.S             	Peekaboo
   --  1. *  W // C293389-8 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    S // DB        //  0.8 au
 
-2536 D470566-5 R ..... ..	De,Lt,NI       	N       	M2V/M2V           WR.S            	Tines'
+2536 D470566-5 R .S... ..	De,Lt,NI       	N       	M0V/M4V           WR.S            	San-Ska-Re
   --  1. *  W // D470566-5 //  0.2 au
   --  2.    R // X200000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
-  --  4.    S // M2V       //  1.6 au
+  --  4.    S // M4V       //  1.6 au
 
-2636 D61699D-9 F ..... AZ	Hi,IC,In       	        	F0V               RRWB            	Delphon
+2636 D61699D-9 F ..... AZ	Hi,IC,In       	        	F5V               RRWB            	Kiluwa
   --  1.    R // X500000-0 //  0.4 au
   --  2.    R // X400000-0 //  0.8 au
   --  3. *  W // D61699D-9 //  1.6 au
                             /    8 rad. X700000
   --  4.    B // XR00000-0 //  3.2 au
 
-2736 C434555-7 C ..... ..	NI             	F,O,S   	M6V               W               	Mongo
+2736 C434555-7 C ..... ..	NI             	F,O,S   	M6V               W               	Persephone
   --  1. *  W // C434555-7 //  0.2 au
                             /    7 rad. X401000
                             /   11 rad. X303000
 
-2936 C848000-0 T ..G.. AZ	Ba,Lt          	        	M0II/M6VI         R.S...W.G       	Zeos
+2936 C848000-0 T ..GC. AZ	Ba,Lt          	        	M4II/M4VI         R.S...W.G       	Nomolos
   --  1.    R // X600000-0 //  0.6 au
   --  2.    . // .......-. //  0.9 au
-  --  3.    S // M6VI      //  1.5 au
+  --  3.    S // M4VI      //  1.5 au
   --  4.    . // .......-. //  2.7 au
   --  5.    . // .......-. //  5.1 au
   --  6.    . // .......-. //  9.9 au
@@ -2499,14 +2499,14 @@
   --  8.    . // .......-. // 38.7 au
   --  9.    G // Large GG  // 77.1 au
 
-3036 E727669-6 F ..G.. AZ	NI             	F       	M0V               WGG             	Downunder
+3036 E727669-6 F ..G.. AZ	NI             	F       	M0V               WGG             	Mito
   --  1. *  W // E727669-6 //  0.2 au
                             /    8 rad. X400000
                             /   10 rad. X202000
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Small GG  //  0.8 au
 
-0837 E661255-5 R ..G.. ..	Lo,Lt          	M       	M6V/DB            WG..S           	Betelgeuse
+0837 E661255-5 R ..G.. ..	Lo,Lt          	M       	M0V/DB            WG..S           	Fendi
   --  1. *  W // E661255-5 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
                             /    4 rad. X735000
@@ -2520,7 +2520,7 @@
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-1037 D95A334-9 C ..... ..	Lo             	O,F     	M6V/DB            W.....S         	Lakertya
+1037 D95A334-9 C ..... ..	Lo             	O,F     	M6V/DB            W.....S         	Felis
   --  1. *  W // D95A334-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -2529,20 +2529,20 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-2437 C525566-7 T ..G.. ..	NI             	M       	M0V/DB            WB..S           	Ophiuchus
+2437 C525566-7 T ..GC. ..	NI             	M       	M6V/DB            WB..S           	Atlast
   --  1. *  W // C525566-7 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    . // .......-. //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2537 E648559-5 T ..... AZ	Ag,Lt,NI       	        	M2V/DB            W..S            	Greene
+2537 E648559-5 T ..... AZ	Ag,Lt,NI       	        	M4V/DB            W..S            	Bathyos
   --  1. *  W // E648559-5 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-2737 D526114-5 T ..G.. ..	Lo,Lt          	        	F5V/DB            BRW..S          	Lystera
+2737 D526114-5 T .SG.. ..	Lo,Lt          	        	F0V/DB            BRW..S          	Mela Five
   --  1.    B // XR00000-0 //  0.4 au
   --  2.    R // X400000-0 //  0.8 au
   --  3. *  W // D526114-5 //  1.6 au
@@ -2550,11 +2550,11 @@
   --  5.    . // .......-. //  6.4 au
   --  6.    S // DB        // 12.8 au
 
-2837 C87A456-A F ..... ..	NI             	S       	G2IV/DB           RH.WRS          	Shammat
+2837 C87A456-A F .S.C. ..	NI             	S       	G5IV/DB           RH.WRS          	Metaluna
   --  1.    R // X300000-0 //  0.4 au
                             /    2 rad. XR00000
                             /    7 rad. X300000
-  --  2.    H // X2B0000-0 //  0.7 au
+  --  2.    H // X2E0000-0 //  0.7 au
                             /    1 rad. XR00000
                             /    2 rad. XR00000
                             /   11 rad. X300000
@@ -2563,7 +2563,7 @@
   --  5.    R // X700000-0 //  5.6 au
   --  6.    S // DB        // 11.2 au
 
-3137 C497225-8 T ..G.. ..	Lo             	N,M     	M6V/DB            WGGGB....S      	Sanctuary
+3137 C497225-8 T .SG.P ..	Lo             	N,M     	M6V/DB            WGGGB....S      	Nomolos
   --  1. *  W // C497225-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    G // Large GG  //  0.8 au
@@ -2575,7 +2575,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-3237 EB2A145-7 F ..G.. ..	Lo             	        	M0V               WGGG            	Karadakk
+3237 EB2A145-7 F ..G.. ..	Lo             	        	M4V               WGGG            	Wallach-Eli
   --  1. *  W // EB2A145-7 //  0.2 au
                             /    4 rad. X501000
   --  2.    G // Large GG  //  0.4 au
@@ -2589,13 +2589,13 @@
                             /   10 rad. X105000
                             /   11 rad. X306000
 
-0138 B457444-8 T ..G.. ..	NI             	N,F,S   	M4V               WGRG            	Moy
+0138 B457444-8 T ..GC. ..	NI             	N,F,S   	M4V               WGRG            	Veridani
   --  1. *  W // B457444-8 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    R // X500000-0 //  0.8 au
   --  4.    G // Large GG  //  1.6 au
 
-0238 D777666-6 T ..... ..	Ag,NI          	M,M     	M0V/DB            W....S          	Kainui
+0238 D777666-6 T ..... ..	Ag,NI          	M,M     	M2V/DB            W....S          	Lea
   --  1. *  W // D777666-6 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -2603,7 +2603,7 @@
   --  5.    . // .......-. //  3.2 au
   --  6.    S // DB        //  6.4 au
 
-1438 D739333-7 F ..... ..	Lo             	N,S     	M4V/DB/DB         W.BBS....S      	Hablu
+1438 D739333-7 F .S... ..	Lo             	N,S     	M0V/DB/DB         W.BBS....S      	Aquitar
   --  1. *  W // D739333-7 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    B // XR00000-0 //  0.8 au
@@ -2615,7 +2615,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-1838 E949556-5 T ..G.. ..	Lt,NI          	        	F2IV/DB           R..WGG..S       	Miranda
+1838 E949556-5 T ..G.. ..	Lt,NI          	        	F5IV/DB           R..WGG..S       	Bortresoye
   --  1.    R // X600000-0 //  0.4 au
                             /    7 rad. X420000
                             /    9 rad. X620000
@@ -2633,18 +2633,18 @@
   --  8.    . // .......-. // 44.8 au
   --  9. -  S // DB        // 89.6 au
 
-2638 BB28555-9 H ..... ..	NI             	        	M6V/DB            W.RBS           	Riker
+2638 BB28555-9 H .S... ..	NI             	        	M6V/DB            W.RBS           	Bel
   --  1. *  W // BB28555-9 //  0.2 au
   --  2.    . // .......-. //  0.4 au
   --  3.    R // X200000-0 //  0.8 au
   --  4.    B // XR00000-0 //  1.6 au
   --  5.    S // DB        //  3.2 au
 
-2938 X2626AA-6 T ..... AZ	NI,Ri          	F       	M0V               WB              	Sayshell
+2938 X2626AA-6 T ..... AZ	NI,Ri          	F       	M0V               WB              	Euterpe
   --  1. *  W // X2626AA-6 //  0.2 au
   --  2.    B // XR00000-0 //  0.4 au
 
-0439 D252667-6 T ..G.. ..	NI,Po          	O       	M4V               WGG             	Tock
+0439 D252667-6 T ..G.. ..	NI,Po          	O       	M0V               WGG             	Bandicoot
   --  1. *  W // D252667-6 //  0.2 au
                             /   11 rad. X703000
   --  2.    G // Small GG  //  0.4 au
@@ -2655,8 +2655,8 @@
                             /    9 rad. X302000
                             /   10 rad. X407000
 
-0739 EA3A225-9 T ..G.. ..	Lo             	        	F0III/DB          HRHWG.S         	Constance
-  --  1.    H // X4E0000-0 //  0.5 au
+0739 EA3A225-9 T ..G.. ..	Lo             	        	F0III/DB          HRHWG.S         	Porcelo
+  --  1.    H // X4B0000-0 //  0.5 au
   --  2.    R // X700000-0 //  0.8 au
   --  3.    H // X6C0000-0 //  1.5 au
                             /    1 rad. XR00000
@@ -2670,7 +2670,7 @@
   --  6.    . // .......-. // 11.3 au
   --  7.    S // DB        // 22.5 au
 
-1039 D262466-4 T ..G.. ..	Lt,NI          	O       	M2V/DB            WG.R..S         	Vlhan
+1039 D262466-4 T .SG.. ..	Lt,NI          	O       	M6V/DB            WG.R..S         	Axista
   --  1. *  W // D262466-4 //  0.2 au
   --  2.    G // Large GG  //  0.4 au
   --  3.    . // .......-. //  0.8 au
@@ -2679,7 +2679,7 @@
   --  6.    . // .......-. //  6.4 au
   --  7. -  S // DB        // 12.8 au
 
-1639 E679789-7 T ..... AZ	               	N,F     	M2V/DB            W........S      	Dellaconda
+1639 E679789-7 T ..... AZ	               	N,F     	M6V/DB            W........S      	Kingdom
   --  1. *  W // E679789-7 //  0.2 au
                             /    5 rad. X400000
                             /    9 rad. X400000
@@ -2693,7 +2693,7 @@
   --  9. -  . // .......-. // 51.2 au
   -- 10. -  S // DB        // 102.4 au
 
-2039 BA4A111-B T ..... ..	Lo             	F       	F2V               .HRWRR          	Poowadya
+2140 C755737-9 T ...C. ..	Lo             	F       	F2V               .HRWRR          	Copa
   --  1.    . // .......-. //  0.3 au
   --  2.    H // X7C0000-0 //  0.6 au
   --  3.    R // X500000-0 //  1.2 au
@@ -2701,13 +2701,13 @@
   --  5.    R // X400000-0 //  4.8 au
   --  6.    R // X300000-0 //  9.6 au
 
-2839 A75779A-8 T ..G.. AZ	Ag             	O       	M0V               WG              	Zule
+2839 A75779A-8 T N.GC. AZ	Ag             	O       	M4V               WG              	Yugopotamia
   --  1. *  W // A75779A-8 //  0.2 au
                             /    7 rad. X200000
   --  2.    G // Large GG  //  0.4 au
 
-0440 AA7A9DD-B T ..... AZ	Hi,In          	F,N     	K5IV/DB           HHWB....S       	Nostrilla
-  --  1.    H // X5D0000-0 //  0.4 au
+0440 AA7A9DD-B T ..... AZ	Hi,In          	F,N     	K0IV/DB           HHWB....S       	Ament Cour
+  --  1.    H // X5B0000-0 //  0.4 au
   --  2.    H // X0E0000-0 //  0.7 au
                             /   10 rad. X310000
   --  3. *  W // AA7A9DD-B //  1.4 au
@@ -2720,15 +2720,15 @@
   --  8.    . // .......-. // 44.8 au
   --  9.    S // DB        // 89.6 au
 
-0740 C222888-8 T ..... ..	Na,Po          	N       	M6V/DB            W..S            	D'Urth
+0740 C222888-8 T .S... ..	Na,Po          	N       	M4V/DB            W..S            	Caliban
   --  1. *  W // C222888-8 //  0.2 au
                             /    3 rad. X301000
   --  2.    . // .......-. //  0.4 au
   --  3.    . // .......-. //  0.8 au
   --  4.    S // DB        //  1.6 au
 
-1340 C95A122-7 T ..G.. ..	Lo             	F,M,N   	F0V/DB            H..WG.S         	Nhouaste
-  --  1.    H // X2C0000-0 //  0.3 au
+1340 C95A122-7 T .SG.. ..	Lo             	F,M,N   	F2V/DB            H..WG.S         	Stombos
+  --  1.    H // X2E0000-0 //  0.3 au
   --  2.    . // .......-. //  0.6 au
   --  3.    . // .......-. //  1.2 au
   --  4. *  W // C95A122-7 //  2.4 au
@@ -2736,7 +2736,7 @@
   --  6.    . // .......-. //  9.6 au
   --  7.    S // DB        // 19.2 au
 
-1540 C76AAAA-A T ..G.. AZ	Hi             	        	F2V               RRWGB           	Elysia
+1540 C76AAAA-A T .SGC. AZ	Hi             	        	F0V               RRWGB           	Ardamador
   --  1.    R // X700000-0 //  0.4 au
   --  2.    R // X700000-0 //  0.8 au
   --  3. *  W // C76AAAA-A //  1.6 au
@@ -2748,8 +2748,8 @@
                             /   12 rad. X100000
   --  5.    B // XR00000-0 //  6.4 au
 
-3040 E491666-8 R ..G.. ..	NI             	        	G2V               HHWGB           	Vorpis
-  --  1.    H // X3C0000-0 //  0.4 au
+3040 E491666-8 R ..G.. ..	NI             	        	G0V               HHWGB           	Hurria
+  --  1.    H // X3E0000-0 //  0.4 au
   --  2.    H // X1C0000-0 //  0.8 au
                             /    3 rad. X540000
                             /    8 rad. X100000

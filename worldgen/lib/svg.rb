@@ -82,7 +82,7 @@ class SvgOutput<WorldGenerator
       :Tract     => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Hexgrid   => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Name      => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
-      :symbol    => "text-anchor='middle' font-size='#{@side/2.5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
+      :symbol    => "text-anchor='middle' font-size='#{@side/2.5}px' fill='#{@color[:black]}' font-family='Verdana'",
       :Spaceport => "text-anchor='middle' font-size='#{@side/3}px' fill='#{@color[:world_text]}' font-family='Verdana'",
       :TractID   => "text-anchor='middle' font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
       :VolumeId  => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:hex_id]}' font-family='Verdana'",
