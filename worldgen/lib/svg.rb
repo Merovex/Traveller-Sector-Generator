@@ -82,6 +82,7 @@ class SvgOutput<WorldGenerator
       :Tract     => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Hexgrid   => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Name      => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
+      :symbol    => "text-anchor='middle' font-size='#{@side/2.5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
       :Spaceport => "text-anchor='middle' font-size='#{@side/3}px' fill='#{@color[:world_text]}' font-family='Verdana'",
       :TractID   => "text-anchor='middle' font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
       :VolumeId  => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:hex_id]}' font-family='Verdana'",
@@ -169,6 +170,8 @@ class SvgOutput<WorldGenerator
     output += navy_base(c)  if nsg.include?('N')
     output += scout_base(c) if nsg.include?('S')
     output += gas_giant(c)  if nsg.include?('G')
+    output += consulate(c)  if nsg.include?('C')
+    output += pirates(c)    if nsg.include?('P')
     # output += "    <text #{@style[:Name]} x='#{(c[0]+(@side/1.8)).tweak}' y='#{(c[1]-(@side/3)).tweak}'>#{star[0..1].strip}</text>\n"
     output += stars(c,star)
     output
@@ -246,8 +249,20 @@ class SvgOutput<WorldGenerator
     </g>
     GIANT
   end
-  def scout_base(c); '<!-- SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3); end
-  def navy_base(c); '<!-- NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); end
+  def pirates(c);
+      return "<!-- Pirates --><text #{@style[:symbol]} x='#{c[0]-(@side/3.1)}' y='#{c[1]+(@side/7)}'>\u2620</text>\n"
+  end
+  def consulate(c);
+      return "<!-- Consulate --><text #{@style[:symbol]} x='#{c[0]-(@side/1.5)}' y='#{c[1]+(@side/7)}'>\u2691</text>\n"
+  end
+  def scout_base(c);
+      return "<!-- Scout Base --><text #{@style[:symbol]} x='#{c[0]-(@side/1.8)}' y='#{c[1]+(@side/2.4)}'>\u269C</text>\n"
+    '<!-- SB -->' + polygon(c[0]-(@side/1.8),c[1]+(@side/3.7), @side/(@mark/2), @side/@mark, 3);
+  end
+  def navy_base(c); 
+    return "<!-- Navy Base --><text #{@style[:symbol]} x='#{c[0]-(@side/1.8)}' y='#{c[1]-(@side/6)}'>\u2693</text>\n"
+    '<!-- NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); 
+  end
   def hex_grid; (@rows * 3 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) }; 
   end
   def hex_row(row, top=false)
