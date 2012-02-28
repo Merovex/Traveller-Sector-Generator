@@ -39,8 +39,6 @@ class World<Terrestrial
   def initialize(star,orbit_number)
     super
     
-    @navy      = '.'
-    @scout     = '.'
     @port_roll = toss(2,0)
     
     @kid = 'W'
@@ -82,6 +80,16 @@ class World<Terrestrial
     # Fix temperature (Me)
     @temp = 'F' if (trade_codes.include?('IC') or trade_codes.include?('Va'))
     @temp = 'T' if ((trade_codes.include?('Ag') or trade_codes.include?('Ga') or trade_codes.include?('Ri') or trade_codes.include?('Wa')) and @temp != 'T')
+
+    base = {      
+      "Navy"      => { 'A' => 8,  'B' => 8,  'C' => 20, 'D' => 20, 'E' => 20, 'X' => 20 }[port],
+      "Scout"     => { 'A' => 10, 'B' => 8,  'C' =>  8, 'D' =>  7, 'E' => 20, 'X' => 20 }[port],
+      "Consolate" => { 'A' => 6,  'B' => 8,  'C' => 10, 'D' => 20, 'E' => 20, 'X' => 20 }[port],
+      "Pirate"    => { 'A' => 20, 'B' => 12, 'C' => 10, 'D' => 12, 'E' => 20, 'X' => 20 }[port]
+    }
+
+    @base = {}
+    base.keys.each  {|key| @base[key] = (2.d6 > base[key] - 1) ? key[0] : '.'}
   end
   def travel_code
     @code = (@atmo > 9 or [0,7,10].include?(@govm) or [0,9,10,11,12,13].include?(@law)) ? 'AZ' : '..'
@@ -91,7 +99,7 @@ class World<Terrestrial
     @gravity
   end
   def bases
-    return [@navy,@scout,@gas_giant,'.','.'].join('')
+    return [@base['Navy'],@base['Scout'],@gas_giant,@base['Consolate'],@base['Pirate']].join('')
   end
   def port
     %w{X X X E E D D C C B B A A A A A A A A A}[@port_roll.whole]

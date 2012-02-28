@@ -45,7 +45,8 @@ class SvgOutput<WorldGenerator
         :black      => base3,
         :base02     => base2,
         :base1      => base01,
-        :white      => white
+        :white      => white,
+        :tract_id   => base01
       },
       'lite' => {
         :background => white,
@@ -81,7 +82,7 @@ class SvgOutput<WorldGenerator
       :Tract     => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Hexgrid   => "fill='none' stroke='#{@color[:hex]}' stroke-width='1'",
       :Name      => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:world_text]}' font-family='Verdana'",
-      :Spaceport => "text-anchor='middle' font-size='#{@side/3}px' font-family='Verdana'",
+      :Spaceport => "text-anchor='middle' font-size='#{@side/3}px' fill='#{@color[:world_text]}' font-family='Verdana'",
       :TractID   => "text-anchor='middle' font-size='#{@side*3}px' fill='#{@color[:tract_id]}' font-family='Verdana'",
       :VolumeId  => "text-anchor='middle' font-size='#{@side/5}px' fill='#{@color[:hex_id]}' font-family='Verdana'",
       :rect      => "fill='#{@color[:background]}'"
@@ -234,14 +235,14 @@ class SvgOutput<WorldGenerator
   end
   def polygon(x, y, sx, sy, sides=4)
     polygon = star_coords(sx, sy, sides).map { |c| "#{x + c[0]},#{y.tweak+c[1]}" }
-    "    <polygon points='#{polygon.join(' ')}' />\n"
+    "    <polygon #{@style[:polygon]} points='#{polygon.join(' ')}' />\n"
   end
   def gas_giant(c)
     x = (c[0]+(@side/1.8)).tweak; y = (c[1]+(@side/3)).tweak;
     return<<-GIANT
     <g><!-- Has Gas Giant -->
       <ellipse #{@style[:ellipse]} cx='#{x}' cy='#{y}' rx='#{(@side/(@mark * 0.5)).tweak}' ry='#{(@side/@mark * 0.3).tweak}' />
-      <circle  cx='#{x}' cy='#{y}' r='#{(@side/(@mark * 1.2)).tweak}' />
+      <circle  #{@style[:circle]} cx='#{x}' cy='#{y}' r='#{(@side/(@mark * 1.2)).tweak}' />
     </g>
     GIANT
   end

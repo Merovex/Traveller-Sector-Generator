@@ -1,7 +1,7 @@
 class Volume<WorldGenerator
   attr_accessor :gas_giant
   def initialize(c,r)
-    @name   = @@names.sample
+    @name   = (@@config['named']) ? @@names.sample : "%02d%02d" % [c,r]
     @column = c
     @row    = r
     @star   = Star.new(self)
