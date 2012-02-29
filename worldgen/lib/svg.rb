@@ -15,6 +15,7 @@ class SvgOutput<WorldGenerator
     @mark    = 13
     @zones   = []
     @volumes = []
+    puts "Height: #{@height}; Width: #{@width}"
     
     base03  = '#002b36'
     base02  = '#073642'
