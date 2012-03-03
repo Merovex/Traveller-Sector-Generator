@@ -1,5 +1,5 @@
 class Volume<WorldGenerator
-  attr_accessor :gas_giant
+  attr_accessor :gas_giant, :name
   def initialize(c,r)
     @name   = (@@config['named']) ? @@names.sample : "%02d%02d" % [c,r]
     @column = c

@@ -17,4 +17,21 @@ class Sector<WorldGenerator
       end
     end
   end
+  def prename!
+    prename_file = @name + '.names'
+    lines = File.open(prename_file,'r').readlines.map{|l| l.strip} if File.exist?(prename_file).inspect
+    # raise names.inspect
+    volumes = {}
+    @volumes.each do |v|
+      volumes["#{v.location}"] = v
+    end
+       
+    lines.each do |l|
+      volume_id, name, uwp = l.split(/\s+/)
+      next if volume_id.nil? or volumes[volume_id].nil?
+      volumes[volume_id].name = name unless name.nil?
+      # raise [volume_id, name, uwp].inspect
+    end
+    @volumes = volumes.values
+  end
 end

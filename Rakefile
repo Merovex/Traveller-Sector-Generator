@@ -18,6 +18,7 @@ task :sector, :sector_name do |t,args|
   read_config
   s = Sector.new(name)
   s.generate!
+  s.prename!
   s.to_file
   puts "Created Sector '#{s.name}'"
 end
