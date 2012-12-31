@@ -25,7 +25,15 @@ end
 def read_config
   @config = YAML::load(IO.read('_config.yml'))
 end
+desc "Pregenerate Roles"
 task :setup do
   @rolls = 100000.times.map { 1.d6 }
   File.open('pregen_rolls.yml','w+').write( @rolls.to_yaml )
+end
+task :rename do |t, args|
+  filename = args[:filename] || Dir.entries('.').sort_by {|f| File.mtime(f)}.reverse.map{|x| x if (/\.sector$/).match(x)}.compact[0] if filename.nil?
+  name = filename.split(".")[0]
+  s = Sector.new(name)
+  s.rename!
+  # raise [s, filename, name].inspect
 end

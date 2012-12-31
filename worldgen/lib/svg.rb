@@ -7,7 +7,8 @@ class SvgOutput<WorldGenerator
     @rows     = 40
     @columns  = 32
     @source_filename = filename
-    @svg_filename    = filename.gsub(File.extname(filename), '.svg')
+    sectorname = filename.gsub(File.extname(filename), '')
+    @svg_filename    = sectorname + '.svg'
     @side    = 40
     @factor  = 1.732
     @height  = (@side * @factor * (@rows + 0.5)).ceil
@@ -15,6 +16,7 @@ class SvgOutput<WorldGenerator
     @mark    = 13
     @zones   = []
     @volumes = []
+    @name = sectorname.capitalize
     puts "Height: #{@height}; Width: #{@width}"
     
     base03  = '#002b36'
@@ -224,6 +226,7 @@ class SvgOutput<WorldGenerator
         # raise output
       end
     end
+    output += namestamp
     return output
   end
   def volumes
@@ -265,6 +268,9 @@ class SvgOutput<WorldGenerator
     '<!-- NB -->' +polygon(c[0]-(@side/1.8), c[1]-(@side/3.7), @side/(@mark/2), @side/@mark, 5); 
   end
   def hex_grid; (@rows * 3 + 2).times.map { |j| hex_row((j/2).floor, (j % 2 != 0)) }; 
+  end
+  def namestamp
+    return "<text text-anchor='left' font-size='30px' fill='#8A9DD1' font-family='Verdana' x='30' y='2800'>#{@name}</text>"
   end
   def hex_row(row, top=false)
     ly = (row * 2 * @hex[:side_h]) + @hex[:side_h]
